@@ -1,0 +1,4881 @@
+BackdropNode {
+ inputs 0
+ name BackdropNode1
+ tile_color 0x717171ff
+ label ASSETS
+ note_font "Verdana Bold"
+ note_font_size 42
+ xpos -13030
+ ypos -323
+ bdwidth 915
+ bdheight 215
+}
+Read {
+ inputs 0
+ file_type exr
+ file /render/h21_karma_all_materials.0001.exr
+ format "1920 1440 0 0 1920 1440 1 "
+ origset true
+ version 1
+ name Read4
+ xpos -12780
+ ypos -243
+}
+NoOp {
+ name Anchor_1cb5467e66
+ help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025"
+ onCreate "if nuke.GUI:\n    try:\n        import stamps; stamps.anchorOnCreate()\n    except:\n        pass"
+ knobChanged stamps.anchorKnobChanged()
+ autolabel "nuke.thisNode().knob(\"title\").value()"
+ tile_color 0xffffff01
+ note_font_size 20
+ xpos -12780
+ ypos -147
+ addUserKnob {20 anchor_tab l "Anchor Stamp"}
+ addUserKnob {26 identifier -STARTLINE +HIDDEN T anchor}
+ addUserKnob {1 title l Title: t "Displayed name on the Node Graph for this Stamp and its Anchor.\nIMPORTANT: This is only for display purposes, and is different from the internal node name."}
+ title h21_karma_all_materials
+ addUserKnob {26 prev_title l "" +STARTLINE +HIDDEN T h21_karma_all_materials}
+ addUserKnob {26 prev_name l "" +STARTLINE +HIDDEN T Anchor_1cb5467e66}
+ addUserKnob {3 showing l "" +STARTLINE +HIDDEN}
+ addUserKnob {1 tags l Tags t "Comma-separated tags to help find this Anchor via the Stamp Selector."}
+ tags 2D,
+ addUserKnob {26 line1 l "" +STARTLINE}
+ addUserKnob {26 stamps_label l Stamps: T " "}
+ addUserKnob {22 createStamp l new t "Create a new Stamp for this Anchor." -STARTLINE T stamps.stampCreateWired(nuke.thisNode())}
+ addUserKnob {22 selectStamps l select t "Select all of this Anchor's Stamps." -STARTLINE T stamps.wiredSelectSimilar(nuke.thisNode().name())}
+ addUserKnob {22 reconnectStamps l reconnect t "Reconnect all of this Anchor's Stamps." -STARTLINE T stamps.anchorReconnectWired()}
+ addUserKnob {22 zoomNext l "zoom next" t "Navigate to this Anchor's next Stamp on the Node Graph." -STARTLINE T stamps.wiredZoomNext(nuke.thisNode().name())}
+ addUserKnob {26 line2 l "" +STARTLINE}
+ addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
+ addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"><big>Stamps v1.2</big></span></a>"}
+}
+NoOp {
+ name Stamp3
+ help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025"
+ onCreate "if nuke.GUI:\n    try:\n        import stamps; stamps.wiredOnCreate()\n    except Exception:\n        pass\n"
+ knobChanged "if nuke.GUI:\n    try:\n        import stamps; stamps.wiredKnobChanged()\n    except:\n        pass"
+ autolabel "nuke.thisNode().knob(\"title\").value()"
+ tile_color 0x1000001
+ note_font Verdana
+ note_font_size 20
+ xpos -12990
+ ypos 2332
+ hide_input true
+ addUserKnob {20 wired_tab l "Wired Stamp"}
+ addUserKnob {26 identifier -STARTLINE +HIDDEN T wired}
+ addUserKnob {3 lockCallbacks l "" +STARTLINE +HIDDEN}
+ addUserKnob {6 toReconnect -STARTLINE +HIDDEN}
+ addUserKnob {1 title l Title: t "Displayed name on the Node Graph for this Stamp and its Anchor."}
+ title h21_karma_all_materials
+ addUserKnob {26 prev_title l "" +STARTLINE +HIDDEN T h21_karma_all_materials}
+ addUserKnob {26 tags l Tags: t "Tags of this stamp's Anchor. Click 'show anchor' to change them." T <i>2D</i>}
+ addUserKnob {26 backdrops l Backdrops: t "Labels of backdrop nodes that contain this stamp's Anchor." +HIDDEN T " "}
+ addUserKnob {26 line1 l "" +STARTLINE}
+ addUserKnob {6 postageStamp_show l "postage stamp" t "Enable the postage stamp thumbnail for this node." +HIDDEN +STARTLINE}
+ addUserKnob {26 anchor_label l Anchor: T " "}
+ addUserKnob {22 show_anchor l " show anchor " t "Show the properties panel for this Stamp's Anchor." -STARTLINE T stamps.wiredShowAnchor()}
+ addUserKnob {22 zoom_anchor l "zoom anchor" t "Navigate to this Stamp's Anchor on the Node Graph." -STARTLINE T stamps.wiredZoomAnchor()}
+ addUserKnob {26 stamps_label l Stamps: T " "}
+ addUserKnob {22 zoomNext l " zoom next " t "Navigate to this Stamp's next sibling on the Node Graph." -STARTLINE T stamps.wiredZoomNext()}
+ addUserKnob {22 selectSimilar l " select similar " t "Select all similar Stamps to this one on the Node Graph." -STARTLINE T stamps.wiredSelectSimilar()}
+ addUserKnob {26 space_1 l "" +STARTLINE T " "}
+ addUserKnob {26 reconnect_label l Reconnect: t "Reconnect by the stored Anchor name." T " "}
+ addUserKnob {22 reconnect_this l this t "Reconnect this Stamp to its Anchor using the stored Anchor name." -STARTLINE T "n = nuke.thisNode()\ntry:\n    n.setInput(0, nuke.toNode(n.knob(\"anchor\").value()))\nexcept Exception:\n    nuke.message(\"Unable to reconnect.\")\ntry:\n    import stamps\n    stamps.wiredGetStyle(n)\nexcept Exception:\n    pass\n"}
+ addUserKnob {22 reconnect_similar l similar t "Reconnect this Stamp and similar ones using the stored anchor name." -STARTLINE T stamps.wiredReconnectSimilar()}
+ addUserKnob {22 reconnect_all l all t "Reconnect all Stamps to their Anchors using the stored names." -STARTLINE T stamps.wiredReconnectAll()}
+ addUserKnob {26 space_2 l "" +STARTLINE T " "}
+ addUserKnob {20 advanced_reconnection l "Advanced Reconnection" n 2}
+ addUserKnob {26 reconnect_by_title_label l "<font color=gold>By Title:" t "Reconnect by searching for a matching title." T " "}
+ addUserKnob {22 reconnect_by_title_this l this t "Find an Anchor that shares this Stamp's title and connect to it." -STARTLINE T stamps.wiredReconnectByTitle()}
+ addUserKnob {22 reconnect_by_title_similar l similar t "Find an Anchor by title and reconnect this Stamp and similar ones to it." -STARTLINE T stamps.wiredReconnectByTitleSimilar()}
+ addUserKnob {22 reconnect_by_title_selected l selected t "For each selected Stamp, reconnect using an Anchor that shares its title." -STARTLINE T stamps.wiredReconnectByTitleSelected()}
+ addUserKnob {26 reconnect_by_selection_label l "<font color=orangered>By Selection:" t "Force reconnect to a selected Anchor." T " "}
+ addUserKnob {22 reconnect_by_selection_this l this t "Force reconnect this Stamp to a selected Anchor." -STARTLINE T stamps.wiredReconnectBySelection()}
+ addUserKnob {22 reconnect_by_selection_similar l similar t "Force reconnect this Stamp and similar ones to a selected Anchor." -STARTLINE T stamps.wiredReconnectBySelectionSimilar()}
+ addUserKnob {22 reconnect_by_selection_selected l selected t "Force reconnect all selected Stamps to the selected Anchor." -STARTLINE T stamps.wiredReconnectBySelectionSelected()}
+ addUserKnob {1 anchor l Anchor}
+ anchor Anchor_1cb5467e66
+ addUserKnob {6 auto_reconnect_by_title l "<font color=#ED9977>&nbsp; auto-reconnect by title" t "On copy-paste, auto-reconnect by title instead of stored Anchor name; turns off automatically." +STARTLINE}
+ addUserKnob {26 line2 l "" +STARTLINE}
+ addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
+ addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"><big>Stamps v1.2</big></span></a>"}
+}
+add_layer {original original.red original.green original.blue original.alpha}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ out1 original
+ fromInput2 {
+  {0}
+  B
+ }
+ mappings "4 rgba.red 0 0 original.red 0 0 rgba.green 0 1 original.green 0 1 rgba.blue 0 2 original.blue 0 2 rgba.alpha 0 3 original.alpha 0 3"
+ name Shuffle45
+ label "\[value in1] > \[value out1]"
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -12990
+ ypos 2445
+}
+Unpremult {
+ channels {original.red original.green original.blue none}
+ name Unpremult5
+ xpos -12990
+ ypos 2545
+}
+Dot {
+ name Dot1
+ xpos -12956
+ ypos 2655
+}
+set N141af360 [stack 0]
+Dot {
+ name Dot2
+ xpos -12706
+ ypos 2655
+}
+Dot {
+ name start_dot
+ xpos -12706
+ ypos 2905
+}
+set Ne188080 [stack 0]
+Dot {
+ name aov_dot
+ xpos -12456
+ ypos 2905
+}
+set Ne18e770 [stack 0]
+Dot {
+ name aov_dot1
+ xpos -12206
+ ypos 2905
+}
+set N13e00b90 [stack 0]
+Dot {
+ name Dot10
+ note_font " Bold"
+ note_font_size 40
+ xpos -11957
+ ypos 2905
+}
+set N13e07280 [stack 0]
+Dot {
+ name aov_dot2
+ xpos -11706
+ ypos 2905
+}
+set N139ced40 [stack 0]
+Dot {
+ name aov_dot3
+ xpos -11456
+ ypos 2905
+}
+set N139d5380 [stack 0]
+Dot {
+ name aov_dot4
+ xpos -11206
+ ypos 2905
+}
+set N139dbaf0 [stack 0]
+Dot {
+ name aov_dot5
+ xpos -10956
+ ypos 2905
+}
+set N13befbd0 [stack 0]
+Dot {
+ name aov_dot6
+ xpos -10706
+ ypos 2905
+}
+set N13cfb710 [stack 0]
+add_layer {albedoglossyreflection albedoglossyreflection.red albedoglossyreflection.green albedoglossyreflection.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 albedoglossyreflection
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 albedoglossyreflection.red 0 0 rgba.red 0 0 albedoglossyreflection.green 0 1 rgba.green 0 1 albedoglossyreflection.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle55
+ label albedoglossyreflection
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -10740
+ ypos 2923
+}
+Unpremult {
+ name Unpremult15
+ xpos -10740
+ ypos 2961
+}
+Dot {
+ name Dot17
+ note_font " Bold"
+ note_font_size 40
+ xpos -10706
+ ypos 3105
+}
+set N13fbc7e0 [stack 0]
+Dot {
+ name Dot18
+ note_font " Bold"
+ note_font_size 40
+ xpos -10706
+ ypos 3148
+}
+set N13fc2f60 [stack 0]
+Dot {
+ name Dot27
+ label "Grade Color\nin this pipe"
+ note_font "Verdana Bold"
+ note_font_size 20
+ note_font_color 0xffffffff
+ xpos -10706
+ ypos 3221
+}
+Dot {
+ name Dot25
+ note_font " Bold"
+ note_font_size 40
+ xpos -10706
+ ypos 3562
+}
+push $N13fc2f60
+push $N13cfb710
+Dot {
+ name aov_dot7
+ xpos -10456
+ ypos 2905
+}
+set N13e6d6a0 [stack 0]
+Dot {
+ name aov_dot8
+ xpos -10206
+ ypos 2905
+}
+set N13e73ce0 [stack 0]
+add_layer {indirectglossyreflection indirectglossyreflection.red indirectglossyreflection.green indirectglossyreflection.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 indirectglossyreflection
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 indirectglossyreflection.red 0 0 rgba.red 0 0 indirectglossyreflection.green 0 1 rgba.green 0 1 indirectglossyreflection.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle54
+ label indirectglossyreflection
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -10240
+ ypos 2923
+}
+Unpremult {
+ name Unpremult14
+ xpos -10240
+ ypos 2961
+}
+MergeExpression {
+ inputs 2
+ expr0 "Ar == 0 ? Br : Br/Ar"
+ expr1 "Ag == 0 ? Bg : Bg/Ag"
+ expr2 "Ab == 0 ? Bb : Bb/Ab"
+ expr3 "Aa == 0 ? Ba : Ba/Aa"
+ name MergeDivide5
+ label "( B / A )"
+ note_font_color 0xffffffff
+ xpos -10240
+ ypos 3138
+}
+Dot {
+ name Dot29
+ label "RAW\nIndirect Reflection"
+ note_font "Verdana Bold"
+ note_font_size 20
+ note_font_color 0xffffffff
+ xpos -10206
+ ypos 3221
+}
+Dot {
+ name bottom_aov_dot8
+ xpos -10206
+ ypos 3385
+}
+push $N13fbc7e0
+push $N13e6d6a0
+add_layer {directglossyreflection directglossyreflection.red directglossyreflection.green directglossyreflection.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 directglossyreflection
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 directglossyreflection.red 0 0 rgba.red 0 0 directglossyreflection.green 0 1 rgba.green 0 1 directglossyreflection.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle53
+ label directglossyreflection
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -10490
+ ypos 2923
+}
+Unpremult {
+ name Unpremult13
+ xpos -10490
+ ypos 2961
+}
+MergeExpression {
+ inputs 2
+ expr0 "Ar == 0 ? Br : Br/Ar"
+ expr1 "Ag == 0 ? Bg : Bg/Ag"
+ expr2 "Ab == 0 ? Bb : Bb/Ab"
+ expr3 "Aa == 0 ? Ba : Ba/Aa"
+ name MergeDivide3
+ label "( B / A )"
+ note_font_color 0xffffffff
+ xpos -10490
+ ypos 3095
+}
+Dot {
+ name Dot28
+ label "RAW\nDirect Reflection"
+ note_font "Verdana Bold"
+ note_font_size 20
+ note_font_color 0xffffffff
+ xpos -10456
+ ypos 3221
+}
+Merge2 {
+ inputs 2
+ operation plus
+ output rgb
+ name Merge6
+ tile_color 0x82ff8fff
+ label indirectglossyreflection
+ xpos -10490
+ ypos 3375
+}
+Merge2 {
+ inputs 2
+ operation multiply
+ bbox B
+ name Merge39
+ xpos -10490
+ ypos 3558
+}
+set N140e2830 [stack 0]
+push $N13e73ce0
+Dot {
+ name aov_dot9
+ xpos -9956
+ ypos 2905
+}
+set N141353d0 [stack 0]
+add_layer {combinedglossyreflection combinedglossyreflection.red combinedglossyreflection.green combinedglossyreflection.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 combinedglossyreflection
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 combinedglossyreflection.red 0 0 rgba.red 0 0 combinedglossyreflection.green 0 1 rgba.green 0 1 combinedglossyreflection.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle52
+ label combinedglossyreflection
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -9990
+ ypos 2923
+}
+Unpremult {
+ name Unpremult12
+ xpos -9990
+ ypos 2961
+}
+Switch {
+ inputs 2
+ name Switch4
+ label "Difference Check"
+ note_font "Verdana Bold"
+ note_font_color 0xffffffff
+ xpos -9990
+ ypos 3552
+}
+push $N141353d0
+Dot {
+ name aov_dot10
+ xpos -9706
+ ypos 2905
+}
+set N1415c4e0 [stack 0]
+Dot {
+ name aov_dot11
+ xpos -9456
+ ypos 2905
+}
+set N13983af0 [stack 0]
+Dot {
+ name aov_dot23
+ xpos -9191
+ ypos 2905
+}
+set N1398a1b0 [stack 0]
+add_layer {combinedemission combinedemission.red combinedemission.green combinedemission.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 combinedemission
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 combinedemission.red 0 0 rgba.red 0 0 combinedemission.green 0 1 rgba.green 0 1 combinedemission.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle14
+ label combinedemission
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -9225
+ ypos 2923
+}
+Unpremult {
+ name Unpremult27
+ xpos -9225
+ ypos 2961
+}
+Dot {
+ name bottom_aov_dot16
+ xpos -9191
+ ypos 3031
+}
+push $N1398a1b0
+Dot {
+ name aov_dot24
+ xpos -8891
+ ypos 2905
+}
+set N139ad160 [stack 0]
+Dot {
+ name aov_dot25
+ xpos -8591
+ ypos 2905
+}
+set N139b37b0 [stack 0]
+Dot {
+ name aov_dot26
+ xpos -8291
+ ypos 2905
+}
+set N13ba3600 [stack 0]
+add_layer {combinedvolume combinedvolume.red combinedvolume.green combinedvolume.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 combinedvolume
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 combinedvolume.red 0 0 rgba.red 0 0 combinedvolume.green 0 1 rgba.green 0 1 combinedvolume.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle17
+ label combinedvolume
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -8325
+ ypos 2923
+}
+Unpremult {
+ name Unpremult30
+ xpos -8325
+ ypos 2961
+}
+Dot {
+ name bottom_aov_dot19
+ xpos -8291
+ ypos 3031
+}
+push $N13ba3600
+Dot {
+ name aov_dot27
+ xpos -7991
+ ypos 2905
+}
+set N13bc80a0 [stack 0]
+Dot {
+ name aov_dot28
+ xpos -7691
+ ypos 2905
+}
+set N13bce6f0 [stack 0]
+Dot {
+ name aov_dot29
+ xpos -7391
+ ypos 2905
+}
+set N13ea4410 [stack 0]
+add_layer {ao ao.red ao.green ao.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 ao
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 ao.red 0 0 rgba.red 0 0 ao.green 0 1 rgba.green 0 1 ao.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle20
+ label ao
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -7425
+ ypos 2923
+}
+Unpremult {
+ name Unpremult33
+ xpos -7425
+ ypos 2961
+}
+Dot {
+ name bottom_aov_dot22
+ xpos -7391
+ ypos 3031
+}
+Dot {
+ inputs 0
+ name unassigned_bottom_dot
+ xpos -7091
+ ypos 6797
+}
+push $N13bce6f0
+add_layer {indirectvolume indirectvolume.red indirectvolume.green indirectvolume.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 indirectvolume
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 indirectvolume.red 0 0 rgba.red 0 0 indirectvolume.green 0 1 rgba.green 0 1 indirectvolume.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle19
+ label indirectvolume
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -7725
+ ypos 2923
+}
+Unpremult {
+ name Unpremult32
+ xpos -7725
+ ypos 2961
+}
+Dot {
+ name bottom_aov_dot21
+ xpos -7691
+ ypos 5492
+}
+push $N13bc80a0
+add_layer {directvolume directvolume.red directvolume.green directvolume.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 directvolume
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 directvolume.red 0 0 rgba.red 0 0 directvolume.green 0 1 rgba.green 0 1 directvolume.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle18
+ label directvolume
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -8025
+ ypos 2923
+}
+Unpremult {
+ name Unpremult31
+ xpos -8025
+ ypos 2961
+}
+Dot {
+ name bottom_aov_dot20
+ xpos -7991
+ ypos 5192
+}
+Read {
+ inputs 0
+ file_type exr
+ file /render/h21_karma_all_aovs.0001.exr
+ format "1920 1440 0 0 1920 1440 1 "
+ origset true
+ name Read1
+ xpos -13020
+ ypos -242
+}
+NoOp {
+ name Anchor_37bdefd408
+ help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025"
+ onCreate "if nuke.GUI:\n    try:\n        import stamps; stamps.anchorOnCreate()\n    except:\n        pass"
+ knobChanged stamps.anchorKnobChanged()
+ autolabel "nuke.thisNode().knob(\"title\").value()"
+ tile_color 0xffffff01
+ note_font_size 20
+ xpos -13020
+ ypos -146
+ addUserKnob {20 anchor_tab l "Anchor Stamp"}
+ addUserKnob {26 identifier -STARTLINE +HIDDEN T anchor}
+ addUserKnob {1 title l Title: t "Displayed name on the Node Graph for this Stamp and its Anchor.\nIMPORTANT: This is only for display purposes, and is different from the internal node name."}
+ title h21_karma_all_aovs
+ addUserKnob {26 prev_title l "" +STARTLINE +HIDDEN T h21_karma_all_aovs}
+ addUserKnob {26 prev_name l "" +STARTLINE +HIDDEN T Anchor_37bdefd408}
+ addUserKnob {3 showing l "" +STARTLINE +HIDDEN}
+ addUserKnob {1 tags l Tags t "Comma-separated tags to help find this Anchor via the Stamp Selector."}
+ tags 2D,
+ addUserKnob {26 line1 l "" +STARTLINE}
+ addUserKnob {26 stamps_label l Stamps: T " "}
+ addUserKnob {22 createStamp l new t "Create a new Stamp for this Anchor." -STARTLINE T stamps.stampCreateWired(nuke.thisNode())}
+ addUserKnob {22 selectStamps l select t "Select all of this Anchor's Stamps." -STARTLINE T stamps.wiredSelectSimilar(nuke.thisNode().name())}
+ addUserKnob {22 reconnectStamps l reconnect t "Reconnect all of this Anchor's Stamps." -STARTLINE T stamps.anchorReconnectWired()}
+ addUserKnob {22 zoomNext l "zoom next" t "Navigate to this Anchor's next Stamp on the Node Graph." -STARTLINE T stamps.wiredZoomNext(nuke.thisNode().name())}
+ addUserKnob {26 line2 l "" +STARTLINE}
+ addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
+ addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"><big>Stamps v1.2</big></span></a>"}
+}
+NoOp {
+ name Stamp2
+ help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025"
+ onCreate "if nuke.GUI:\n    try:\n        import stamps; stamps.wiredOnCreate()\n    except Exception:\n        pass\n"
+ knobChanged "if nuke.GUI:\n    try:\n        import stamps; stamps.wiredKnobChanged()\n    except:\n        pass"
+ autolabel "nuke.thisNode().knob(\"title\").value()"
+ tile_color 0x1000001
+ note_font Verdana
+ note_font_size 20
+ xpos -13020
+ ypos 619
+ hide_input true
+ addUserKnob {20 wired_tab l "Wired Stamp"}
+ addUserKnob {26 identifier -STARTLINE +HIDDEN T wired}
+ addUserKnob {3 lockCallbacks l "" +STARTLINE +HIDDEN}
+ addUserKnob {6 toReconnect -STARTLINE +HIDDEN}
+ addUserKnob {1 title l Title: t "Displayed name on the Node Graph for this Stamp and its Anchor."}
+ title h21_karma_all_aovs
+ addUserKnob {26 prev_title l "" +STARTLINE +HIDDEN T h21_karma_all_aovs}
+ addUserKnob {26 tags l Tags: t "Tags of this stamp's Anchor. Click 'show anchor' to change them." T <i>2D</i>}
+ addUserKnob {26 backdrops l Backdrops: t "Labels of backdrop nodes that contain this stamp's Anchor." +HIDDEN T " "}
+ addUserKnob {26 line1 l "" +STARTLINE}
+ addUserKnob {6 postageStamp_show l "postage stamp" t "Enable the postage stamp thumbnail for this node." +HIDDEN +STARTLINE}
+ addUserKnob {26 anchor_label l Anchor: T " "}
+ addUserKnob {22 show_anchor l " show anchor " t "Show the properties panel for this Stamp's Anchor." -STARTLINE T stamps.wiredShowAnchor()}
+ addUserKnob {22 zoom_anchor l "zoom anchor" t "Navigate to this Stamp's Anchor on the Node Graph." -STARTLINE T stamps.wiredZoomAnchor()}
+ addUserKnob {26 stamps_label l Stamps: T " "}
+ addUserKnob {22 zoomNext l " zoom next " t "Navigate to this Stamp's next sibling on the Node Graph." -STARTLINE T stamps.wiredZoomNext()}
+ addUserKnob {22 selectSimilar l " select similar " t "Select all similar Stamps to this one on the Node Graph." -STARTLINE T stamps.wiredSelectSimilar()}
+ addUserKnob {26 space_1 l "" +STARTLINE T " "}
+ addUserKnob {26 reconnect_label l Reconnect: t "Reconnect by the stored Anchor name." T " "}
+ addUserKnob {22 reconnect_this l this t "Reconnect this Stamp to its Anchor using the stored Anchor name." -STARTLINE T "n = nuke.thisNode()\ntry:\n    n.setInput(0, nuke.toNode(n.knob(\"anchor\").value()))\nexcept Exception:\n    nuke.message(\"Unable to reconnect.\")\ntry:\n    import stamps\n    stamps.wiredGetStyle(n)\nexcept Exception:\n    pass\n"}
+ addUserKnob {22 reconnect_similar l similar t "Reconnect this Stamp and similar ones using the stored anchor name." -STARTLINE T stamps.wiredReconnectSimilar()}
+ addUserKnob {22 reconnect_all l all t "Reconnect all Stamps to their Anchors using the stored names." -STARTLINE T stamps.wiredReconnectAll()}
+ addUserKnob {26 space_2 l "" +STARTLINE T " "}
+ addUserKnob {20 advanced_reconnection l "Advanced Reconnection" n 2}
+ addUserKnob {26 reconnect_by_title_label l "<font color=gold>By Title:" t "Reconnect by searching for a matching title." T " "}
+ addUserKnob {22 reconnect_by_title_this l this t "Find an Anchor that shares this Stamp's title and connect to it." -STARTLINE T stamps.wiredReconnectByTitle()}
+ addUserKnob {22 reconnect_by_title_similar l similar t "Find an Anchor by title and reconnect this Stamp and similar ones to it." -STARTLINE T stamps.wiredReconnectByTitleSimilar()}
+ addUserKnob {22 reconnect_by_title_selected l selected t "For each selected Stamp, reconnect using an Anchor that shares its title." -STARTLINE T stamps.wiredReconnectByTitleSelected()}
+ addUserKnob {26 reconnect_by_selection_label l "<font color=orangered>By Selection:" t "Force reconnect to a selected Anchor." T " "}
+ addUserKnob {22 reconnect_by_selection_this l this t "Force reconnect this Stamp to a selected Anchor." -STARTLINE T stamps.wiredReconnectBySelection()}
+ addUserKnob {22 reconnect_by_selection_similar l similar t "Force reconnect this Stamp and similar ones to a selected Anchor." -STARTLINE T stamps.wiredReconnectBySelectionSimilar()}
+ addUserKnob {22 reconnect_by_selection_selected l selected t "Force reconnect all selected Stamps to the selected Anchor." -STARTLINE T stamps.wiredReconnectBySelectionSelected()}
+ addUserKnob {1 anchor l Anchor}
+ anchor Anchor_37bdefd408
+ addUserKnob {6 auto_reconnect_by_title l "<font color=#ED9977>&nbsp; auto-reconnect by title" t "On copy-paste, auto-reconnect by title instead of stored Anchor name; turns off automatically." +STARTLINE}
+ addUserKnob {26 line2 l "" +STARTLINE}
+ addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
+ addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"><big>Stamps v1.2</big></span></a>"}
+}
+Dot {
+ name Dot13
+ label "MATERIALS >"
+ note_font " Bold"
+ note_font_size 40
+ note_font_color 0xffffffff
+ xpos -12986
+ ypos 756
+}
+set N140f3270 [stack 0]
+Dot {
+ name Dot62
+ label "UTILITIES >"
+ note_font " Bold"
+ note_font_size 40
+ note_font_color 0xffffffff
+ xpos -12986
+ ypos 1006
+}
+set N13b96d60 [stack 0]
+Dot {
+ name Dot63
+ xpos -12736
+ ypos 1006
+}
+set N13e122e0 [stack 0]
+Dot {
+ name Dot64
+ xpos -12486
+ ypos 1006
+}
+set N14085be0 [stack 0]
+add_layer {CryptoMaterial CryptoMaterial.red CryptoMaterial.green CryptoMaterial.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 CryptoMaterial
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 CryptoMaterial.red 0 0 rgba.red 0 0 CryptoMaterial.green 0 1 rgba.green 0 1 CryptoMaterial.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle44
+ label CryptoMaterial
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -12520
+ ypos 1024
+ postage_stamp true
+}
+Cryptomatte {
+ cryptoLayerChoice {
+  {7}
+  hitstack
+  rayorigin
+  CryptoObject
+  time
+  Ng_facing
+  near
+  hitdist
+  CryptoMaterial
+  far
+ }
+ pickerAdd {1.21875 1.247070312 0.2377929688 1 1030 800 1031 801}
+ matteList /World/Materials/basic
+ lastSelectedCryptoLayerName CryptoMaterial
+ name Cryptomatte1
+ xpos -12520
+ ypos 1108
+}
+NoOp {
+ name Anchor_21915d9fb4
+ help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025"
+ onCreate "if nuke.GUI:\n    try:\n        import stamps; stamps.anchorOnCreate()\n    except:\n        pass"
+ knobChanged stamps.anchorKnobChanged()
+ autolabel "nuke.thisNode().knob(\"title\").value()"
+ tile_color 0xffffff01
+ note_font_size 20
+ xpos -12520
+ ypos 1134
+ addUserKnob {20 anchor_tab l "Anchor Stamp"}
+ addUserKnob {26 identifier -STARTLINE +HIDDEN T anchor}
+ addUserKnob {1 title l Title: t "Displayed name on the Node Graph for this Stamp and its Anchor.\nIMPORTANT: This is only for display purposes, and is different from the internal node name."}
+ title Cryptomatte_material_sphere
+ addUserKnob {26 prev_title l "" +STARTLINE +HIDDEN T Cryptomatte_material_sphere}
+ addUserKnob {26 prev_name l "" +STARTLINE +HIDDEN T Anchor_21915d9fb4}
+ addUserKnob {3 showing l "" +STARTLINE +HIDDEN}
+ addUserKnob {1 tags l Tags t "Comma-separated tags to help find this Anchor via the Stamp Selector."}
+ tags 2D,
+ addUserKnob {26 line1 l "" +STARTLINE}
+ addUserKnob {26 stamps_label l Stamps: T " "}
+ addUserKnob {22 createStamp l new t "Create a new Stamp for this Anchor." -STARTLINE T stamps.stampCreateWired(nuke.thisNode())}
+ addUserKnob {22 selectStamps l select t "Select all of this Anchor's Stamps." -STARTLINE T stamps.wiredSelectSimilar(nuke.thisNode().name())}
+ addUserKnob {22 reconnectStamps l reconnect t "Reconnect all of this Anchor's Stamps." -STARTLINE T stamps.anchorReconnectWired()}
+ addUserKnob {22 zoomNext l "zoom next" t "Navigate to this Anchor's next Stamp on the Node Graph." -STARTLINE T stamps.wiredZoomNext(nuke.thisNode().name())}
+ addUserKnob {26 line2 l "" +STARTLINE}
+ addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
+ addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"><big>Stamps v1.2</big></span></a>"}
+}
+set N139ec0a0 [stack 0]
+NoOp {
+ name Stamp7
+ help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025"
+ onCreate "if nuke.GUI:\n    try:\n        import stamps; stamps.wiredOnCreate()\n    except Exception:\n        pass\n"
+ knobChanged "if nuke.GUI:\n    try:\n        import stamps; stamps.wiredKnobChanged()\n    except:\n        pass"
+ autolabel "nuke.thisNode().knob(\"title\").value()"
+ tile_color 0x1000001
+ note_font Verdana
+ note_font_size 20
+ xpos -8816
+ ypos 3390
+ hide_input true
+ addUserKnob {20 wired_tab l "Wired Stamp"}
+ addUserKnob {26 identifier -STARTLINE +HIDDEN T wired}
+ addUserKnob {3 lockCallbacks l "" +STARTLINE +HIDDEN}
+ addUserKnob {6 toReconnect -STARTLINE +HIDDEN}
+ addUserKnob {1 title l Title: t "Displayed name on the Node Graph for this Stamp and its Anchor."}
+ title Cryptomatte_material_sphere
+ addUserKnob {26 prev_title l "" +STARTLINE +HIDDEN T Cryptomatte_material_sphere}
+ addUserKnob {26 tags l Tags: t "Tags of this stamp's Anchor. Click 'show anchor' to change them." T <i>2D</i>}
+ addUserKnob {26 backdrops l Backdrops: t "Labels of backdrop nodes that contain this stamp's Anchor." +HIDDEN T " "}
+ addUserKnob {26 line1 l "" +STARTLINE}
+ addUserKnob {6 postageStamp_show l "postage stamp" t "Enable the postage stamp thumbnail for this node." +HIDDEN +STARTLINE}
+ addUserKnob {26 anchor_label l Anchor: T " "}
+ addUserKnob {22 show_anchor l " show anchor " t "Show the properties panel for this Stamp's Anchor." -STARTLINE T stamps.wiredShowAnchor()}
+ addUserKnob {22 zoom_anchor l "zoom anchor" t "Navigate to this Stamp's Anchor on the Node Graph." -STARTLINE T stamps.wiredZoomAnchor()}
+ addUserKnob {26 stamps_label l Stamps: T " "}
+ addUserKnob {22 zoomNext l " zoom next " t "Navigate to this Stamp's next sibling on the Node Graph." -STARTLINE T stamps.wiredZoomNext()}
+ addUserKnob {22 selectSimilar l " select similar " t "Select all similar Stamps to this one on the Node Graph." -STARTLINE T stamps.wiredSelectSimilar()}
+ addUserKnob {26 space_1 l "" +STARTLINE T " "}
+ addUserKnob {26 reconnect_label l Reconnect: t "Reconnect by the stored Anchor name." T " "}
+ addUserKnob {22 reconnect_this l this t "Reconnect this Stamp to its Anchor using the stored Anchor name." -STARTLINE T "n = nuke.thisNode()\ntry:\n    n.setInput(0, nuke.toNode(n.knob(\"anchor\").value()))\nexcept Exception:\n    nuke.message(\"Unable to reconnect.\")\ntry:\n    import stamps\n    stamps.wiredGetStyle(n)\nexcept Exception:\n    pass\n"}
+ addUserKnob {22 reconnect_similar l similar t "Reconnect this Stamp and similar ones using the stored anchor name." -STARTLINE T stamps.wiredReconnectSimilar()}
+ addUserKnob {22 reconnect_all l all t "Reconnect all Stamps to their Anchors using the stored names." -STARTLINE T stamps.wiredReconnectAll()}
+ addUserKnob {26 space_2 l "" +STARTLINE T " "}
+ addUserKnob {20 advanced_reconnection l "Advanced Reconnection" n 2}
+ addUserKnob {26 reconnect_by_title_label l "<font color=gold>By Title:" t "Reconnect by searching for a matching title." T " "}
+ addUserKnob {22 reconnect_by_title_this l this t "Find an Anchor that shares this Stamp's title and connect to it." -STARTLINE T stamps.wiredReconnectByTitle()}
+ addUserKnob {22 reconnect_by_title_similar l similar t "Find an Anchor by title and reconnect this Stamp and similar ones to it." -STARTLINE T stamps.wiredReconnectByTitleSimilar()}
+ addUserKnob {22 reconnect_by_title_selected l selected t "For each selected Stamp, reconnect using an Anchor that shares its title." -STARTLINE T stamps.wiredReconnectByTitleSelected()}
+ addUserKnob {26 reconnect_by_selection_label l "<font color=orangered>By Selection:" t "Force reconnect to a selected Anchor." T " "}
+ addUserKnob {22 reconnect_by_selection_this l this t "Force reconnect this Stamp to a selected Anchor." -STARTLINE T stamps.wiredReconnectBySelection()}
+ addUserKnob {22 reconnect_by_selection_similar l similar t "Force reconnect this Stamp and similar ones to a selected Anchor." -STARTLINE T stamps.wiredReconnectBySelectionSimilar()}
+ addUserKnob {22 reconnect_by_selection_selected l selected t "Force reconnect all selected Stamps to the selected Anchor." -STARTLINE T stamps.wiredReconnectBySelectionSelected()}
+ addUserKnob {1 anchor l Anchor}
+ anchor Anchor_21915d9fb4
+ addUserKnob {6 auto_reconnect_by_title l "<font color=#ED9977>&nbsp; auto-reconnect by title" t "On copy-paste, auto-reconnect by title instead of stored Anchor name; turns off automatically." +STARTLINE}
+ addUserKnob {26 line2 l "" +STARTLINE}
+ addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
+ addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"><big>Stamps v1.2</big></span></a>"}
+}
+push $N139b37b0
+add_layer {indirectemission indirectemission.red indirectemission.green indirectemission.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 indirectemission
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 indirectemission.red 0 0 rgba.red 0 0 indirectemission.green 0 1 rgba.green 0 1 indirectemission.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle16
+ label indirectemission
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -8625
+ ypos 2923
+}
+Unpremult {
+ name Unpremult29
+ xpos -8625
+ ypos 2961
+}
+HueShift {
+ inputs 1+1
+ hue_rotation {{parent.HueShift1.hue_rotation}}
+ name HueShift2
+ xpos -8625
+ ypos 3394
+}
+Dot {
+ name bottom_aov_dot18
+ xpos -8591
+ ypos 4892
+}
+push $N139ad160
+add_layer {directemission directemission.red directemission.green directemission.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 directemission
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 directemission.red 0 0 rgba.red 0 0 directemission.green 0 1 rgba.green 0 1 directemission.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle15
+ label directemission
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -8925
+ ypos 2923
+}
+Unpremult {
+ name Unpremult28
+ xpos -8925
+ ypos 2961
+}
+Dot {
+ name bottom_aov_dot17
+ xpos -8891
+ ypos 4592
+}
+push $N1415c4e0
+add_layer {albedoglossytransmission albedoglossytransmission.red albedoglossytransmission.green albedoglossytransmission.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 albedoglossytransmission
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 albedoglossytransmission.red 0 0 rgba.red 0 0 albedoglossytransmission.green 0 1 rgba.green 0 1 albedoglossytransmission.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle70
+ label "\[value in1]"
+ note_font "Verdana Bold"
+ note_font_color 0xffffffff
+ xpos -9740
+ ypos 2923
+}
+Unpremult {
+ name Unpremult3
+ xpos -9740
+ ypos 2961
+}
+Dot {
+ name Dot3
+ note_font " Bold"
+ note_font_size 40
+ xpos -9706
+ ypos 3105
+}
+set N1427a4d0 [stack 0]
+Dot {
+ name Dot6
+ label "Grade Color\nin this pipe"
+ note_font "Verdana Bold"
+ note_font_size 20
+ note_font_color 0xffffffff
+ xpos -9706
+ ypos 3221
+}
+Dot {
+ name Dot26
+ note_font " Bold"
+ note_font_size 40
+ xpos -9706
+ ypos 3562
+}
+push $N1427a4d0
+push $N13983af0
+add_layer {glossytransmission glossytransmission.red glossytransmission.green glossytransmission.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 glossytransmission
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 glossytransmission.red 0 0 rgba.red 0 0 glossytransmission.green 0 1 rgba.green 0 1 glossytransmission.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle57
+ label glossytransmission
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -9490
+ ypos 2923
+}
+Unpremult {
+ name Unpremult17
+ xpos -9490
+ ypos 2961
+}
+MergeExpression {
+ inputs 2
+ expr0 "Ar == 0 ? Br : Br/Ar"
+ expr1 "Ag == 0 ? Bg : Bg/Ag"
+ expr2 "Ab == 0 ? Bb : Bb/Ab"
+ expr3 "Aa == 0 ? Ba : Ba/Aa"
+ name MergeDivide6
+ label "( B / A )"
+ note_font_color 0xffffffff
+ xpos -9490
+ ypos 3095
+}
+Dot {
+ name Dot7
+ label "RAW\nDirect Transmission"
+ note_font "Verdana Bold"
+ note_font_size 20
+ note_font_color 0xffffffff
+ xpos -9456
+ ypos 3221
+}
+Merge2 {
+ inputs 2
+ operation multiply
+ bbox B
+ name Merge7
+ xpos -9490
+ ypos 3558
+}
+Dot {
+ name bottom_aov_dot11
+ xpos -9456
+ ypos 4279
+}
+push $N140e2830
+Dot {
+ name Dot4
+ note_font " Bold"
+ note_font_size 40
+ xpos -10456
+ ypos 3985
+}
+push $N139ec0a0
+NoOp {
+ name Stamp6
+ help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025"
+ onCreate "if nuke.GUI:\n    try:\n        import stamps; stamps.wiredOnCreate()\n    except Exception:\n        pass\n"
+ knobChanged "if nuke.GUI:\n    try:\n        import stamps; stamps.wiredKnobChanged()\n    except:\n        pass"
+ autolabel "nuke.thisNode().knob(\"title\").value()"
+ tile_color 0x1000001
+ note_font Verdana
+ note_font_size 20
+ xpos -12181
+ ypos 3393
+ hide_input true
+ addUserKnob {20 wired_tab l "Wired Stamp"}
+ addUserKnob {26 identifier -STARTLINE +HIDDEN T wired}
+ addUserKnob {3 lockCallbacks l "" +STARTLINE +HIDDEN}
+ addUserKnob {6 toReconnect -STARTLINE +HIDDEN}
+ addUserKnob {1 title l Title: t "Displayed name on the Node Graph for this Stamp and its Anchor."}
+ title Cryptomatte_material_sphere
+ addUserKnob {26 prev_title l "" +STARTLINE +HIDDEN T Cryptomatte_material_sphere}
+ addUserKnob {26 tags l Tags: t "Tags of this stamp's Anchor. Click 'show anchor' to change them." T <i>2D</i>}
+ addUserKnob {26 backdrops l Backdrops: t "Labels of backdrop nodes that contain this stamp's Anchor." +HIDDEN T " "}
+ addUserKnob {26 line1 l "" +STARTLINE}
+ addUserKnob {6 postageStamp_show l "postage stamp" t "Enable the postage stamp thumbnail for this node." +HIDDEN +STARTLINE}
+ addUserKnob {26 anchor_label l Anchor: T " "}
+ addUserKnob {22 show_anchor l " show anchor " t "Show the properties panel for this Stamp's Anchor." -STARTLINE T stamps.wiredShowAnchor()}
+ addUserKnob {22 zoom_anchor l "zoom anchor" t "Navigate to this Stamp's Anchor on the Node Graph." -STARTLINE T stamps.wiredZoomAnchor()}
+ addUserKnob {26 stamps_label l Stamps: T " "}
+ addUserKnob {22 zoomNext l " zoom next " t "Navigate to this Stamp's next sibling on the Node Graph." -STARTLINE T stamps.wiredZoomNext()}
+ addUserKnob {22 selectSimilar l " select similar " t "Select all similar Stamps to this one on the Node Graph." -STARTLINE T stamps.wiredSelectSimilar()}
+ addUserKnob {26 space_1 l "" +STARTLINE T " "}
+ addUserKnob {26 reconnect_label l Reconnect: t "Reconnect by the stored Anchor name." T " "}
+ addUserKnob {22 reconnect_this l this t "Reconnect this Stamp to its Anchor using the stored Anchor name." -STARTLINE T "n = nuke.thisNode()\ntry:\n    n.setInput(0, nuke.toNode(n.knob(\"anchor\").value()))\nexcept Exception:\n    nuke.message(\"Unable to reconnect.\")\ntry:\n    import stamps\n    stamps.wiredGetStyle(n)\nexcept Exception:\n    pass\n"}
+ addUserKnob {22 reconnect_similar l similar t "Reconnect this Stamp and similar ones using the stored anchor name." -STARTLINE T stamps.wiredReconnectSimilar()}
+ addUserKnob {22 reconnect_all l all t "Reconnect all Stamps to their Anchors using the stored names." -STARTLINE T stamps.wiredReconnectAll()}
+ addUserKnob {26 space_2 l "" +STARTLINE T " "}
+ addUserKnob {20 advanced_reconnection l "Advanced Reconnection" n 2}
+ addUserKnob {26 reconnect_by_title_label l "<font color=gold>By Title:" t "Reconnect by searching for a matching title." T " "}
+ addUserKnob {22 reconnect_by_title_this l this t "Find an Anchor that shares this Stamp's title and connect to it." -STARTLINE T stamps.wiredReconnectByTitle()}
+ addUserKnob {22 reconnect_by_title_similar l similar t "Find an Anchor by title and reconnect this Stamp and similar ones to it." -STARTLINE T stamps.wiredReconnectByTitleSimilar()}
+ addUserKnob {22 reconnect_by_title_selected l selected t "For each selected Stamp, reconnect using an Anchor that shares its title." -STARTLINE T stamps.wiredReconnectByTitleSelected()}
+ addUserKnob {26 reconnect_by_selection_label l "<font color=orangered>By Selection:" t "Force reconnect to a selected Anchor." T " "}
+ addUserKnob {22 reconnect_by_selection_this l this t "Force reconnect this Stamp to a selected Anchor." -STARTLINE T stamps.wiredReconnectBySelection()}
+ addUserKnob {22 reconnect_by_selection_similar l similar t "Force reconnect this Stamp and similar ones to a selected Anchor." -STARTLINE T stamps.wiredReconnectBySelectionSimilar()}
+ addUserKnob {22 reconnect_by_selection_selected l selected t "Force reconnect all selected Stamps to the selected Anchor." -STARTLINE T stamps.wiredReconnectBySelectionSelected()}
+ addUserKnob {1 anchor l Anchor}
+ anchor Anchor_21915d9fb4
+ addUserKnob {6 auto_reconnect_by_title l "<font color=#ED9977>&nbsp; auto-reconnect by title" t "On copy-paste, auto-reconnect by title instead of stored Anchor name; turns off automatically." +STARTLINE}
+ addUserKnob {26 line2 l "" +STARTLINE}
+ addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
+ addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"><big>Stamps v1.2</big></span></a>"}
+}
+push $N13e07280
+add_layer {albedotransmitteddiffuse albedotransmitteddiffuse.red albedotransmitteddiffuse.green albedotransmitteddiffuse.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 albedotransmitteddiffuse
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 albedotransmitteddiffuse.red 0 0 rgba.red 0 0 albedotransmitteddiffuse.green 0 1 rgba.green 0 1 albedotransmitteddiffuse.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle71
+ label "\[value in1]"
+ note_font "Verdana Bold"
+ note_font_color 0xffffffff
+ xpos -11991
+ ypos 2923
+}
+Unpremult {
+ name Unpremult2
+ xpos -11991
+ ypos 2961
+}
+Dot {
+ name Dot11
+ note_font " Bold"
+ note_font_size 40
+ xpos -11957
+ ypos 3065
+}
+push $N13e00b90
+add_layer {albedodiffuse albedodiffuse.red albedodiffuse.green albedodiffuse.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 albedodiffuse
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 albedodiffuse.red 0 0 rgba.red 0 0 albedodiffuse.green 0 1 rgba.green 0 1 albedodiffuse.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle47
+ label albedodiffuse
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -12240
+ ypos 2923
+}
+Unpremult {
+ name Unpremult7
+ xpos -12240
+ ypos 2961
+}
+push $Ne18e770
+add_layer {albedo albedo.red albedo.green albedo.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 albedo
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 albedo.red 0 0 rgba.red 0 0 albedo.green 0 1 rgba.green 0 1 albedo.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle46
+ label albedo
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -12490
+ ypos 2923
+}
+Unpremult {
+ name Unpremult6
+ xpos -12490
+ ypos 2961
+}
+Dot {
+ name bottom_aov_dot
+ xpos -12456
+ ypos 3065
+}
+Switch {
+ inputs 3
+ which 2
+ name Switch2
+ xpos -12240
+ ypos 3061
+}
+Dot {
+ name Dot12
+ note_font " Bold"
+ note_font_size 40
+ xpos -12206
+ ypos 3105
+}
+Dot {
+ name Dot20
+ note_font " Bold"
+ note_font_size 40
+ xpos -11956
+ ypos 3105
+}
+set N13fdf090 [stack 0]
+Dot {
+ name Dot21
+ note_font " Bold"
+ note_font_size 40
+ xpos -11956
+ ypos 3148
+}
+set N13ef8350 [stack 0]
+Dot {
+ name Dot9
+ note_font " Bold"
+ note_font_size 40
+ xpos -11956
+ ypos 3193
+}
+set N13efeb60 [stack 0]
+Dot {
+ name Dot23
+ label "Grade Color\nin this pipe"
+ note_font "Verdana Bold"
+ note_font_size 20
+ note_font_color 0xffffffff
+ xpos -11956
+ ypos 3221
+}
+HueShift {
+ inputs 1+1
+ hue_rotation 100
+ name HueShift1
+ xpos -11990
+ ypos 3397
+}
+Dot {
+ name Dot24
+ note_font " Bold"
+ note_font_size 40
+ xpos -11956
+ ypos 3769
+}
+push $N13efeb60
+push $N139dbaf0
+add_layer {sss sss.red sss.green sss.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 sss
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 sss.red 0 0 rgba.red 0 0 sss.green 0 1 rgba.green 0 1 sss.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle51
+ label sss
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -11240
+ ypos 2923
+}
+Unpremult {
+ name Unpremult11
+ xpos -11240
+ ypos 2961
+}
+set N1409eb30 [stack 0]
+MergeExpression {
+ inputs 2
+ expr0 "Ar == 0 ? Br : Br/Ar"
+ expr1 "Ag == 0 ? Bg : Bg/Ag"
+ expr2 "Ab == 0 ? Bb : Bb/Ab"
+ expr3 "Aa == 0 ? Ba : Ba/Aa"
+ name MergeDivide2
+ label "( B / A )"
+ note_font_color 0xffffffff
+ xpos -11240
+ ypos 3183
+}
+Dot {
+ name Dot22
+ label "RAW\nSSS"
+ note_font "Verdana Bold"
+ note_font_size 20
+ note_font_color 0xffffffff
+ xpos -11206
+ ypos 3221
+}
+Dot {
+ name bottom_aov_dot5
+ xpos -11206
+ ypos 3562
+}
+push $N13ef8350
+push $N139d5380
+add_layer {indirectdiffuse indirectdiffuse.red indirectdiffuse.green indirectdiffuse.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 indirectdiffuse
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 indirectdiffuse.red 0 0 rgba.red 0 0 indirectdiffuse.green 0 1 rgba.green 0 1 indirectdiffuse.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle50
+ label indirectdiffuse
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -11490
+ ypos 2923
+}
+Unpremult {
+ name Unpremult10
+ xpos -11490
+ ypos 2961
+}
+MergeExpression {
+ inputs 2
+ expr0 "Ar == 0 ? Br : Br/Ar"
+ expr1 "Ag == 0 ? Bg : Bg/Ag"
+ expr2 "Ab == 0 ? Bb : Bb/Ab"
+ expr3 "Aa == 0 ? Ba : Ba/Aa"
+ name MergeDivide1
+ label "( B / A )"
+ note_font_color 0xffffffff
+ xpos -11490
+ ypos 3138
+}
+Dot {
+ name Dot8
+ label "RAW\nIndirect Lighting"
+ note_font "Verdana Bold"
+ note_font_size 20
+ note_font_color 0xffffffff
+ xpos -11456
+ ypos 3221
+}
+Dot {
+ name bottom_aov_dot4
+ xpos -11456
+ ypos 3385
+}
+push $N13fdf090
+push $N139ced40
+add_layer {directdiffuse directdiffuse.red directdiffuse.green directdiffuse.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 directdiffuse
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 directdiffuse.red 0 0 rgba.red 0 0 directdiffuse.green 0 1 rgba.green 0 1 directdiffuse.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle49
+ label directdiffuse
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -11740
+ ypos 2923
+}
+Unpremult {
+ name Unpremult9
+ xpos -11740
+ ypos 2961
+}
+MergeExpression {
+ inputs 2
+ expr0 "Ar == 0 ? Br : Br/Ar"
+ expr1 "Ag == 0 ? Bg : Bg/Ag"
+ expr2 "Ab == 0 ? Bb : Bb/Ab"
+ expr3 "Aa == 0 ? Ba : Ba/Aa"
+ name MergeDivide4
+ label "( B / A )"
+ note_font_color 0xffffffff
+ xpos -11740
+ ypos 3095
+}
+Dot {
+ name Dot19
+ label "RAW\nDirect Lighting"
+ note_font "Verdana Bold"
+ note_font_size 20
+ note_font_color 0xffffffff
+ xpos -11706
+ ypos 3221
+}
+Merge2 {
+ inputs 2
+ operation plus
+ output rgb
+ name Merge3
+ tile_color 0x82ff8fff
+ label indirectdiffuse
+ xpos -11740
+ ypos 3375
+}
+Merge2 {
+ inputs 2
+ operation plus
+ output rgb
+ name Merge4
+ tile_color 0x82ff8fff
+ label sss
+ xpos -11740
+ ypos 3552
+}
+Merge2 {
+ inputs 2
+ operation multiply
+ bbox B
+ name Merge37
+ xpos -11740
+ ypos 3765
+}
+set N13bdbbd0 [stack 0]
+Merge2 {
+ inputs 2
+ operation plus
+ bbox B
+ name Merge5
+ xpos -11740
+ ypos 3981
+}
+Merge2 {
+ inputs 2
+ operation plus
+ output rgb
+ name Merge8
+ tile_color 0x82ff8fff
+ label glossytransmission
+ xpos -11740
+ ypos 4269
+}
+push $Ne188080
+Remove {
+ channels rgb
+ name Remove1
+ label RGB
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -12740
+ ypos 2923
+}
+Merge2 {
+ inputs 2
+ operation plus
+ bbox B
+ name Merge2
+ xpos -12740
+ ypos 4275
+}
+Merge2 {
+ inputs 2
+ operation plus
+ output rgb
+ name Merge15
+ tile_color 0x82ff8fff
+ label directemission
+ xpos -12740
+ ypos 4582
+}
+Merge2 {
+ inputs 2
+ operation plus
+ output rgb
+ name Merge16
+ tile_color 0x82ff8fff
+ label indirectemission
+ xpos -12740
+ ypos 4882
+}
+Merge2 {
+ inputs 2
+ operation plus
+ output rgb
+ name Merge17
+ tile_color 0x82ff8fff
+ label directvolume
+ xpos -12740
+ ypos 5182
+}
+Merge2 {
+ inputs 2
+ operation plus
+ output rgb
+ name Merge18
+ tile_color 0x82ff8fff
+ label indirectvolume
+ xpos -12740
+ ypos 5482
+}
+Merge2 {
+ operation plus
+ output rgb
+ name merge_plus
+ tile_color 0x82ff8fff
+ label "<i> unassigned aov"
+ xpos -12740
+ ypos 6783
+ disable true
+}
+Dot {
+ name Dot16
+ xpos -12706
+ ypos 6897
+}
+set N143899c0 [stack 0]
+push $N141af360
+Dot {
+ name Dot30
+ xpos -12956
+ ypos 6897
+}
+set N1438fec0 [stack 0]
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 original
+ fromInput2 {
+  {0}
+  B
+ }
+ mappings "4 original.red 0 0 rgba.red 0 0 original.green 0 1 rgba.green 0 1 original.blue 0 2 rgba.blue 0 2 original.alpha 0 3 rgba.alpha 0 3"
+ name Shuffle22
+ label "original rbg"
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -12846
+ ypos 6887
+}
+set N143965d0 [stack 0]
+Merge2 {
+ inputs 2
+ operation divide
+ output rgb
+ name Merge40
+ xpos -12740
+ ypos 6993
+}
+push $N1438fec0
+Merge2 {
+ inputs 2
+ operation multiply
+ output rgb
+ name Merge41
+ xpos -12990
+ ypos 7093
+}
+Premult {
+ name Premult1
+ xpos -12990
+ ypos 7293
+}
+push $N140f3270
+Dot {
+ name Dot14
+ xpos -12736
+ ypos 756
+}
+set N143d49a0 [stack 0]
+Dot {
+ name Dot32
+ xpos -12486
+ ypos 756
+}
+set N143daf40 [stack 0]
+Dot {
+ name Dot33
+ xpos -12236
+ ypos 756
+}
+set N143e16b0 [stack 0]
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 albedoglossyreflection
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 albedoglossyreflection.red 0 0 rgba.red 0 0 albedoglossyreflection.green 0 1 rgba.green 0 1 albedoglossyreflection.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle3
+ label albedoglossyreflection
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -12270
+ ypos 775
+ postage_stamp true
+}
+push $N143e16b0
+Dot {
+ name Dot34
+ xpos -11986
+ ypos 756
+}
+set N143f3d00 [stack 0]
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 albedoglossytransmission
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 albedoglossytransmission.red 0 0 rgba.red 0 0 albedoglossytransmission.green 0 1 rgba.green 0 1 albedoglossytransmission.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle4
+ label albedoglossytransmission
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -12020
+ ypos 775
+ postage_stamp true
+}
+push $N143f3d00
+Dot {
+ name Dot35
+ xpos -11736
+ ypos 756
+}
+set N14406060 [stack 0]
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 albedotransmitteddiffuse
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 albedotransmitteddiffuse.red 0 0 rgba.red 0 0 albedotransmitteddiffuse.green 0 1 rgba.green 0 1 albedotransmitteddiffuse.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle5
+ label albedotransmitteddiffuse
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -11770
+ ypos 775
+ postage_stamp true
+}
+push $N14406060
+Dot {
+ name Dot36
+ xpos -11486
+ ypos 756
+}
+set N144183c0 [stack 0]
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 ao
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 ao.red 0 0 rgba.red 0 0 ao.green 0 1 rgba.green 0 1 ao.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle6
+ label ao
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -11520
+ ypos 775
+ postage_stamp true
+}
+push $N144183c0
+Dot {
+ name Dot37
+ xpos -11236
+ ypos 756
+}
+set N1442a4b0 [stack 0]
+add_layer {basecolor basecolor.red basecolor.green basecolor.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 basecolor
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 basecolor.red 0 0 rgba.red 0 0 basecolor.green 0 1 rgba.green 0 1 basecolor.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle7
+ label basecolor
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -11270
+ ypos 775
+ postage_stamp true
+}
+push $N1442a4b0
+Dot {
+ name Dot38
+ xpos -10986
+ ypos 756
+}
+set N1443c780 [stack 0]
+Dot {
+ name Dot39
+ xpos -10736
+ ypos 756
+}
+set N14442a10 [stack 0]
+add_layer {coat coat.red coat.green coat.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 coat
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 coat.red 0 0 rgba.red 0 0 coat.green 0 1 rgba.green 0 1 coat.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle9
+ label coat
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -10770
+ ypos 775
+ postage_stamp true
+}
+push $N14442a10
+Dot {
+ name Dot40
+ xpos -10486
+ ypos 756
+}
+set N14455310 [stack 0]
+Dot {
+ name Dot41
+ xpos -10236
+ ypos 756
+}
+set N1445b640 [stack 0]
+Dot {
+ name Dot42
+ xpos -9986
+ ypos 756
+}
+set N14461db0 [stack 0]
+Dot {
+ name Dot43
+ xpos -9736
+ ypos 756
+}
+set N14468520 [stack 0]
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 combinedemission
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 combinedemission.red 0 0 rgba.red 0 0 combinedemission.green 0 1 rgba.green 0 1 combinedemission.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle23
+ label combinedemission
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -9770
+ ypos 775
+ postage_stamp true
+}
+push $N14468520
+Dot {
+ name Dot44
+ xpos -9486
+ ypos 756
+}
+set N1447ae50 [stack 0]
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 combinedglossyreflection
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 combinedglossyreflection.red 0 0 rgba.red 0 0 combinedglossyreflection.green 0 1 rgba.green 0 1 combinedglossyreflection.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle24
+ label combinedglossyreflection
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -9520
+ ypos 775
+ postage_stamp true
+}
+push $N1447ae50
+Dot {
+ name Dot45
+ xpos -9236
+ ypos 756
+}
+set N1448d140 [stack 0]
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 combinedvolume
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 combinedvolume.red 0 0 rgba.red 0 0 combinedvolume.green 0 1 rgba.green 0 1 combinedvolume.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle25
+ label combinedvolume
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -9270
+ ypos 775
+ postage_stamp true
+}
+push $N1448d140
+Dot {
+ name Dot46
+ xpos -8986
+ ypos 756
+}
+set N1449f260 [stack 0]
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 directdiffuse
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 directdiffuse.red 0 0 rgba.red 0 0 directdiffuse.green 0 1 rgba.green 0 1 directdiffuse.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle26
+ label directdiffuse
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -9020
+ ypos 775
+ postage_stamp true
+}
+push $N1449f260
+Dot {
+ name Dot47
+ xpos -8736
+ ypos 756
+}
+set N144b1500 [stack 0]
+Dot {
+ name Dot48
+ xpos -8486
+ ypos 756
+}
+set N144b7760 [stack 0]
+Dot {
+ name Dot49
+ xpos -8236
+ ypos 756
+}
+set N144bded0 [stack 0]
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 directemission
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 directemission.red 0 0 rgba.red 0 0 directemission.green 0 1 rgba.green 0 1 directemission.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle30
+ label directemission
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -8270
+ ypos 775
+ postage_stamp true
+}
+push $N144bded0
+Dot {
+ name Dot50
+ xpos -7986
+ ypos 756
+}
+set N144d0680 [stack 0]
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 directglossyreflection
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 directglossyreflection.red 0 0 rgba.red 0 0 directglossyreflection.green 0 1 rgba.green 0 1 directglossyreflection.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle31
+ label directglossyreflection
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -8020
+ ypos 775
+ postage_stamp true
+}
+push $N144d0680
+Dot {
+ name Dot51
+ xpos -7736
+ ypos 756
+}
+set N144e2a60 [stack 0]
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 directvolume
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 directvolume.red 0 0 rgba.red 0 0 directvolume.green 0 1 rgba.green 0 1 directvolume.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle32
+ label directvolume
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -7770
+ ypos 775
+ postage_stamp true
+}
+push $N144e2a60
+Dot {
+ name Dot52
+ xpos -7486
+ ypos 756
+}
+set N144f4c00 [stack 0]
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 glossytransmission
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 glossytransmission.red 0 0 rgba.red 0 0 glossytransmission.green 0 1 rgba.green 0 1 glossytransmission.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle34
+ label glossytransmission
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -7520
+ ypos 775
+ postage_stamp true
+}
+push $N144f4c00
+Dot {
+ name Dot53
+ xpos -7236
+ ypos 756
+}
+set N14507040 [stack 0]
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 indirectdiffuse
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 indirectdiffuse.red 0 0 rgba.red 0 0 indirectdiffuse.green 0 1 rgba.green 0 1 indirectdiffuse.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle35
+ label indirectdiffuse
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -7270
+ ypos 775
+ postage_stamp true
+}
+push $N14507040
+Dot {
+ name Dot54
+ xpos -6986
+ ypos 756
+}
+set N145192e0 [stack 0]
+add_layer {indirectdiffuseshadow indirectdiffuseshadow.red indirectdiffuseshadow.green indirectdiffuseshadow.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 indirectdiffuseshadow
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 indirectdiffuseshadow.red 0 0 rgba.red 0 0 indirectdiffuseshadow.green 0 1 rgba.green 0 1 indirectdiffuseshadow.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle36
+ label indirectdiffuseshadow
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -7020
+ ypos 775
+ postage_stamp true
+}
+push $N145192e0
+Dot {
+ name Dot55
+ xpos -6736
+ ypos 756
+}
+set N1452b740 [stack 0]
+add_layer {indirectdiffuseunshadowed indirectdiffuseunshadowed.red indirectdiffuseunshadowed.green indirectdiffuseunshadowed.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 indirectdiffuseunshadowed
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 indirectdiffuseunshadowed.red 0 0 rgba.red 0 0 indirectdiffuseunshadowed.green 0 1 rgba.green 0 1 indirectdiffuseunshadowed.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle37
+ label indirectdiffuseunshadowed
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -6770
+ ypos 775
+ postage_stamp true
+}
+push $N1452b740
+Dot {
+ name Dot56
+ xpos -6486
+ ypos 756
+}
+set N1453dea0 [stack 0]
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 indirectemission
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 indirectemission.red 0 0 rgba.red 0 0 indirectemission.green 0 1 rgba.green 0 1 indirectemission.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle38
+ label indirectemission
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -6520
+ ypos 775
+ postage_stamp true
+}
+push $N1453dea0
+Dot {
+ name Dot57
+ xpos -6236
+ ypos 756
+}
+set N14550170 [stack 0]
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 indirectglossyreflection
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 indirectglossyreflection.red 0 0 rgba.red 0 0 indirectglossyreflection.green 0 1 rgba.green 0 1 indirectglossyreflection.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle39
+ label indirectglossyreflection
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -6270
+ ypos 775
+ postage_stamp true
+}
+push $N14550170
+Dot {
+ name Dot58
+ xpos -5986
+ ypos 756
+}
+set N13bb62f0 [stack 0]
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 indirectvolume
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 indirectvolume.red 0 0 rgba.red 0 0 indirectvolume.green 0 1 rgba.green 0 1 indirectvolume.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle40
+ label indirectvolume
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -6020
+ ypos 775
+ postage_stamp true
+}
+push $N13bb62f0
+Dot {
+ name Dot59
+ xpos -5736
+ ypos 756
+}
+set N145769d0 [stack 0]
+Dot {
+ name Dot60
+ xpos -5486
+ ypos 756
+}
+set N1457cc30 [stack 0]
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 sss
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 sss.red 0 0 rgba.red 0 0 sss.green 0 1 rgba.green 0 1 sss.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle42
+ label sss
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -5520
+ ypos 775
+ postage_stamp true
+}
+push $N144b7760
+add_layer {directdiffuseunshadowed directdiffuseunshadowed.red directdiffuseunshadowed.green directdiffuseunshadowed.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 directdiffuseunshadowed
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 directdiffuseunshadowed.red 0 0 rgba.red 0 0 directdiffuseunshadowed.green 0 1 rgba.green 0 1 directdiffuseunshadowed.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle29
+ label directdiffuseunshadowed
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -8520
+ ypos 775
+ postage_stamp true
+}
+NoOp {
+ name Anchor_13e8a50949
+ help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025"
+ onCreate "if nuke.GUI:\n    try:\n        import stamps; stamps.anchorOnCreate()\n    except:\n        pass"
+ knobChanged stamps.anchorKnobChanged()
+ autolabel "nuke.thisNode().knob(\"title\").value()"
+ tile_color 0xffffff01
+ note_font_size 20
+ xpos -8520
+ ypos 859
+ addUserKnob {20 anchor_tab l "Anchor Stamp"}
+ addUserKnob {26 identifier -STARTLINE +HIDDEN T anchor}
+ addUserKnob {1 title l Title: t "Displayed name on the Node Graph for this Stamp and its Anchor.\nIMPORTANT: This is only for display purposes, and is different from the internal node name."}
+ title directdiffuseunshadowed
+ addUserKnob {26 prev_title l "" +STARTLINE +HIDDEN T directdiffuseunshadowed}
+ addUserKnob {26 prev_name l "" +STARTLINE +HIDDEN T Anchor_13e8a50949}
+ addUserKnob {3 showing l "" +STARTLINE +HIDDEN}
+ addUserKnob {1 tags l Tags t "Comma-separated tags to help find this Anchor via the Stamp Selector."}
+ tags 2D,
+ addUserKnob {26 line1 l "" +STARTLINE}
+ addUserKnob {26 stamps_label l Stamps: T " "}
+ addUserKnob {22 createStamp l new t "Create a new Stamp for this Anchor." -STARTLINE T stamps.stampCreateWired(nuke.thisNode())}
+ addUserKnob {22 selectStamps l select t "Select all of this Anchor's Stamps." -STARTLINE T stamps.wiredSelectSimilar(nuke.thisNode().name())}
+ addUserKnob {22 reconnectStamps l reconnect t "Reconnect all of this Anchor's Stamps." -STARTLINE T stamps.anchorReconnectWired()}
+ addUserKnob {22 zoomNext l "zoom next" t "Navigate to this Anchor's next Stamp on the Node Graph." -STARTLINE T stamps.wiredZoomNext(nuke.thisNode().name())}
+ addUserKnob {26 line2 l "" +STARTLINE}
+ addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
+ addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"><big>Stamps v1.2</big></span></a>"}
+}
+push $N144b1500
+add_layer {directdiffuseshadow directdiffuseshadow.red directdiffuseshadow.green directdiffuseshadow.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 directdiffuseshadow
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 directdiffuseshadow.red 0 0 rgba.red 0 0 directdiffuseshadow.green 0 1 rgba.green 0 1 directdiffuseshadow.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle27
+ label directdiffuseshadow
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -8770
+ ypos 775
+ postage_stamp true
+}
+NoOp {
+ name Anchor_39d145a885
+ help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025"
+ onCreate "if nuke.GUI:\n    try:\n        import stamps; stamps.anchorOnCreate()\n    except:\n        pass"
+ knobChanged stamps.anchorKnobChanged()
+ autolabel "nuke.thisNode().knob(\"title\").value()"
+ tile_color 0xffffff01
+ note_font_size 20
+ xpos -8770
+ ypos 859
+ addUserKnob {20 anchor_tab l "Anchor Stamp"}
+ addUserKnob {26 identifier -STARTLINE +HIDDEN T anchor}
+ addUserKnob {1 title l Title: t "Displayed name on the Node Graph for this Stamp and its Anchor.\nIMPORTANT: This is only for display purposes, and is different from the internal node name."}
+ title directdiffuseshadow
+ addUserKnob {26 prev_title l "" +STARTLINE +HIDDEN T directdiffuseshadow}
+ addUserKnob {26 prev_name l "" +STARTLINE +HIDDEN T Anchor_39d145a885}
+ addUserKnob {3 showing l "" +STARTLINE +HIDDEN}
+ addUserKnob {1 tags l Tags t "Comma-separated tags to help find this Anchor via the Stamp Selector."}
+ tags 2D,
+ addUserKnob {26 line1 l "" +STARTLINE}
+ addUserKnob {26 stamps_label l Stamps: T " "}
+ addUserKnob {22 createStamp l new t "Create a new Stamp for this Anchor." -STARTLINE T stamps.stampCreateWired(nuke.thisNode())}
+ addUserKnob {22 selectStamps l select t "Select all of this Anchor's Stamps." -STARTLINE T stamps.wiredSelectSimilar(nuke.thisNode().name())}
+ addUserKnob {22 reconnectStamps l reconnect t "Reconnect all of this Anchor's Stamps." -STARTLINE T stamps.anchorReconnectWired()}
+ addUserKnob {22 zoomNext l "zoom next" t "Navigate to this Anchor's next Stamp on the Node Graph." -STARTLINE T stamps.wiredZoomNext(nuke.thisNode().name())}
+ addUserKnob {26 line2 l "" +STARTLINE}
+ addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
+ addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"><big>Stamps v1.2</big></span></a>"}
+}
+StickyNote {
+ inputs 0
+ name StickyNote1
+ tile_color 0x272727ff
+ label "LAYERS KEY"
+ note_font " Bold"
+ note_font_size 60
+ note_font_color 0xa8a8a8ff
+ xpos -13154
+ ypos 347
+ bookmark true
+}
+push $N14461db0
+add_layer {combineddiffuseunshadowed combineddiffuseunshadowed.red combineddiffuseunshadowed.green combineddiffuseunshadowed.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 combineddiffuseunshadowed
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 combineddiffuseunshadowed.red 0 0 rgba.red 0 0 combineddiffuseunshadowed.green 0 1 rgba.green 0 1 combineddiffuseunshadowed.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle13
+ label combineddiffuseunshadowed
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -10020
+ ypos 775
+ postage_stamp true
+}
+push $N1445b640
+add_layer {combineddiffuseshadow combineddiffuseshadow.red combineddiffuseshadow.green combineddiffuseshadow.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 combineddiffuseshadow
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 combineddiffuseshadow.red 0 0 rgba.red 0 0 combineddiffuseshadow.green 0 1 rgba.green 0 1 combineddiffuseshadow.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle12
+ label combineddiffuseshadow
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -10270
+ ypos 775
+ postage_stamp true
+}
+push $N13b96d60
+Dot {
+ name Dot123
+ label "OTHER >"
+ note_font " Bold"
+ note_font_size 40
+ note_font_color 0xffffffff
+ xpos -12986
+ ypos 1256
+}
+Dot {
+ name Dot124
+ xpos -12736
+ ypos 1256
+}
+set N145e87d0 [stack 0]
+add_layer {sss_bounce sss_bounce.red sss_bounce.green sss_bounce.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 sss_bounce
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 sss_bounce.red 0 0 rgba.red 0 0 sss_bounce.green 0 1 rgba.green 0 1 sss_bounce.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle119
+ label sss_bounce
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -12770
+ ypos 1274
+ postage_stamp true
+}
+push $N14085be0
+Dot {
+ name Dot65
+ xpos -12236
+ ypos 1006
+}
+set N145fae30 [stack 0]
+Dot {
+ name Dot66
+ xpos -11986
+ ypos 1006
+}
+set N146010a0 [stack 0]
+Dot {
+ name Dot67
+ xpos -11736
+ ypos 1006
+}
+set N14607810 [stack 0]
+add_layer {CryptoMaterial02 CryptoMaterial02.red CryptoMaterial02.green CryptoMaterial02.blue CryptoMaterial02.alpha}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 CryptoMaterial02
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 CryptoMaterial02.red 0 0 rgba.red 0 0 CryptoMaterial02.green 0 1 rgba.green 0 1 CryptoMaterial02.blue 0 2 rgba.blue 0 2 CryptoMaterial02.alpha 0 3 rgba.alpha 0 3"
+ name Shuffle59
+ label CryptoMaterial02
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -11770
+ ypos 1024
+ postage_stamp true
+}
+push $N14607810
+Dot {
+ name Dot68
+ xpos -11486
+ ypos 1006
+}
+set N1461a530 [stack 0]
+add_layer {CryptoObject CryptoObject.red CryptoObject.green CryptoObject.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 CryptoObject
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 CryptoObject.red 0 0 rgba.red 0 0 CryptoObject.green 0 1 rgba.green 0 1 CryptoObject.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle60
+ label CryptoObject
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -11520
+ ypos 1024
+ postage_stamp true
+}
+push $N1461a530
+Dot {
+ name Dot69
+ xpos -11236
+ ypos 1006
+}
+set N1462c8d0 [stack 0]
+add_layer {CryptoObject00 CryptoObject00.red CryptoObject00.green CryptoObject00.blue CryptoObject00.alpha}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 CryptoObject00
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 CryptoObject00.red 0 0 rgba.red 0 0 CryptoObject00.green 0 1 rgba.green 0 1 CryptoObject00.blue 0 2 rgba.blue 0 2 CryptoObject00.alpha 0 3 rgba.alpha 0 3"
+ name Shuffle61
+ label CryptoObject00
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -11270
+ ypos 1024
+ postage_stamp true
+}
+push $N1462c8d0
+Dot {
+ name Dot70
+ xpos -10986
+ ypos 1006
+}
+set N1463f250 [stack 0]
+add_layer {CryptoObject01 CryptoObject01.red CryptoObject01.green CryptoObject01.blue CryptoObject01.alpha}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 CryptoObject01
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 CryptoObject01.red 0 0 rgba.red 0 0 CryptoObject01.green 0 1 rgba.green 0 1 CryptoObject01.blue 0 2 rgba.blue 0 2 CryptoObject01.alpha 0 3 rgba.alpha 0 3"
+ name Shuffle62
+ label CryptoObject01
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -11020
+ ypos 1024
+ postage_stamp true
+}
+push $N1463f250
+Dot {
+ name Dot71
+ xpos -10736
+ ypos 1006
+}
+set N146527c0 [stack 0]
+add_layer {CryptoObject02 CryptoObject02.red CryptoObject02.green CryptoObject02.blue CryptoObject02.alpha}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 CryptoObject02
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 CryptoObject02.red 0 0 rgba.red 0 0 CryptoObject02.green 0 1 rgba.green 0 1 CryptoObject02.blue 0 2 rgba.blue 0 2 CryptoObject02.alpha 0 3 rgba.alpha 0 3"
+ name Shuffle63
+ label CryptoObject02
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -10770
+ ypos 1024
+ postage_stamp true
+}
+push $N146527c0
+Dot {
+ name Dot72
+ xpos -10486
+ ypos 1006
+}
+set N14664d10 [stack 0]
+add_layer {Facingratio_N Facingratio_N.Facingratio_N}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 Facingratio_N
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 Facingratio_N.Facingratio_N 0 0 rgba.red 0 0 Facingratio_N.Facingratio_N 0 0 rgba.green 0 1 Facingratio_N.Facingratio_N 0 0 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle64
+ label Facingratio_N
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -10520
+ ypos 1024
+ postage_stamp true
+}
+push $N14664d10
+Dot {
+ name Dot73
+ xpos -10236
+ ypos 1006
+}
+set N14676c30 [stack 0]
+add_layer {Facingratio_Ng Facingratio_Ng.Facingratio_Ng}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 Facingratio_Ng
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 Facingratio_Ng.Facingratio_Ng 0 0 rgba.red 0 0 Facingratio_Ng.Facingratio_Ng 0 0 rgba.green 0 1 Facingratio_Ng.Facingratio_Ng 0 0 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle65
+ label Facingratio_Ng
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -10270
+ ypos 1024
+ postage_stamp true
+}
+push $N14676c30
+Dot {
+ name Dot74
+ xpos -9986
+ ypos 1006
+}
+set N14688fb0 [stack 0]
+add_layer {N N.x N.y N.z}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 N
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 N.x 0 0 rgba.red 0 0 N.y 0 1 rgba.green 0 1 N.z 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle66
+ label N
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -10020
+ ypos 1024
+ postage_stamp true
+}
+push $N14688fb0
+Dot {
+ name Dot75
+ xpos -9736
+ ypos 1006
+}
+set N1469b420 [stack 0]
+add_layer {Ng Ng.x Ng.y Ng.z}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 Ng
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 Ng.x 0 0 rgba.red 0 0 Ng.y 0 1 rgba.green 0 1 Ng.z 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle67
+ label Ng
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -9770
+ ypos 1024
+ postage_stamp true
+}
+push $N1469b420
+Dot {
+ name Dot76
+ xpos -9486
+ ypos 1006
+}
+set N146ad790 [stack 0]
+add_layer {Ng_camera Ng_camera.x Ng_camera.y Ng_camera.z}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 Ng_camera
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 Ng_camera.x 0 0 rgba.red 0 0 Ng_camera.y 0 1 rgba.green 0 1 Ng_camera.z 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle68
+ label Ng_camera
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -9520
+ ypos 1024
+ postage_stamp true
+}
+push $N146ad790
+Dot {
+ name Dot77
+ xpos -9236
+ ypos 1006
+}
+set N146bfd30 [stack 0]
+add_layer {Ng_facing Ng_facing.x Ng_facing.y Ng_facing.z}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 Ng_facing
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 Ng_facing.x 0 0 rgba.red 0 0 Ng_facing.y 0 1 rgba.green 0 1 Ng_facing.z 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle69
+ label Ng_facing
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -9270
+ ypos 1024
+ postage_stamp true
+}
+push $N146bfd30
+Dot {
+ name Dot78
+ xpos -8986
+ ypos 1006
+}
+set N146d20a0 [stack 0]
+add_layer {Ng_facing00 Ng_facing00.red Ng_facing00.green Ng_facing00.blue Ng_facing00.alpha}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 Ng_facing00
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 Ng_facing00.red 0 0 rgba.red 0 0 Ng_facing00.green 0 1 rgba.green 0 1 Ng_facing00.blue 0 2 rgba.blue 0 2 Ng_facing00.alpha 0 3 rgba.alpha 0 3"
+ name Shuffle72
+ label Ng_facing00
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -9020
+ ypos 1024
+ postage_stamp true
+}
+push $N146d20a0
+Dot {
+ name Dot79
+ xpos -8736
+ ypos 1006
+}
+set N146e43e0 [stack 0]
+add_layer {Ng_facing01 Ng_facing01.red Ng_facing01.green Ng_facing01.blue Ng_facing01.alpha}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 Ng_facing01
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 Ng_facing01.red 0 0 rgba.red 0 0 Ng_facing01.green 0 1 rgba.green 0 1 Ng_facing01.blue 0 2 rgba.blue 0 2 Ng_facing01.alpha 0 3 rgba.alpha 0 3"
+ name Shuffle73
+ label Ng_facing01
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -8770
+ ypos 1024
+ postage_stamp true
+}
+push $N146e43e0
+Dot {
+ name Dot80
+ xpos -8486
+ ypos 1006
+}
+set N146f68d0 [stack 0]
+add_layer {Ng_facing02 Ng_facing02.red Ng_facing02.green Ng_facing02.blue Ng_facing02.alpha}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 Ng_facing02
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 Ng_facing02.red 0 0 rgba.red 0 0 Ng_facing02.green 0 1 rgba.green 0 1 Ng_facing02.blue 0 2 rgba.blue 0 2 Ng_facing02.alpha 0 3 rgba.alpha 0 3"
+ name Shuffle74
+ label Ng_facing02
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -8520
+ ypos 1024
+ postage_stamp true
+}
+push $N146f68d0
+Dot {
+ name Dot81
+ xpos -8236
+ ypos 1006
+}
+set N14708dc0 [stack 0]
+add_layer {P P.x P.y P.z}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 P
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 P.x 0 0 rgba.red 0 0 P.y 0 1 rgba.green 0 1 P.z 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle75
+ label P
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -8270
+ ypos 1024
+ postage_stamp true
+}
+push $N14708dc0
+Dot {
+ name Dot82
+ xpos -7986
+ ypos 1006
+}
+set N1471b0b0 [stack 0]
+add_layer {P_camera P_camera.x P_camera.y P_camera.z}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 P_camera
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 P_camera.x 0 0 rgba.red 0 0 P_camera.y 0 1 rgba.green 0 1 P_camera.z 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle76
+ label P_camera
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -8020
+ ypos 1024
+ postage_stamp true
+}
+push $N1471b0b0
+Dot {
+ name Dot83
+ xpos -7736
+ ypos 1006
+}
+set N1472d5b0 [stack 0]
+add_layer {P_holdouts P_holdouts.x P_holdouts.y P_holdouts.z}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 P_holdouts
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 P_holdouts.x 0 0 rgba.red 0 0 P_holdouts.y 0 1 rgba.green 0 1 P_holdouts.z 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle77
+ label P_holdouts
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -7770
+ ypos 1024
+ postage_stamp true
+}
+push $N1472d5b0
+Dot {
+ name Dot84
+ xpos -7486
+ ypos 1006
+}
+set N1473f7b0 [stack 0]
+add_layer {P_noholdouts P_noholdouts.x P_noholdouts.y P_noholdouts.z}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 P_noholdouts
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 P_noholdouts.x 0 0 rgba.red 0 0 P_noholdouts.y 0 1 rgba.green 0 1 P_noholdouts.z 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle78
+ label P_noholdouts
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -7520
+ ypos 1024
+ postage_stamp true
+}
+push $N1473f7b0
+Dot {
+ name Dot85
+ xpos -7236
+ ypos 1006
+}
+set N147517f0 [stack 0]
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 rgba.alpha 0 3 rgba.red 0 0 rgba.alpha 0 3 rgba.green 0 1 rgba.alpha 0 3 rgba.blue 0 2 rgba.alpha 0 3 rgba.alpha 0 3"
+ name Shuffle79
+ label alpha
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -7270
+ ypos 1024
+ postage_stamp true
+}
+push $N147517f0
+Dot {
+ name Dot86
+ xpos -6986
+ ypos 1006
+}
+set N14763aa0 [stack 0]
+add_layer {cputime cputime.cputime}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 cputime
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 cputime.cputime 0 0 rgba.red 0 0 cputime.cputime 0 0 rgba.green 0 1 cputime.cputime 0 0 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle80
+ label cputime
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -7020
+ ypos 1024
+ postage_stamp true
+}
+push $N14763aa0
+Dot {
+ name Dot87
+ xpos -6736
+ ypos 1006
+}
+set N14775cb0 [stack 0]
+add_layer {dPdz dPdz.dPdz}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 dPdz
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 dPdz.dPdz 0 0 rgba.red 0 0 dPdz.dPdz 0 0 rgba.green 0 1 dPdz.dPdz 0 0 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle81
+ label dPdz
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -6770
+ ypos 1024
+ postage_stamp true
+}
+push $N14775cb0
+Dot {
+ name Dot88
+ xpos -6486
+ ypos 1006
+}
+set N14788c20 [stack 0]
+add_layer {depth_extra depth_extra.z}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 depth_extra
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 depth_extra.z 0 0 rgba.red 0 0 depth_extra.z 0 0 rgba.green 0 1 depth_extra.z 0 0 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle82
+ label depth_extra
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -6520
+ ypos 1024
+ postage_stamp true
+}
+push $N14788c20
+Dot {
+ name Dot89
+ xpos -6236
+ ypos 1006
+}
+set N1479ac50 [stack 0]
+add_layer {element element.id}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 element
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 element.id 0 0 rgba.red 0 0 element.id 0 0 rgba.green 0 1 element.id 0 0 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle83
+ label element
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -6270
+ ypos 1024
+ postage_stamp true
+}
+push $N1479ac50
+Dot {
+ name Dot90
+ xpos -5986
+ ypos 1006
+}
+set N147ad9b0 [stack 0]
+add_layer {far far.far}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 far
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 far.far 0 0 rgba.red 0 0 far.far 0 0 rgba.green 0 1 far.far 0 0 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle84
+ label far
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -6020
+ ypos 1024
+ postage_stamp true
+}
+push $N147ad9b0
+Dot {
+ name Dot91
+ xpos -5736
+ ypos 1006
+}
+set N147bfa90 [stack 0]
+add_layer {far00 far00.red far00.green far00.blue far00.alpha}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 far00
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 far00.red 0 0 rgba.red 0 0 far00.green 0 1 rgba.green 0 1 far00.blue 0 2 rgba.blue 0 2 far00.alpha 0 3 rgba.alpha 0 3"
+ name Shuffle85
+ label far00
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -5770
+ ypos 1024
+ postage_stamp true
+}
+push $N147bfa90
+Dot {
+ name Dot92
+ xpos -5486
+ ypos 1006
+}
+set N147d2180 [stack 0]
+add_layer {far01 far01.red far01.green far01.blue far01.alpha}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 far01
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 far01.red 0 0 rgba.red 0 0 far01.green 0 1 rgba.green 0 1 far01.blue 0 2 rgba.blue 0 2 far01.alpha 0 3 rgba.alpha 0 3"
+ name Shuffle86
+ label far01
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -5520
+ ypos 1024
+ postage_stamp true
+}
+push $N147d2180
+Dot {
+ name Dot93
+ xpos -5236
+ ypos 1006
+}
+set N147e4540 [stack 0]
+add_layer {far02 far02.red far02.green far02.blue far02.alpha}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 far02
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 far02.red 0 0 rgba.red 0 0 far02.green 0 1 rgba.green 0 1 far02.blue 0 2 rgba.blue 0 2 far02.alpha 0 3 rgba.alpha 0 3"
+ name Shuffle87
+ label far02
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -5270
+ ypos 1024
+ postage_stamp true
+}
+push $N147e4540
+Dot {
+ name Dot94
+ xpos -4986
+ ypos 1006
+}
+set N147f6900 [stack 0]
+add_layer {flags flags.flags}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 flags
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 flags.flags 0 0 rgba.red 0 0 flags.flags 0 0 rgba.green 0 1 flags.flags 0 0 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle88
+ label flags
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -5020
+ ypos 1024
+ postage_stamp true
+}
+push $N147f6900
+Dot {
+ name Dot95
+ xpos -4736
+ ypos 1006
+}
+set N14808b10 [stack 0]
+add_layer {hitdist hitdist.hitdist}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 hitdist
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 hitdist.hitdist 0 0 rgba.red 0 0 hitdist.hitdist 0 0 rgba.green 0 1 hitdist.hitdist 0 0 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle89
+ label hitdist
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -4770
+ ypos 1024
+ postage_stamp true
+}
+push $N14808b10
+Dot {
+ name Dot96
+ xpos -4486
+ ypos 1006
+}
+set N1481aaa0 [stack 0]
+add_layer {hitdist00 hitdist00.red hitdist00.green hitdist00.blue hitdist00.alpha}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 hitdist00
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 hitdist00.red 0 0 rgba.red 0 0 hitdist00.green 0 1 rgba.green 0 1 hitdist00.blue 0 2 rgba.blue 0 2 hitdist00.alpha 0 3 rgba.alpha 0 3"
+ name Shuffle90
+ label hitdist00
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -4520
+ ypos 1024
+ postage_stamp true
+}
+push $N1481aaa0
+Dot {
+ name Dot97
+ xpos -4236
+ ypos 1006
+}
+set N1482ce90 [stack 0]
+add_layer {hitdist01 hitdist01.red hitdist01.green hitdist01.blue hitdist01.alpha}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 hitdist01
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 hitdist01.red 0 0 rgba.red 0 0 hitdist01.green 0 1 rgba.green 0 1 hitdist01.blue 0 2 rgba.blue 0 2 hitdist01.alpha 0 3 rgba.alpha 0 3"
+ name Shuffle91
+ label hitdist01
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -4270
+ ypos 1024
+ postage_stamp true
+}
+push $N1482ce90
+Dot {
+ name Dot98
+ xpos -3986
+ ypos 1006
+}
+set N1483f250 [stack 0]
+add_layer {hitdist02 hitdist02.red hitdist02.green hitdist02.blue hitdist02.alpha}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 hitdist02
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 hitdist02.red 0 0 rgba.red 0 0 hitdist02.green 0 1 rgba.green 0 1 hitdist02.blue 0 2 rgba.blue 0 2 hitdist02.alpha 0 3 rgba.alpha 0 3"
+ name Shuffle92
+ label hitdist02
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -4020
+ ypos 1024
+ postage_stamp true
+}
+push $N1483f250
+Dot {
+ name Dot99
+ xpos -3736
+ ypos 1006
+}
+set N14851610 [stack 0]
+add_layer {hitstack hitstack.hitstack}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 hitstack
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 hitstack.hitstack 0 0 rgba.red 0 0 hitstack.hitstack 0 0 rgba.green 0 1 hitstack.hitstack 0 0 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle93
+ label hitstack
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -3770
+ ypos 1024
+ postage_stamp true
+}
+push $N14851610
+Dot {
+ name Dot100
+ xpos -3486
+ ypos 1006
+}
+set N148638a0 [stack 0]
+add_layer {hitstack00 hitstack00.red hitstack00.green hitstack00.blue hitstack00.alpha}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 hitstack00
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 hitstack00.red 0 0 rgba.red 0 0 hitstack00.green 0 1 rgba.green 0 1 hitstack00.blue 0 2 rgba.blue 0 2 hitstack00.alpha 0 3 rgba.alpha 0 3"
+ name Shuffle94
+ label hitstack00
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -3520
+ ypos 1024
+ postage_stamp true
+}
+push $N148638a0
+Dot {
+ name Dot101
+ xpos -3236
+ ypos 1006
+}
+set N14875ed0 [stack 0]
+add_layer {hitstack01 hitstack01.red hitstack01.green hitstack01.blue hitstack01.alpha}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 hitstack01
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 hitstack01.red 0 0 rgba.red 0 0 hitstack01.green 0 1 rgba.green 0 1 hitstack01.blue 0 2 rgba.blue 0 2 hitstack01.alpha 0 3 rgba.alpha 0 3"
+ name Shuffle95
+ label hitstack01
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -3270
+ ypos 1024
+ postage_stamp true
+}
+push $N14875ed0
+Dot {
+ name Dot102
+ xpos -2986
+ ypos 1006
+}
+set N14888350 [stack 0]
+add_layer {hitstack02 hitstack02.red hitstack02.green hitstack02.blue hitstack02.alpha}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 hitstack02
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 hitstack02.red 0 0 rgba.red 0 0 hitstack02.green 0 1 rgba.green 0 1 hitstack02.blue 0 2 rgba.blue 0 2 hitstack02.alpha 0 3 rgba.alpha 0 3"
+ name Shuffle96
+ label hitstack02
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -3020
+ ypos 1024
+ postage_stamp true
+}
+push $N14888350
+Dot {
+ name Dot103
+ xpos -2736
+ ypos 1006
+}
+set N1489a7d0 [stack 0]
+add_layer {indirectraycount indirectraycount.indirectraycount}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 indirectraycount
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 indirectraycount.indirectraycount 0 0 rgba.red 0 0 indirectraycount.indirectraycount 0 0 rgba.green 0 1 indirectraycount.indirectraycount 0 0 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle97
+ label indirectraycount
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -2770
+ ypos 1024
+ postage_stamp true
+}
+push $N1489a7d0
+Dot {
+ name Dot104
+ xpos -2486
+ ypos 1006
+}
+set N148ac9c0 [stack 0]
+add_layer {mask_extra mask_extra.mask}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 mask_extra
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 mask_extra.mask 0 0 rgba.red 0 0 mask_extra.mask 0 0 rgba.green 0 1 mask_extra.mask 0 0 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle98
+ label mask_extra
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -2520
+ ypos 1024
+ postage_stamp true
+}
+push $N148ac9c0
+Dot {
+ name Dot105
+ xpos -2236
+ ypos 1006
+}
+set N148bed60 [stack 0]
+add_layer {motionvectors motionvectors.x motionvectors.y motionvectors.z}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 motionvectors
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 motionvectors.x 0 0 rgba.red 0 0 motionvectors.y 0 1 rgba.green 0 1 motionvectors.z 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle99
+ label motionvectors
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -2270
+ ypos 1024
+ postage_stamp true
+}
+push $N148bed60
+Dot {
+ name Dot106
+ xpos -1986
+ ypos 1006
+}
+set N148d10d0 [stack 0]
+add_layer {near near.near}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 near
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 near.near 0 0 rgba.red 0 0 near.near 0 0 rgba.green 0 1 near.near 0 0 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle100
+ label near
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -2020
+ ypos 1024
+ postage_stamp true
+}
+push $N148d10d0
+Dot {
+ name Dot107
+ xpos -1736
+ ypos 1006
+}
+set N148e3440 [stack 0]
+add_layer {near00 near00.red near00.green near00.blue near00.alpha}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 near00
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 near00.red 0 0 rgba.red 0 0 near00.green 0 1 rgba.green 0 1 near00.blue 0 2 rgba.blue 0 2 near00.alpha 0 3 rgba.alpha 0 3"
+ name Shuffle101
+ label near00
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -1770
+ ypos 1024
+ postage_stamp true
+}
+push $N148e3440
+Dot {
+ name Dot108
+ xpos -1486
+ ypos 1006
+}
+set N148f5ab0 [stack 0]
+add_layer {near01 near01.red near01.green near01.blue near01.alpha}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 near01
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 near01.red 0 0 rgba.red 0 0 near01.green 0 1 rgba.green 0 1 near01.blue 0 2 rgba.blue 0 2 near01.alpha 0 3 rgba.alpha 0 3"
+ name Shuffle102
+ label near01
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -1520
+ ypos 1024
+ postage_stamp true
+}
+push $N148f5ab0
+Dot {
+ name Dot109
+ xpos -1236
+ ypos 1006
+}
+set N14907e70 [stack 0]
+add_layer {near02 near02.red near02.green near02.blue near02.alpha}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 near02
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 near02.red 0 0 rgba.red 0 0 near02.green 0 1 rgba.green 0 1 near02.blue 0 2 rgba.blue 0 2 near02.alpha 0 3 rgba.alpha 0 3"
+ name Shuffle103
+ label near02
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -1270
+ ypos 1024
+ postage_stamp true
+}
+push $N14907e70
+Dot {
+ name Dot110
+ xpos -986
+ ypos 1006
+}
+set N1491a230 [stack 0]
+add_layer {oraclevariance oraclevariance.oraclevariance}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 oraclevariance
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 oraclevariance.oraclevariance 0 0 rgba.red 0 0 oraclevariance.oraclevariance 0 0 rgba.green 0 1 oraclevariance.oraclevariance 0 0 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle104
+ label oraclevariance
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -1020
+ ypos 1024
+ postage_stamp true
+}
+push $N1491a230
+Dot {
+ name Dot111
+ xpos -736
+ ypos 1006
+}
+set N1492c250 [stack 0]
+add_layer {primarysamples primarysamples.primarysamples}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 primarysamples
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 primarysamples.primarysamples 0 0 rgba.red 0 0 primarysamples.primarysamples 0 0 rgba.green 0 1 primarysamples.primarysamples 0 0 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle105
+ label primarysamples
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -770
+ ypos 1024
+ postage_stamp true
+}
+push $N1492c250
+Dot {
+ name Dot112
+ xpos -486
+ ypos 1006
+}
+set N1493e5d0 [stack 0]
+add_layer {primid primid.id}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 primid
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 primid.id 0 0 rgba.red 0 0 primid.id 0 0 rgba.green 0 1 primid.id 0 0 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle106
+ label primid
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -520
+ ypos 1024
+ postage_stamp true
+}
+push $N1493e5d0
+Dot {
+ name Dot113
+ xpos -236
+ ypos 1006
+}
+set N14950940 [stack 0]
+add_layer {raydirection raydirection.x raydirection.y raydirection.z}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 raydirection
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 raydirection.x 0 0 rgba.red 0 0 raydirection.y 0 1 rgba.green 0 1 raydirection.z 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle107
+ label raydirection
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -270
+ ypos 1024
+ postage_stamp true
+}
+push $N14950940
+Dot {
+ name Dot114
+ xpos 14
+ ypos 1006
+}
+set N14962c00 [stack 0]
+add_layer {rayorigin rayorigin.x rayorigin.y rayorigin.z}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 rayorigin
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 rayorigin.x 0 0 rgba.red 0 0 rayorigin.y 0 1 rgba.green 0 1 rayorigin.z 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle108
+ label rayorigin
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -20
+ ypos 1024
+ postage_stamp true
+}
+push $N14962c00
+Dot {
+ name Dot115
+ xpos 264
+ ypos 1006
+}
+set N149752a0 [stack 0]
+add_layer {rayorigin00 rayorigin00.red rayorigin00.green rayorigin00.blue rayorigin00.alpha}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 rayorigin00
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 rayorigin00.red 0 0 rgba.red 0 0 rayorigin00.green 0 1 rgba.green 0 1 rayorigin00.blue 0 2 rgba.blue 0 2 rayorigin00.alpha 0 3 rgba.alpha 0 3"
+ name Shuffle109
+ label rayorigin00
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos 230
+ ypos 1024
+ postage_stamp true
+}
+push $N149752a0
+Dot {
+ name Dot116
+ xpos 514
+ ypos 1006
+}
+set N149875e0 [stack 0]
+add_layer {rayorigin01 rayorigin01.red rayorigin01.green rayorigin01.blue rayorigin01.alpha}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 rayorigin01
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 rayorigin01.red 0 0 rgba.red 0 0 rayorigin01.green 0 1 rgba.green 0 1 rayorigin01.blue 0 2 rgba.blue 0 2 rayorigin01.alpha 0 3 rgba.alpha 0 3"
+ name Shuffle110
+ label rayorigin01
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos 480
+ ypos 1024
+ postage_stamp true
+}
+push $N149875e0
+Dot {
+ name Dot117
+ xpos 764
+ ypos 1006
+}
+set N14999ad0 [stack 0]
+add_layer {rayorigin02 rayorigin02.red rayorigin02.green rayorigin02.blue rayorigin02.alpha}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 rayorigin02
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 rayorigin02.red 0 0 rgba.red 0 0 rayorigin02.green 0 1 rgba.green 0 1 rayorigin02.blue 0 2 rgba.blue 0 2 rayorigin02.alpha 0 3 rgba.alpha 0 3"
+ name Shuffle111
+ label rayorigin02
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos 730
+ ypos 1024
+ postage_stamp true
+}
+push $N14999ad0
+Dot {
+ name Dot118
+ xpos 1014
+ ypos 1006
+}
+set N149abfc0 [stack 0]
+add_layer {time time.time}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 time
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 time.time 0 0 rgba.red 0 0 time.time 0 0 rgba.green 0 1 time.time 0 0 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle112
+ label time
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos 980
+ ypos 1024
+ postage_stamp true
+}
+push $N149abfc0
+Dot {
+ name Dot119
+ xpos 1264
+ ypos 1006
+}
+set N149bf540 [stack 0]
+add_layer {time00 time00.red time00.green time00.blue time00.alpha}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 time00
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 time00.red 0 0 rgba.red 0 0 time00.green 0 1 rgba.green 0 1 time00.blue 0 2 rgba.blue 0 2 time00.alpha 0 3 rgba.alpha 0 3"
+ name Shuffle113
+ label time00
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos 1230
+ ypos 1024
+ postage_stamp true
+}
+push $N149bf540
+Dot {
+ name Dot120
+ xpos 1514
+ ypos 1006
+}
+set N149d1830 [stack 0]
+add_layer {time01 time01.red time01.green time01.blue time01.alpha}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 time01
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 time01.red 0 0 rgba.red 0 0 time01.green 0 1 rgba.green 0 1 time01.blue 0 2 rgba.blue 0 2 time01.alpha 0 3 rgba.alpha 0 3"
+ name Shuffle114
+ label time01
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos 1480
+ ypos 1024
+ postage_stamp true
+}
+push $N149d1830
+Dot {
+ name Dot121
+ xpos 1764
+ ypos 1006
+}
+set N149e3bf0 [stack 0]
+add_layer {time02 time02.red time02.green time02.blue time02.alpha}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 time02
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 time02.red 0 0 rgba.red 0 0 time02.green 0 1 rgba.green 0 1 time02.blue 0 2 rgba.blue 0 2 time02.alpha 0 3 rgba.alpha 0 3"
+ name Shuffle115
+ label time02
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos 1730
+ ypos 1024
+ postage_stamp true
+}
+push $N149e3bf0
+Dot {
+ name Dot122
+ xpos 2014
+ ypos 1006
+}
+set N149f5fb0 [stack 0]
+add_layer {uv_extra uv_extra.red uv_extra.green uv_extra.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 uv_extra
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 uv_extra.red 0 0 rgba.red 0 0 uv_extra.green 0 1 rgba.green 0 1 uv_extra.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle116
+ label uv_extra
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos 1980
+ ypos 1024
+ postage_stamp true
+}
+push $N149f5fb0
+Dot {
+ name Dot128
+ xpos 2264
+ ypos 1006
+}
+add_layer {velocity velocity.x velocity.y velocity.z}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 velocity
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 velocity.x 0 0 rgba.red 0 0 velocity.y 0 1 rgba.green 0 1 velocity.z 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle117
+ label velocity
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos 2230
+ ypos 1024
+ postage_stamp true
+}
+push $N146010a0
+add_layer {CryptoMaterial01 CryptoMaterial01.red CryptoMaterial01.green CryptoMaterial01.blue CryptoMaterial01.alpha}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 CryptoMaterial01
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 CryptoMaterial01.red 0 0 rgba.red 0 0 CryptoMaterial01.green 0 1 rgba.green 0 1 CryptoMaterial01.blue 0 2 rgba.blue 0 2 CryptoMaterial01.alpha 0 3 rgba.alpha 0 3"
+ name Shuffle58
+ label CryptoMaterial01
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -12020
+ ypos 1024
+ postage_stamp true
+}
+push $N145fae30
+add_layer {CryptoMaterial00 CryptoMaterial00.red CryptoMaterial00.green CryptoMaterial00.blue CryptoMaterial00.alpha}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 CryptoMaterial00
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 CryptoMaterial00.red 0 0 rgba.red 0 0 CryptoMaterial00.green 0 1 rgba.green 0 1 CryptoMaterial00.blue 0 2 rgba.blue 0 2 CryptoMaterial00.alpha 0 3 rgba.alpha 0 3"
+ name Shuffle56
+ label CryptoMaterial00
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -12270
+ ypos 1024
+ postage_stamp true
+}
+push $N13e122e0
+add_layer {contributon contributon.red contributon.green contributon.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 contributon
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 contributon.red 0 0 rgba.red 0 0 contributon.green 0 1 rgba.green 0 1 contributon.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle118
+ label contributon
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -12770
+ ypos 1024
+ postage_stamp true
+}
+push $N145e87d0
+Dot {
+ name Dot125
+ xpos -12486
+ ypos 1256
+}
+add_layer {volume_bounce volume_bounce.red volume_bounce.green volume_bounce.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 volume_bounce
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 volume_bounce.red 0 0 rgba.red 0 0 volume_bounce.green 0 1 rgba.green 0 1 volume_bounce.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle120
+ label volume_bounce
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -12520
+ ypos 1274
+ postage_stamp true
+}
+push $N1457cc30
+Dot {
+ name Dot61
+ xpos -5236
+ ypos 756
+}
+set N14a4ffd0 [stack 0]
+add_layer {visiblelights visiblelights.red visiblelights.green visiblelights.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 visiblelights
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 visiblelights.red 0 0 rgba.red 0 0 visiblelights.green 0 1 rgba.green 0 1 visiblelights.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle43
+ label visiblelights
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -5270
+ ypos 774
+ postage_stamp true
+}
+StickyNote {
+ inputs 0
+ name StickyNote2
+ tile_color 0x272727ff
+ label "REBUILD WITH ALBEDO \nEXAMPLE"
+ note_font " Bold"
+ note_font_size 60
+ note_font_color 0xa8a8a8ff
+ xpos -13299
+ ypos 2133
+ bookmark true
+}
+Read {
+ inputs 0
+ file_type exr
+ file /render/h21_karma_all_default_utils.0001.exr
+ format "1920 1440 0 0 1920 1440 1 "
+ origset true
+ name Read2
+ xpos -12475
+ ypos -238
+}
+Read {
+ inputs 0
+ file_type exr
+ file /render/h21_karma_all_extra_utils.0001.exr
+ format "1920 1440 0 0 1920 1440 1 "
+ origset true
+ name Read3
+ xpos -12365
+ ypos -238
+}
+DeepRead {
+ inputs 0
+ file /render/h21_karma_beauty_deep.dcm.0001.exr
+ format "1920 1440 0 0 1920 1440 1 "
+ origset true
+ name DeepRead1
+ xpos -12205
+ ypos -219
+}
+StickyNote {
+ inputs 0
+ name StickyNote10
+ tile_color 0xff7f00ff
+ label "<h3>Warning!</h3><i>Due to multiple AOVs of the same type using different names \nthis pipe is broken (negative values). Do not add to B pipe"
+ note_font_size 40
+ note_font_color 0xa8a8a8ff
+ xpos -7594
+ ypos 6871
+}
+push $N14a4ffd0
+Dot {
+ name Dot127
+ xpos -4986
+ ypos 756
+}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 rgba.red 0 0 rgba.red 0 0 rgba.green 0 1 rgba.green 0 1 rgba.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle28
+ label "rgba\n(beauty)"
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -5020
+ ypos 775
+ postage_stamp true
+}
+NoOp {
+ name Anchor_109e3b3f46
+ help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025"
+ onCreate "if nuke.GUI:\n    try:\n        import stamps; stamps.anchorOnCreate()\n    except:\n        pass"
+ knobChanged stamps.anchorKnobChanged()
+ autolabel "nuke.thisNode().knob(\"title\").value()"
+ tile_color 0xffffff01
+ note_font_size 20
+ xpos -5020
+ ypos 871
+ addUserKnob {20 anchor_tab l "Anchor Stamp"}
+ addUserKnob {26 identifier -STARTLINE +HIDDEN T anchor}
+ addUserKnob {1 title l Title: t "Displayed name on the Node Graph for this Stamp and its Anchor.\nIMPORTANT: This is only for display purposes, and is different from the internal node name."}
+ title beauty
+ addUserKnob {26 prev_title l "" +STARTLINE +HIDDEN T beauty}
+ addUserKnob {26 prev_name l "" +STARTLINE +HIDDEN T Anchor_109e3b3f46}
+ addUserKnob {3 showing l "" +STARTLINE +HIDDEN}
+ addUserKnob {1 tags l Tags t "Comma-separated tags to help find this Anchor via the Stamp Selector."}
+ tags 2D,
+ addUserKnob {26 line1 l "" +STARTLINE}
+ addUserKnob {26 stamps_label l Stamps: T " "}
+ addUserKnob {22 createStamp l new t "Create a new Stamp for this Anchor." -STARTLINE T stamps.stampCreateWired(nuke.thisNode())}
+ addUserKnob {22 selectStamps l select t "Select all of this Anchor's Stamps." -STARTLINE T stamps.wiredSelectSimilar(nuke.thisNode().name())}
+ addUserKnob {22 reconnectStamps l reconnect t "Reconnect all of this Anchor's Stamps." -STARTLINE T stamps.anchorReconnectWired()}
+ addUserKnob {22 zoomNext l "zoom next" t "Navigate to this Anchor's next Stamp on the Node Graph." -STARTLINE T stamps.wiredZoomNext(nuke.thisNode().name())}
+ addUserKnob {26 line2 l "" +STARTLINE}
+ addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
+ addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"><big>Stamps v1.2</big></span></a>"}
+}
+push $N1443c780
+add_layer {beautyunshadowed beautyunshadowed.red beautyunshadowed.green beautyunshadowed.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 beautyunshadowed
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 beautyunshadowed.red 0 0 rgba.red 0 0 beautyunshadowed.green 0 1 rgba.green 0 1 beautyunshadowed.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle8
+ label beautyunshadowed
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -11020
+ ypos 775
+ postage_stamp true
+}
+NoOp {
+ name Anchor_2a15e17688
+ help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025"
+ onCreate "if nuke.GUI:\n    try:\n        import stamps; stamps.anchorOnCreate()\n    except:\n        pass"
+ knobChanged stamps.anchorKnobChanged()
+ autolabel "nuke.thisNode().knob(\"title\").value()"
+ tile_color 0xffffff01
+ note_font_size 20
+ xpos -11020
+ ypos 859
+ addUserKnob {20 anchor_tab l "Anchor Stamp"}
+ addUserKnob {26 identifier -STARTLINE +HIDDEN T anchor}
+ addUserKnob {1 title l Title: t "Displayed name on the Node Graph for this Stamp and its Anchor.\nIMPORTANT: This is only for display purposes, and is different from the internal node name."}
+ title beautyunshadowed
+ addUserKnob {26 prev_title l "" +STARTLINE +HIDDEN T beautyunshadowed}
+ addUserKnob {26 prev_name l "" +STARTLINE +HIDDEN T Anchor_2a15e17688}
+ addUserKnob {3 showing l "" +STARTLINE +HIDDEN}
+ addUserKnob {1 tags l Tags t "Comma-separated tags to help find this Anchor via the Stamp Selector."}
+ tags 2D,
+ addUserKnob {26 line1 l "" +STARTLINE}
+ addUserKnob {26 stamps_label l Stamps: T " "}
+ addUserKnob {22 createStamp l new t "Create a new Stamp for this Anchor." -STARTLINE T stamps.stampCreateWired(nuke.thisNode())}
+ addUserKnob {22 selectStamps l select t "Select all of this Anchor's Stamps." -STARTLINE T stamps.wiredSelectSimilar(nuke.thisNode().name())}
+ addUserKnob {22 reconnectStamps l reconnect t "Reconnect all of this Anchor's Stamps." -STARTLINE T stamps.anchorReconnectWired()}
+ addUserKnob {22 zoomNext l "zoom next" t "Navigate to this Anchor's next Stamp on the Node Graph." -STARTLINE T stamps.wiredZoomNext(nuke.thisNode().name())}
+ addUserKnob {26 line2 l "" +STARTLINE}
+ addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
+ addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"><big>Stamps v1.2</big></span></a>"}
+}
+push $N145769d0
+add_layer {shadow shadow.red shadow.green shadow.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 shadow
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 shadow.red 0 0 rgba.red 0 0 shadow.green 0 1 rgba.green 0 1 shadow.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle41
+ label shadow
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -5770
+ ypos 775
+ postage_stamp true
+}
+NoOp {
+ name Anchor_1e911e38f2
+ help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025"
+ onCreate "if nuke.GUI:\n    try:\n        import stamps; stamps.anchorOnCreate()\n    except:\n        pass"
+ knobChanged stamps.anchorKnobChanged()
+ autolabel "nuke.thisNode().knob(\"title\").value()"
+ tile_color 0xffffff01
+ note_font_size 20
+ xpos -5770
+ ypos 859
+ addUserKnob {20 anchor_tab l "Anchor Stamp"}
+ addUserKnob {26 identifier -STARTLINE +HIDDEN T anchor}
+ addUserKnob {1 title l Title: t "Displayed name on the Node Graph for this Stamp and its Anchor.\nIMPORTANT: This is only for display purposes, and is different from the internal node name."}
+ title shadow
+ addUserKnob {26 prev_title l "" +STARTLINE +HIDDEN T shadow}
+ addUserKnob {26 prev_name l "" +STARTLINE +HIDDEN T Anchor_1e911e38f2}
+ addUserKnob {3 showing l "" +STARTLINE +HIDDEN}
+ addUserKnob {1 tags l Tags t "Comma-separated tags to help find this Anchor via the Stamp Selector."}
+ tags 2D,
+ addUserKnob {26 line1 l "" +STARTLINE}
+ addUserKnob {26 stamps_label l Stamps: T " "}
+ addUserKnob {22 createStamp l new t "Create a new Stamp for this Anchor." -STARTLINE T stamps.stampCreateWired(nuke.thisNode())}
+ addUserKnob {22 selectStamps l select t "Select all of this Anchor's Stamps." -STARTLINE T stamps.wiredSelectSimilar(nuke.thisNode().name())}
+ addUserKnob {22 reconnectStamps l reconnect t "Reconnect all of this Anchor's Stamps." -STARTLINE T stamps.anchorReconnectWired()}
+ addUserKnob {22 zoomNext l "zoom next" t "Navigate to this Anchor's next Stamp on the Node Graph." -STARTLINE T stamps.wiredZoomNext(nuke.thisNode().name())}
+ addUserKnob {26 line2 l "" +STARTLINE}
+ addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
+ addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"><big>Stamps v1.2</big></span></a>"}
+}
+push $N14455310
+add_layer {combineddiffuse combineddiffuse.red combineddiffuse.green combineddiffuse.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 combineddiffuse
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 combineddiffuse.red 0 0 rgba.red 0 0 combineddiffuse.green 0 1 rgba.green 0 1 combineddiffuse.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle11
+ label combineddiffuse
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -10520
+ ypos 775
+ postage_stamp true
+}
+NoOp {
+ name Anchor_2ebca2b140
+ help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025"
+ onCreate "if nuke.GUI:\n    try:\n        import stamps; stamps.anchorOnCreate()\n    except:\n        pass"
+ knobChanged stamps.anchorKnobChanged()
+ autolabel "nuke.thisNode().knob(\"title\").value()"
+ tile_color 0xffffff01
+ note_font_size 20
+ xpos -10520
+ ypos 859
+ addUserKnob {20 anchor_tab l "Anchor Stamp"}
+ addUserKnob {26 identifier -STARTLINE +HIDDEN T anchor}
+ addUserKnob {1 title l Title: t "Displayed name on the Node Graph for this Stamp and its Anchor.\nIMPORTANT: This is only for display purposes, and is different from the internal node name."}
+ title combinediffuse
+ addUserKnob {26 prev_title l "" +STARTLINE +HIDDEN T combinediffuse}
+ addUserKnob {26 prev_name l "" +STARTLINE +HIDDEN T Anchor_2ebca2b140}
+ addUserKnob {3 showing l "" +STARTLINE +HIDDEN}
+ addUserKnob {1 tags l Tags t "Comma-separated tags to help find this Anchor via the Stamp Selector."}
+ tags 2D,
+ addUserKnob {26 line1 l "" +STARTLINE}
+ addUserKnob {26 stamps_label l Stamps: T " "}
+ addUserKnob {22 createStamp l new t "Create a new Stamp for this Anchor." -STARTLINE T stamps.stampCreateWired(nuke.thisNode())}
+ addUserKnob {22 selectStamps l select t "Select all of this Anchor's Stamps." -STARTLINE T stamps.wiredSelectSimilar(nuke.thisNode().name())}
+ addUserKnob {22 reconnectStamps l reconnect t "Reconnect all of this Anchor's Stamps." -STARTLINE T stamps.anchorReconnectWired()}
+ addUserKnob {22 zoomNext l "zoom next" t "Navigate to this Anchor's next Stamp on the Node Graph." -STARTLINE T stamps.wiredZoomNext(nuke.thisNode().name())}
+ addUserKnob {26 line2 l "" +STARTLINE}
+ addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
+ addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"><big>Stamps v1.2</big></span></a>"}
+}
+push $N143d49a0
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 albedo
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 albedo.red 0 0 rgba.red 0 0 albedo.green 0 1 rgba.green 0 1 albedo.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle1
+ label albedo
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -12770
+ ypos 775
+ postage_stamp true
+}
+push $N143daf40
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 albedodiffuse
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 albedodiffuse.red 0 0 rgba.red 0 0 albedodiffuse.green 0 1 rgba.green 0 1 albedodiffuse.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle2
+ label albedodiffuse
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -12520
+ ypos 775
+ postage_stamp true
+}
+push $N13ea4410
+Dot {
+ name Dot15
+ xpos -7091
+ ypos 2905
+}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 original
+ fromInput2 {
+  {0}
+  B
+ }
+ mappings "4 original.red 0 0 rgba.red 0 0 original.green 0 1 rgba.green 0 1 original.blue 0 2 rgba.blue 0 2 original.alpha 0 3 rgba.alpha 0 3"
+ name Shuffle21
+ label "original rbg"
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -7125
+ ypos 2995
+}
+Unpremult {
+ channels albedo
+ name Unpremult34
+ xpos -7125
+ ypos 3095
+}
+set N14cb1c70 [stack 0]
+push $N14cb1c70
+Merge2 {
+ inputs 2
+ operation from
+ Achannels albedo
+ output rgb
+ name Merge19
+ tile_color 0x992d32ff
+ label albedo
+ xpos -7125
+ ypos 3195
+}
+Unpremult {
+ channels albedodiffuse
+ name Unpremult35
+ xpos -7125
+ ypos 3295
+}
+set N14cd0190 [stack 0]
+push $N14cd0190
+Merge2 {
+ inputs 2
+ operation from
+ Achannels albedodiffuse
+ output rgb
+ name Merge20
+ tile_color 0x992d32ff
+ label albedodiffuse
+ xpos -7125
+ ypos 3395
+}
+Unpremult {
+ channels combineddiffuse
+ name Unpremult36
+ xpos -7125
+ ypos 3495
+}
+set N14cee6e0 [stack 0]
+push $N14cee6e0
+Merge2 {
+ inputs 2
+ operation from
+ Achannels combineddiffuse
+ output rgb
+ name Merge21
+ tile_color 0x992d32ff
+ label combineddiffuse
+ xpos -7125
+ ypos 3595
+}
+Unpremult {
+ channels directdiffuse
+ name Unpremult37
+ xpos -7125
+ ypos 3695
+}
+set N14d0cdd0 [stack 0]
+push $N14d0cdd0
+Merge2 {
+ inputs 2
+ operation from
+ Achannels directdiffuse
+ output rgb
+ name Merge22
+ tile_color 0x992d32ff
+ label directdiffuse
+ xpos -7125
+ ypos 3795
+}
+Unpremult {
+ channels indirectdiffuse
+ name Unpremult38
+ xpos -7125
+ ypos 3895
+}
+set N14d2b4c0 [stack 0]
+push $N14d2b4c0
+Merge2 {
+ inputs 2
+ operation from
+ Achannels indirectdiffuse
+ output rgb
+ name Merge23
+ tile_color 0x992d32ff
+ label indirectdiffuse
+ xpos -7125
+ ypos 3995
+}
+Unpremult {
+ channels sss
+ name Unpremult39
+ xpos -7125
+ ypos 4095
+}
+set N14d49bb0 [stack 0]
+push $N14d49bb0
+Merge2 {
+ inputs 2
+ operation from
+ Achannels sss
+ output rgb
+ name Merge24
+ tile_color 0x992d32ff
+ label sss
+ xpos -7125
+ ypos 4195
+}
+Unpremult {
+ channels combinedglossyreflection
+ name Unpremult40
+ xpos -7125
+ ypos 4295
+}
+set N14d68390 [stack 0]
+push $N14d68390
+Merge2 {
+ inputs 2
+ operation from
+ Achannels combinedglossyreflection
+ output rgb
+ name Merge25
+ tile_color 0x992d32ff
+ label combinedglossyreflection
+ xpos -7125
+ ypos 4395
+}
+Unpremult {
+ channels directglossyreflection
+ name Unpremult41
+ xpos -7125
+ ypos 4495
+}
+set N14d86970 [stack 0]
+push $N14d86970
+Merge2 {
+ inputs 2
+ operation from
+ Achannels directglossyreflection
+ output rgb
+ name Merge26
+ tile_color 0x992d32ff
+ label directglossyreflection
+ xpos -7125
+ ypos 4595
+}
+Unpremult {
+ channels indirectglossyreflection
+ name Unpremult42
+ xpos -7125
+ ypos 4695
+}
+set N14da50c0 [stack 0]
+push $N14da50c0
+Merge2 {
+ inputs 2
+ operation from
+ Achannels indirectglossyreflection
+ output rgb
+ name Merge27
+ tile_color 0x992d32ff
+ label indirectglossyreflection
+ xpos -7125
+ ypos 4795
+}
+Unpremult {
+ channels coat
+ name Unpremult43
+ xpos -7125
+ ypos 4895
+}
+set N14dc37a0 [stack 0]
+push $N14dc37a0
+Merge2 {
+ inputs 2
+ operation from
+ Achannels coat
+ output rgb
+ name Merge28
+ tile_color 0x992d32ff
+ label coat
+ xpos -7125
+ ypos 4995
+}
+Unpremult {
+ channels glossytransmission
+ name Unpremult44
+ xpos -7125
+ ypos 5095
+}
+set N14de1fd0 [stack 0]
+push $N14de1fd0
+Merge2 {
+ inputs 2
+ operation from
+ Achannels glossytransmission
+ output rgb
+ name Merge29
+ tile_color 0x992d32ff
+ label glossytransmission
+ xpos -7125
+ ypos 5195
+}
+Unpremult {
+ channels combinedemission
+ name Unpremult45
+ xpos -7125
+ ypos 5295
+}
+set N14e005e0 [stack 0]
+push $N14e005e0
+Merge2 {
+ inputs 2
+ operation from
+ Achannels combinedemission
+ output rgb
+ name Merge30
+ tile_color 0x992d32ff
+ label combinedemission
+ xpos -7125
+ ypos 5395
+}
+Unpremult {
+ channels directemission
+ name Unpremult46
+ xpos -7125
+ ypos 5495
+}
+set N14e1ece0 [stack 0]
+push $N14e1ece0
+Merge2 {
+ inputs 2
+ operation from
+ Achannels directemission
+ output rgb
+ name Merge31
+ tile_color 0x992d32ff
+ label directemission
+ xpos -7125
+ ypos 5595
+}
+Unpremult {
+ channels indirectemission
+ name Unpremult47
+ xpos -7125
+ ypos 5695
+}
+set N14e3d3f0 [stack 0]
+push $N14e3d3f0
+Merge2 {
+ inputs 2
+ operation from
+ Achannels indirectemission
+ output rgb
+ name Merge32
+ tile_color 0x992d32ff
+ label indirectemission
+ xpos -7125
+ ypos 5795
+}
+Unpremult {
+ channels combinedvolume
+ name Unpremult48
+ xpos -7125
+ ypos 5895
+}
+set N14e5bae0 [stack 0]
+push $N14e5bae0
+Merge2 {
+ inputs 2
+ operation from
+ Achannels combinedvolume
+ output rgb
+ name Merge33
+ tile_color 0x992d32ff
+ label combinedvolume
+ xpos -7125
+ ypos 5995
+}
+Unpremult {
+ channels directvolume
+ name Unpremult49
+ xpos -7125
+ ypos 6095
+}
+set N14e7a1f0 [stack 0]
+push $N14e7a1f0
+Merge2 {
+ inputs 2
+ operation from
+ Achannels directvolume
+ output rgb
+ name Merge34
+ tile_color 0x992d32ff
+ label directvolume
+ xpos -7125
+ ypos 6195
+}
+Unpremult {
+ channels indirectvolume
+ name Unpremult50
+ xpos -7125
+ ypos 6295
+}
+set N14e98a20 [stack 0]
+push $N14e98a20
+Merge2 {
+ inputs 2
+ operation from
+ Achannels indirectvolume
+ output rgb
+ name Merge35
+ tile_color 0x992d32ff
+ label indirectvolume
+ xpos -7125
+ ypos 6395
+}
+Unpremult {
+ channels ao
+ name Unpremult51
+ xpos -7125
+ ypos 6495
+}
+set N14eb7010 [stack 0]
+push $N14eb7010
+Merge2 {
+ inputs 2
+ operation from
+ Achannels ao
+ output rgb
+ name Merge38
+ tile_color 0x992d32ff
+ label ao
+ xpos -7125
+ ypos 6595
+}
+CurveTool {
+ operation "Max Luma Pixel"
+ ROI {0 0 1920 1440}
+ autocropdata {480 360 1440 1080}
+ maxlumapixdata {{curve x1 0} {curve x1 0}}
+ maxlumapixvalue {{curve x1 0} {curve x1 0} {curve x1 0}}
+ minlumapixdata {{curve x1 1427} {curve x1 1095}}
+ minlumapixvalue {{curve x1 -11.0114069} {curve x1 -3.754487753} {curve x1 -0.4181002378}}
+ name CurveTool1
+ label "\nminlumapixvalue: \[value minlumapixvalue]"
+ note_font "Verdana Bold"
+ note_font_color 0xffffffff
+ xpos -7125
+ ypos 6679
+}
+push $N13bdbbd0
+push $N13befbd0
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 combineddiffuse
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 combineddiffuse.red 0 0 rgba.red 0 0 combineddiffuse.green 0 1 rgba.green 0 1 combineddiffuse.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle48
+ label combineddiffuse
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos -10990
+ ypos 2923
+}
+Unpremult {
+ name Unpremult1
+ xpos -10990
+ ypos 2961
+}
+push $N1409eb30
+Merge2 {
+ inputs 2
+ operation plus
+ bbox B
+ name Merge36
+ xpos -11100
+ ypos 2961
+}
+Switch {
+ inputs 2
+ which 1
+ name Switch3
+ label "Difference Check"
+ note_font "Verdana Bold"
+ note_font_color 0xffffffff
+ xpos -11100
+ ypos 3759
+}
+push $N143965d0
+push $N143899c0
+Switch {
+ inputs 2
+ name Switch5
+ label "Difference Check"
+ note_font "Verdana Bold"
+ xpos -12846
+ ypos 7084
+}

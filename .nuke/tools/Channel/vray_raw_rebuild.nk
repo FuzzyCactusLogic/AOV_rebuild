@@ -1,0 +1,342 @@
+Dot {
+ inputs 0
+ name Dot1
+ xpos 20123
+ ypos -2594
+}
+set N22910070 [stack 0]
+Dot {
+ name Dot22
+ xpos 20323
+ ypos -2594
+}
+set N2195ab50 [stack 0]
+Dot {
+ name Dot3
+ xpos 20424
+ ypos -2594
+}
+set N1f3cbdb0 [stack 0]
+Dot {
+ name Dot4
+ xpos 20524
+ ypos -2593
+}
+set N218bf310 [stack 0]
+Dot {
+ name Dot2
+ xpos 20777
+ ypos -2596
+}
+set N22058700 [stack 0]
+Dot {
+ name Dot5
+ xpos 20937
+ ypos -2596
+}
+set N22b2ee20 [stack 0]
+Dot {
+ name Dot23
+ xpos 21189
+ ypos -2596
+}
+set N1f62a8d0 [stack 0]
+Dot {
+ name Dot6
+ xpos 21346
+ ypos -2596
+}
+add_layer {Refraction_Filter Refraction_Filter.red Refraction_Filter.green Refraction_Filter.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 Refraction_Filter
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 Refraction_Filter.red 0 0 rgba.red 0 0 Refraction_Filter.green 0 1 rgba.green 0 1 Refraction_Filter.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle34
+ label Refraction_Filter
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos 21312
+ ypos -2578
+}
+Dot {
+ name Dot26
+ xpos 21346
+ ypos -2332
+}
+push $N1f62a8d0
+add_layer {Raw_Refraction Raw_Refraction.red Raw_Refraction.green Raw_Refraction.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 Raw_Refraction
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 Raw_Refraction.red 0 0 rgba.red 0 0 Raw_Refraction.green 0 1 rgba.green 0 1 Raw_Refraction.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle35
+ label Raw_Refraction
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos 21155
+ ypos -2578
+}
+Unpremult {
+ name Unpremult8
+ xpos 21155
+ ypos -2540
+}
+Merge2 {
+ inputs 2
+ operation multiply
+ name Merge1
+ xpos 21155
+ ypos -2335
+}
+Dot {
+ name Dot19
+ xpos 21189
+ ypos -1600
+}
+push $N22b2ee20
+add_layer {Reflection_Filter Reflection_Filter.red Reflection_Filter.green Reflection_Filter.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 Reflection_Filter
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 Reflection_Filter.red 0 0 rgba.red 0 0 Reflection_Filter.green 0 1 rgba.green 0 1 Reflection_Filter.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle21
+ label Reflection_Filter
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos 20903
+ ypos -2578
+}
+Dot {
+ name Dot24
+ xpos 20937
+ ypos -2325
+}
+push $N22058700
+add_layer {Raw_Reflection Raw_Reflection.red Raw_Reflection.green Raw_Reflection.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 Raw_Reflection
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 Raw_Reflection.red 0 0 rgba.red 0 0 Raw_Reflection.green 0 1 rgba.green 0 1 Raw_Reflection.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle22
+ label Raw_Reflection
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos 20743
+ ypos -2578
+}
+Unpremult {
+ name Unpremult10
+ xpos 20743
+ ypos -2540
+}
+Merge2 {
+ inputs 2
+ operation multiply
+ name Merge2
+ xpos 20743
+ ypos -2328
+}
+Dot {
+ name Dot20
+ xpos 20777
+ ypos -1900
+}
+push $N218bf310
+add_layer {Diffuse Diffuse.red Diffuse.green Diffuse.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 Diffuse
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 Diffuse.red 0 0 rgba.red 0 0 Diffuse.green 0 1 rgba.green 0 1 Diffuse.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle17
+ label Diffuse
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos 20490
+ ypos -2575
+}
+Dot {
+ name Dot21
+ xpos 20524
+ ypos -2147
+}
+push $N1f3cbdb0
+add_layer {Raw_GI Raw_GI.red Raw_GI.green Raw_GI.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 Raw_GI
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 Raw_GI.red 0 0 rgba.red 0 0 Raw_GI.green 0 1 rgba.green 0 1 Raw_GI.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle38
+ label Raw_GI
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos 20390
+ ypos -2576
+}
+Unpremult {
+ name Unpremult12
+ xpos 20390
+ ypos -2538
+}
+Dot {
+ name Dot25
+ xpos 20424
+ ypos -2330
+}
+push $N2195ab50
+add_layer {Raw_Lighting Raw_Lighting.red Raw_Lighting.green Raw_Lighting.blue}
+Shuffle2 {
+ fromInput1 {
+  {0}
+  B
+ }
+ in1 Raw_Lighting
+ fromInput2 {
+  {0}
+  B
+ }
+ in2 alpha
+ mappings "4 Raw_Lighting.red 0 0 rgba.red 0 0 Raw_Lighting.green 0 1 rgba.green 0 1 Raw_Lighting.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
+ name Shuffle4
+ label Raw_Lighting
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos 20289
+ ypos -2576
+}
+Unpremult {
+ name Unpremult13
+ xpos 20289
+ ypos -2538
+}
+Merge2 {
+ inputs 2
+ operation plus
+ name Merge3
+ xpos 20289
+ ypos -2333
+}
+Merge2 {
+ inputs 2
+ operation multiply
+ name Merge4
+ xpos 20289
+ ypos -2151
+}
+push $N22910070
+Remove {
+ channels rgb
+ name Remove2
+ label RGB
+ note_font " Bold"
+ note_font_color 0xffffffff
+ xpos 20089
+ ypos -2576
+}
+Merge2 {
+ inputs 2
+ operation plus
+ output rgb
+ name Merge5
+ xpos 20089
+ ypos -2151
+}
+Merge2 {
+ inputs 2
+ operation plus
+ output rgb
+ name Merge6
+ xpos 20089
+ ypos -1904
+}
+Merge2 {
+ inputs 2
+ operation plus
+ output rgb
+ name Merge7
+ xpos 20089
+ ypos -1604
+}
+StickyNote {
+ inputs 0
+ name StickyNote2
+ tile_color 0x272727ff
+ label reflections
+ note_font " Bold"
+ note_font_size 40
+ note_font_color 0xa8a8a8ff
+ xpos 20762
+ ypos -2677
+ bookmark true
+}
+StickyNote {
+ inputs 0
+ name StickyNote3
+ tile_color 0x272727ff
+ label refractions
+ note_font " Bold"
+ note_font_size 40
+ note_font_color 0xa8a8a8ff
+ xpos 21179
+ ypos -2680
+ bookmark true
+}
+StickyNote {
+ inputs 0
+ name StickyNote1
+ tile_color 0x272727ff
+ label lighting
+ note_font " Bold"
+ note_font_size 40
+ note_font_color 0xa8a8a8ff
+ xpos 20357
+ ypos -2676
+ bookmark true
+}
