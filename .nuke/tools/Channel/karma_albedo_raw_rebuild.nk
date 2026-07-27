@@ -1,16 +1,16 @@
 Dot {
  inputs 0
  name start_dot
- xpos -12706
- ypos 2905
+ xpos -43
+ ypos -356
 }
-set N945bf5e0 [stack 0]
+set N19964a80 [stack 0]
 Dot {
  name aov_dot
- xpos -12456
- ypos 2905
+ xpos 207
+ ypos -356
 }
-set N58418320 [stack 0]
+set N159fc4c0 [stack 0]
 add_layer {albedo albedo.red albedo.green albedo.blue}
 Shuffle2 {
  fromInput1 {
@@ -28,118 +28,60 @@ Shuffle2 {
  label albedo
  note_font " Bold"
  note_font_color 0xffffffff
- xpos -12490
- ypos 2923
-}
-Unpremult {
- name Unpremult6
- xpos -12490
- ypos 2961
-}
-Dot {
- name bottom_aov_dot
- xpos -12456
- ypos 3065
-}
-push $N58418320
-Dot {
- name aov_dot1
- xpos -12206
- ypos 2905
-}
-set N502b4010 [stack 0]
-add_layer {albedodiffuse albedodiffuse.red albedodiffuse.green albedodiffuse.blue}
-Shuffle2 {
- fromInput1 {
-  {0}
-  B
- }
- in1 albedodiffuse
- fromInput2 {
-  {0}
-  B
- }
- in2 alpha
- mappings "4 albedodiffuse.red 0 0 rgba.red 0 0 albedodiffuse.green 0 1 rgba.green 0 1 albedodiffuse.blue 0 2 rgba.blue 0 2 rgba.alpha 1 0 rgba.alpha 0 3"
- name Shuffle47
- label albedodiffuse
- note_font " Bold"
- note_font_color 0xffffffff
- xpos -12240
- ypos 2923
-}
-Unpremult {
- name Unpremult7
- xpos -12240
- ypos 2961
-}
-Switch {
- inputs 2
- which 1
- name Switch2
- xpos -12240
- ypos 3061
+ xpos 173
+ ypos -338
 }
 Dot {
  name Dot20
  note_font " Bold"
  note_font_size 40
- xpos -12206
- ypos 3087
+ xpos 207
+ ypos -174
 }
-set N5028d9d0 [stack 0]
+set N19c23890 [stack 0]
 Dot {
  name Dot21
  note_font " Bold"
  note_font_size 40
- xpos -12206
- ypos 3130
+ xpos 207
+ ypos -131
 }
-set N5018c510 [stack 0]
+set N17d26b00 [stack 0]
 Dot {
  name Dot9
  note_font " Bold"
  note_font_size 40
- xpos -12206
- ypos 3175
+ xpos 207
+ ypos -86
 }
-set N5022bf90 [stack 0]
-Dot {
- name Dot23
- label "Grade Color\nin this pipe"
- note_font "Verdana Bold"
- note_font_size 20
- note_font_color 0xffffffff
- xpos -12206
- ypos 3203
-}
+set N19db7870 [stack 0]
 Dot {
  name Dot24
  note_font " Bold"
  note_font_size 40
- xpos -12206
- ypos 3751
+ xpos 207
+ ypos 490
 }
-push $N5022bf90
-push $N502b4010
+push $N19db7870
+push $N159fc4c0
 Dot {
  name aov_dot2
- xpos -11956
- ypos 2905
+ xpos 457
+ ypos -356
 }
-set Na0084180 [stack 0]
+set N19bddc20 [stack 0]
 Dot {
  name aov_dot3
- xpos -11706
- ypos 2905
+ xpos 707
+ ypos -356
 }
-set Nd62cdd90 [stack 0]
+set N15b39a80 [stack 0]
 Dot {
  name aov_dot4
- xpos -11456
- ypos 2905
+ xpos 957
+ ypos -356
 }
-set N50226a30 [stack 0]
+set N156f4dd0 [stack 0]
 add_layer {sss sss.red sss.green sss.blue}
 Shuffle2 {
  fromInput1 {
@@ -157,26 +99,21 @@ Shuffle2 {
  label sss
  note_font " Bold"
  note_font_color 0xffffffff
- xpos -11490
- ypos 2923
+ xpos 923
+ ypos -338
 }
-Unpremult {
- name Unpremult11
- xpos -11490
- ypos 2961
-}
-set Na01e0430 [stack 0]
+set N177b1e80 [stack 0]
 MergeExpression {
  inputs 2
  expr0 "Ar == 0 ? Br : Br/Ar"
  expr1 "Ag == 0 ? Bg : Bg/Ag"
  expr2 "Ab == 0 ? Bb : Bb/Ab"
  expr3 "Aa == 0 ? Ba : Ba/Aa"
- name MergeDivide2
+ name MergeDivide6
  label "( B / A )"
  note_font_color 0xffffffff
- xpos -11490
- ypos 3165
+ xpos 923
+ ypos -96
 }
 Dot {
  name Dot22
@@ -184,16 +121,16 @@ Dot {
  note_font "Verdana Bold"
  note_font_size 20
  note_font_color 0xffffffff
- xpos -11456
- ypos 3203
+ xpos 957
+ ypos -58
 }
 Dot {
  name bottom_aov_dot5
- xpos -11456
- ypos 3544
+ xpos 957
+ ypos 283
 }
-push $N5018c510
-push $Nd62cdd90
+push $N17d26b00
+push $N15b39a80
 add_layer {indirectdiffuse indirectdiffuse.red indirectdiffuse.green indirectdiffuse.blue}
 Shuffle2 {
  fromInput1 {
@@ -211,13 +148,8 @@ Shuffle2 {
  label indirectdiffuse
  note_font " Bold"
  note_font_color 0xffffffff
- xpos -11740
- ypos 2923
-}
-Unpremult {
- name Unpremult10
- xpos -11740
- ypos 2961
+ xpos 673
+ ypos -338
 }
 MergeExpression {
  inputs 2
@@ -225,11 +157,11 @@ MergeExpression {
  expr1 "Ag == 0 ? Bg : Bg/Ag"
  expr2 "Ab == 0 ? Bb : Bb/Ab"
  expr3 "Aa == 0 ? Ba : Ba/Aa"
- name MergeDivide1
+ name MergeDivide5
  label "( B / A )"
  note_font_color 0xffffffff
- xpos -11740
- ypos 3120
+ xpos 673
+ ypos -141
 }
 Dot {
  name Dot8
@@ -237,16 +169,16 @@ Dot {
  note_font "Verdana Bold"
  note_font_size 20
  note_font_color 0xffffffff
- xpos -11706
- ypos 3203
+ xpos 707
+ ypos -58
 }
 Dot {
  name bottom_aov_dot4
- xpos -11706
- ypos 3367
+ xpos 707
+ ypos 106
 }
-push $N5028d9d0
-push $Na0084180
+push $N19c23890
+push $N19bddc20
 add_layer {directdiffuse directdiffuse.red directdiffuse.green directdiffuse.blue}
 Shuffle2 {
  fromInput1 {
@@ -264,13 +196,8 @@ Shuffle2 {
  label directdiffuse
  note_font " Bold"
  note_font_color 0xffffffff
- xpos -11990
- ypos 2923
-}
-Unpremult {
- name Unpremult9
- xpos -11990
- ypos 2961
+ xpos 423
+ ypos -338
 }
 MergeExpression {
  inputs 2
@@ -278,11 +205,11 @@ MergeExpression {
  expr1 "Ag == 0 ? Bg : Bg/Ag"
  expr2 "Ab == 0 ? Bb : Bb/Ab"
  expr3 "Aa == 0 ? Ba : Ba/Aa"
- name MergeDivide
+ name MergeDivide4
  label "( B / A )"
  note_font_color 0xffffffff
- xpos -11990
- ypos 3077
+ xpos 423
+ ypos -184
 }
 Dot {
  name Dot19
@@ -290,8 +217,8 @@ Dot {
  note_font "Verdana Bold"
  note_font_size 20
  note_font_color 0xffffffff
- xpos -11956
- ypos 3203
+ xpos 457
+ ypos -58
 }
 Merge2 {
  inputs 2
@@ -300,8 +227,8 @@ Merge2 {
  name Merge3
  tile_color 0x82ff8fff
  label indirectdiffuse
- xpos -11990
- ypos 3357
+ xpos 423
+ ypos 96
 }
 Merge2 {
  inputs 2
@@ -310,25 +237,25 @@ Merge2 {
  name Merge4
  tile_color 0x82ff8fff
  label sss
- xpos -11990
- ypos 3534
+ xpos 423
+ ypos 273
 }
 Merge2 {
  inputs 2
  operation multiply
  bbox B
  name Merge37
- xpos -11990
- ypos 3747
+ xpos 423
+ ypos 486
 }
-set N586e5ac0 [stack 0]
-push $N50226a30
+set N157cda50 [stack 0]
+push $N156f4dd0
 Dot {
  name aov_dot5
- xpos -11206
- ypos 2905
+ xpos 1200
+ ypos -356
 }
-set N58538a60 [stack 0]
+set N199811d0 [stack 0]
 add_layer {combineddiffuse combineddiffuse.red combineddiffuse.green combineddiffuse.blue}
 Shuffle2 {
  fromInput1 {
@@ -346,22 +273,17 @@ Shuffle2 {
  label combineddiffuse
  note_font " Bold"
  note_font_color 0xffffffff
- xpos -11240
- ypos 2923
+ xpos 1166
+ ypos -338
 }
-Unpremult {
- name Unpremult1
- xpos -11240
- ypos 2961
-}
-push $Na01e0430
+push $N177b1e80
 Merge2 {
  inputs 2
  operation plus
  bbox B
  name Merge36
- xpos -11350
- ypos 2961
+ xpos 1056
+ ypos -332
 }
 Switch {
  inputs 2
@@ -370,16 +292,16 @@ Switch {
  label "Difference Check"
  note_font "Verdana Bold"
  note_font_color 0xffffffff
- xpos -11350
- ypos 3741
+ xpos 1056
+ ypos 480
 }
-push $N58538a60
+push $N199811d0
 Dot {
  name aov_dot6
- xpos -10956
- ypos 2905
+ xpos 1457
+ ypos -356
 }
-set N586784c0 [stack 0]
+set N17c22800 [stack 0]
 add_layer {albedoglossyreflection albedoglossyreflection.red albedoglossyreflection.green albedoglossyreflection.blue}
 Shuffle2 {
  fromInput1 {
@@ -397,60 +319,46 @@ Shuffle2 {
  label albedoglossyreflection
  note_font " Bold"
  note_font_color 0xffffffff
- xpos -10990
- ypos 2923
-}
-Unpremult {
- name Unpremult15
- xpos -10990
- ypos 2961
+ xpos 1423
+ ypos -338
 }
 Dot {
  name Dot17
  note_font " Bold"
  note_font_size 40
- xpos -10956
- ypos 3087
+ xpos 1457
+ ypos -174
 }
-set N58754da0 [stack 0]
+set N19c311c0 [stack 0]
 Dot {
  name Dot18
  note_font " Bold"
  note_font_size 40
- xpos -10956
- ypos 3130
+ xpos 1457
+ ypos -131
 }
-set N944443e0 [stack 0]
-Dot {
- name Dot27
- label "Grade Color\nin this pipe"
- note_font "Verdana Bold"
- note_font_size 20
- note_font_color 0xffffffff
- xpos -10956
- ypos 3203
-}
+set N199f5c40 [stack 0]
 Dot {
  name Dot25
  note_font " Bold"
  note_font_size 40
- xpos -10956
- ypos 3544
+ xpos 1457
+ ypos 283
 }
-push $N944443e0
-push $N586784c0
+push $N199f5c40
+push $N17c22800
 Dot {
  name aov_dot7
- xpos -10706
- ypos 2905
+ xpos 1707
+ ypos -356
 }
-set N587f58c0 [stack 0]
+set N177b4770 [stack 0]
 Dot {
  name aov_dot8
- xpos -10456
- ypos 2905
+ xpos 1957
+ ypos -356
 }
-set N587f1360 [stack 0]
+set N17b5d2d0 [stack 0]
 add_layer {indirectglossyreflection indirectglossyreflection.red indirectglossyreflection.green indirectglossyreflection.blue}
 Shuffle2 {
  fromInput1 {
@@ -468,13 +376,8 @@ Shuffle2 {
  label indirectglossyreflection
  note_font " Bold"
  note_font_color 0xffffffff
- xpos -10490
- ypos 2923
-}
-Unpremult {
- name Unpremult14
- xpos -10490
- ypos 2961
+ xpos 1923
+ ypos -338
 }
 MergeExpression {
  inputs 2
@@ -482,11 +385,11 @@ MergeExpression {
  expr1 "Ag == 0 ? Bg : Bg/Ag"
  expr2 "Ab == 0 ? Bb : Bb/Ab"
  expr3 "Aa == 0 ? Ba : Ba/Aa"
- name MergeDivide4
+ name MergeDivide8
  label "( B / A )"
  note_font_color 0xffffffff
- xpos -10490
- ypos 3120
+ xpos 1923
+ ypos -141
 }
 Dot {
  name Dot29
@@ -494,16 +397,16 @@ Dot {
  note_font "Verdana Bold"
  note_font_size 20
  note_font_color 0xffffffff
- xpos -10456
- ypos 3203
+ xpos 1957
+ ypos -58
 }
 Dot {
  name bottom_aov_dot8
- xpos -10456
- ypos 3367
+ xpos 1957
+ ypos 106
 }
-push $N58754da0
-push $N587f58c0
+push $N19c311c0
+push $N177b4770
 add_layer {directglossyreflection directglossyreflection.red directglossyreflection.green directglossyreflection.blue}
 Shuffle2 {
  fromInput1 {
@@ -521,13 +424,8 @@ Shuffle2 {
  label directglossyreflection
  note_font " Bold"
  note_font_color 0xffffffff
- xpos -10740
- ypos 2923
-}
-Unpremult {
- name Unpremult13
- xpos -10740
- ypos 2961
+ xpos 1673
+ ypos -338
 }
 MergeExpression {
  inputs 2
@@ -535,11 +433,11 @@ MergeExpression {
  expr1 "Ag == 0 ? Bg : Bg/Ag"
  expr2 "Ab == 0 ? Bb : Bb/Ab"
  expr3 "Aa == 0 ? Ba : Ba/Aa"
- name MergeDivide3
+ name MergeDivide7
  label "( B / A )"
  note_font_color 0xffffffff
- xpos -10740
- ypos 3077
+ xpos 1673
+ ypos -184
 }
 Dot {
  name Dot28
@@ -547,8 +445,8 @@ Dot {
  note_font "Verdana Bold"
  note_font_size 20
  note_font_color 0xffffffff
- xpos -10706
- ypos 3203
+ xpos 1707
+ ypos -58
 }
 Merge2 {
  inputs 2
@@ -557,25 +455,25 @@ Merge2 {
  name Merge6
  tile_color 0x82ff8fff
  label indirectglossyreflection
- xpos -10740
- ypos 3357
+ xpos 1673
+ ypos 96
 }
 Merge2 {
  inputs 2
  operation multiply
  bbox B
  name Merge39
- xpos -10740
- ypos 3540
+ xpos 1673
+ ypos 279
 }
-set N587d4960 [stack 0]
-push $N587f1360
+set N1783aad0 [stack 0]
+push $N17b5d2d0
 Dot {
  name aov_dot9
- xpos -10206
- ypos 2905
+ xpos 2207
+ ypos -356
 }
-set N4019a70 [stack 0]
+set N199faa00 [stack 0]
 add_layer {combinedglossyreflection combinedglossyreflection.red combinedglossyreflection.green combinedglossyreflection.blue}
 Shuffle2 {
  fromInput1 {
@@ -593,13 +491,8 @@ Shuffle2 {
  label combinedglossyreflection
  note_font " Bold"
  note_font_color 0xffffffff
- xpos -10240
- ypos 2923
-}
-Unpremult {
- name Unpremult12
- xpos -10240
- ypos 2961
+ xpos 2173
+ ypos -338
 }
 Switch {
  inputs 2
@@ -607,16 +500,16 @@ Switch {
  label "Difference Check"
  note_font "Verdana Bold"
  note_font_color 0xffffffff
- xpos -10240
- ypos 3534
+ xpos 2173
+ ypos 273
 }
-push $N4019a70
+push $N199faa00
 Dot {
  name aov_dot10
- xpos -9956
- ypos 2905
+ xpos 2457
+ ypos -356
 }
-set Nd61d7b50 [stack 0]
+set N19cc9d20 [stack 0]
 add_layer {albedoglossytransmission albedoglossytransmission.red albedoglossytransmission.green albedoglossytransmission.blue}
 Shuffle2 {
  fromInput1 {
@@ -634,44 +527,31 @@ Shuffle2 {
  label "\[value in1]"
  note_font "Verdana Bold"
  note_font_color 0xffffffff
- xpos -9990
- ypos 2923
-}
-Unpremult {
- name Unpremult3
- xpos -9990
- ypos 2961
+ xpos 2423
+ ypos -338
 }
 Dot {
  name Dot3
  note_font " Bold"
  note_font_size 40
- xpos -9956
- ypos 3087
+ selected true
+ xpos 2457
+ ypos -174
 }
-set Nd621e710 [stack 0]
-Dot {
- name Dot6
- label "Grade Color\nin this pipe"
- note_font "Verdana Bold"
- note_font_size 20
- note_font_color 0xffffffff
- xpos -9956
- ypos 3203
-}
+set N19dafae0 [stack 0]
 Dot {
  name Dot26
  note_font " Bold"
  note_font_size 40
- xpos -9956
- ypos 3544
+ xpos 2457
+ ypos 283
 }
-push $Nd621e710
-push $Nd61d7b50
+push $N19dafae0
+push $N19cc9d20
 Dot {
  name aov_dot11
- xpos -9706
- ypos 2905
+ xpos 2707
+ ypos -356
 }
 add_layer {glossytransmission glossytransmission.red glossytransmission.green glossytransmission.blue}
 Shuffle2 {
@@ -690,13 +570,8 @@ Shuffle2 {
  label glossytransmission
  note_font " Bold"
  note_font_color 0xffffffff
- xpos -9740
- ypos 2923
-}
-Unpremult {
- name Unpremult17
- xpos -9740
- ypos 2961
+ xpos 2673
+ ypos -338
 }
 MergeExpression {
  inputs 2
@@ -704,11 +579,11 @@ MergeExpression {
  expr1 "Ag == 0 ? Bg : Bg/Ag"
  expr2 "Ab == 0 ? Bb : Bb/Ab"
  expr3 "Aa == 0 ? Ba : Ba/Aa"
- name MergeDivide5
+ name MergeDivide3
  label "( B / A )"
  note_font_color 0xffffffff
- xpos -9740
- ypos 3077
+ xpos 2673
+ ypos -184
 }
 Dot {
  name Dot7
@@ -716,65 +591,64 @@ Dot {
  note_font "Verdana Bold"
  note_font_size 20
  note_font_color 0xffffffff
- xpos -9706
- ypos 3203
+ xpos 2707
+ ypos -58
 }
 Merge2 {
  inputs 2
  operation multiply
  bbox B
  name Merge7
- xpos -9740
- ypos 3540
+ xpos 2673
+ ypos 279
 }
 Dot {
  name Dot30
  note_font " Bold"
  note_font_size 40
- xpos -9706
- ypos 4198
+ xpos 2707
+ ypos 937
 }
-push $N587d4960
+push $N1783aad0
 Dot {
  name Dot4
  note_font " Bold"
  note_font_size 40
- xpos -10706
- ypos 3967
+ xpos 1707
+ ypos 706
 }
-push $N586e5ac0
+push $N157cda50
 Merge2 {
  inputs 2
  operation plus
  bbox B
  name Merge5
- xpos -11990
- ypos 3963
+ xpos 423
+ ypos 702
 }
 Merge2 {
  inputs 2
  operation plus
  bbox B
  name Merge8
- xpos -11990
- ypos 4194
+ xpos 423
+ ypos 933
 }
-push $N945bf5e0
+push $N19964a80
 Remove {
  channels rgb
  name Remove1
  label RGB
  note_font " Bold"
  note_font_color 0xffffffff
- xpos -12740
- ypos 2923
+ xpos -77
+ ypos -338
 }
 Merge2 {
  inputs 2
  operation plus
  bbox B
  name Merge9
- selected true
- xpos -12740
- ypos 4194
+ xpos -77
+ ypos 933
 }
