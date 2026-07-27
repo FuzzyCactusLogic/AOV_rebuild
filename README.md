@@ -10,6 +10,14 @@ Also included are shelf tools (karma_albedo_raw_rebuild.nk), a Karma specific al
 
 
 
+### Wiki
+
+Please see the Wiki for full guide
+
+https://github.com/FuzzyCactusLogic/AOV_rebuild/wiki
+
+
+
 ### v1.1 Updates
 
 * Layout Change (AOV Management): Light, Material and Utility AOVs grouped to column 1 (aov_read) leaving only unassigned AOVs in column 02 (aov_unassigned_read) for a more intuitive user experience.
