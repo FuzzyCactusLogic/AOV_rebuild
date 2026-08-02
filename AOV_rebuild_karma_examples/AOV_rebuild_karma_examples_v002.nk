@@ -5,8 +5,8 @@ BackdropNode {
  label ASSETS
  note_font "Verdana Bold"
  note_font_size 42
- xpos -13456
- ypos -407
+ xpos -13445
+ ypos -1381
  bdwidth 916
  bdheight 247
 }
@@ -16,8 +16,8 @@ Group {
  note_font "Verdana Bold"
  note_font_size 12
  note_font_color 0xffffffff
- xpos -13107
- ypos -336
+ xpos -13096
+ ypos -1310
  postage_stamp true
 }
  Read {
@@ -55,6 +55,8 @@ Group {
   file "\[file dirname \[value root.name]]/render/h21/h21_karma_all_materials_xpu.exr"
   format "1662 1247 0 0 1662 1247 1 "
   origset true
+  in_colorspace scene_linear
+  out_colorspace scene_linear
   name Read8
   xpos -607
   ypos -498
@@ -89,19 +91,13 @@ Group {
   font_height_toolbar 100
   output all
   message "\[metadata exr/Software]"
-  old_message {
-   {75 97 114 109 97 32 40 99 112 117 41 32 50 49 46 48 46 52 52 48}
-  }
   old_expression_markers {
-   {0 19}
+   {0 -1}
   }
   box {{input.width/2} {input.height-50} {input.width} {input.height}}
   xjustify right
   transforms {
    {0 2}
-  }
-  font_size_values {
-   {0 50 1 50 2 50 3 50 4 50 5 50 6 50 7 50 8 50 9 50 10 50 11 50 12 50 13 50 14 50 15 50 16 50 17 50 18 50 19 50 0 90 1 90 2 90 3 90 4 90 5 90 6 90 7 90 8 90 9 90 10 90 11 90 12 90 13 90 14 90 15 90 16 90 17 90 18 90 19 90}
   }
   font {{ Courier 10 Pitch : Regular : Courier10Pitch.pfb : 0 }}
   font_size 50
@@ -145,7 +141,7 @@ Group {
    name Input
    xpos 0
   }
-set N38f0b070 [stack 0]
+set N142df8e0 [stack 0]
   Dot {
    name Dot1
    xpos 150
@@ -156,238 +152,238 @@ set N38f0b070 [stack 0]
    xpos 150
    ypos 109
   }
-set N38b8a6e0 [stack 0]
+set N142c9b00 [stack 0]
   Dot {
    name Dot3
    xpos 150
    ypos 159
   }
-set N36cac990 [stack 0]
+set N97abe8f0 [stack 0]
   Dot {
    name Dot4
    xpos 150
    ypos 209
   }
-set N36cc6cc0 [stack 0]
+set N97ba3020 [stack 0]
   Dot {
    name Dot5
    xpos 150
    ypos 259
   }
-set N38cb97f0 [stack 0]
+set N141ca3c0 [stack 0]
   Dot {
    name Dot6
    xpos 150
    ypos 309
   }
-set N38fe2130 [stack 0]
+set N143e9b30 [stack 0]
   Dot {
    name Dot7
    xpos 150
    ypos 359
   }
-set N3690d8a0 [stack 0]
+set N141fc020 [stack 0]
   Dot {
    name Dot8
    xpos 150
    ypos 409
   }
-set N3ad7f2f0 [stack 0]
+set N141cd330 [stack 0]
   Dot {
    name Dot9
    xpos 150
    ypos 459
   }
-set N3adbcff0 [stack 0]
+set Nec234250 [stack 0]
   Dot {
    name Dot10
    xpos 150
    ypos 509
   }
-set N38731190 [stack 0]
+set N240531b0 [stack 0]
   Dot {
    name Dot11
    xpos 150
    ypos 559
   }
-set N38b85cb0 [stack 0]
+set N142b8a40 [stack 0]
   Dot {
    name Dot12
    xpos 150
    ypos 609
   }
-set N3aef8e20 [stack 0]
+set N147a0130 [stack 0]
   Dot {
    name Dot13
    xpos 150
    ypos 659
   }
-set N3ad73470 [stack 0]
+set N97c8d270 [stack 0]
   Dot {
    name Dot14
    xpos 150
    ypos 709
   }
-set N38a67580 [stack 0]
+set N97a04380 [stack 0]
   Dot {
    name Dot15
    xpos 150
    ypos 759
   }
-set N38a3f360 [stack 0]
+set Nec7f59d0 [stack 0]
   Dot {
    name Dot16
    xpos 150
    ypos 809
   }
-set N3b0fa900 [stack 0]
+set N97ab7c90 [stack 0]
   Dot {
    name Dot17
    xpos 150
    ypos 859
   }
-set N38f25f90 [stack 0]
+set Nec646d80 [stack 0]
   Dot {
    name Dot18
    xpos 150
    ypos 909
   }
-set N3afbb1d0 [stack 0]
+set N141f85c0 [stack 0]
   Dot {
    name Dot19
    xpos 150
    ypos 959
   }
-set N3ada46e0 [stack 0]
+set N1440d6a0 [stack 0]
   Dot {
    name Dot20
    xpos 150
    ypos 1009
   }
-set N38a35b80 [stack 0]
+set N97a660e0 [stack 0]
   Dot {
    name Dot21
    xpos 150
    ypos 1059
   }
-set N3aef78b0 [stack 0]
+set N14205950 [stack 0]
   Dot {
    name Dot22
    xpos 150
    ypos 1109
   }
-set N3ae0de70 [stack 0]
+set N141b1f30 [stack 0]
   Dot {
    name Dot23
    xpos 150
    ypos 1159
   }
-set N3aed4c00 [stack 0]
+set N97917f90 [stack 0]
   Dot {
    name Dot24
    xpos 150
    ypos 1209
   }
-set N3b14f180 [stack 0]
+set N14419d60 [stack 0]
   Dot {
    name Dot25
    xpos 150
    ypos 1259
   }
-set N38b31c80 [stack 0]
+set N14192b40 [stack 0]
   Dot {
    name Dot26
    xpos 150
    ypos 1309
   }
-set N3aeec380 [stack 0]
+set N979f4b80 [stack 0]
   Dot {
    name Dot27
    xpos 150
    ypos 1359
   }
-set N3af84390 [stack 0]
+set N97a78200 [stack 0]
   Dot {
    name Dot28
    xpos 150
    ypos 1409
   }
-set N3b087c20 [stack 0]
+set N97a6bb60 [stack 0]
   Dot {
    name Dot29
    xpos 150
    ypos 1459
   }
-set N3872d460 [stack 0]
+set N979fa6a0 [stack 0]
   Dot {
    name Dot30
    xpos 150
    ypos 1509
   }
-set N3b158450 [stack 0]
+set N97b23510 [stack 0]
   Dot {
    name Dot31
    xpos 150
    ypos 1559
   }
-set N3af50150 [stack 0]
+set N142d1970 [stack 0]
   Dot {
    name Dot32
    xpos 150
    ypos 1609
   }
-set N3b0aea80 [stack 0]
+set N2405a490 [stack 0]
   Dot {
    name Dot33
    xpos 150
    ypos 1659
   }
-set N3b0b3360 [stack 0]
+set N340296f0 [stack 0]
   Dot {
    name Dot34
    xpos 150
    ypos 1709
   }
-set N38cbdd20 [stack 0]
+set N140f0670 [stack 0]
   Dot {
    name Dot35
    xpos 150
    ypos 1759
   }
-push $N38cbdd20
-push $N3b0b3360
-push $N3b0aea80
-push $N3af50150
-push $N3b158450
-push $N3872d460
-push $N3b087c20
-push $N3af84390
-push $N3aeec380
-push $N38b31c80
-push $N3b14f180
-push $N3aed4c00
-push $N3ae0de70
-push $N3aef78b0
-push $N38a35b80
-push $N3ada46e0
-push $N3afbb1d0
-push $N38f25f90
-push $N3b0fa900
-push $N38a3f360
-push $N38a67580
-push $N3ad73470
-push $N3aef8e20
-push $N38b85cb0
-push $N38731190
-push $N3adbcff0
-push $N3ad7f2f0
-push $N3690d8a0
-push $N38fe2130
-push $N38cb97f0
-push $N36cc6cc0
-push $N36cac990
-push $N38b8a6e0
-push $N38f0b070
+push $N140f0670
+push $N340296f0
+push $N2405a490
+push $N142d1970
+push $N97b23510
+push $N979fa6a0
+push $N97a6bb60
+push $N97a78200
+push $N979f4b80
+push $N14192b40
+push $N14419d60
+push $N97917f90
+push $N141b1f30
+push $N14205950
+push $N97a660e0
+push $N1440d6a0
+push $N141f85c0
+push $Nec646d80
+push $N97ab7c90
+push $Nec7f59d0
+push $N97a04380
+push $N97c8d270
+push $N147a0130
+push $N142b8a40
+push $N240531b0
+push $Nec234250
+push $N141cd330
+push $N141fc020
+push $N143e9b30
+push $N141ca3c0
+push $N97ba3020
+push $N97abe8f0
+push $N142c9b00
+push $N142df8e0
   Remove {
    name Remove1
    xpos 0
@@ -684,8 +680,8 @@ NoOp {
  autolabel "nuke.thisNode().knob(\"title\").value()"
  tile_color 0xffffff01
  note_font_size 20
- xpos -13107
- ypos -252
+ xpos -13096
+ ypos -1226
  addUserKnob {20 anchor_tab l "Anchor Stamp"}
  addUserKnob {26 identifier -STARTLINE +HIDDEN T anchor}
  addUserKnob {1 title l Title: t "Displayed name on the Node Graph for this Stamp and its Anchor.\nIMPORTANT: This is only for display purposes, and is different from the internal node name."}
@@ -705,7 +701,7 @@ NoOp {
  addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
  addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"><big>Stamps v1.2</big></span></a>"}
 }
-set N3ac194e0 [stack 0]
+set N34e76e80 [stack 0]
 NoOp {
  name Stamp13
  help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025"
@@ -758,7 +754,7 @@ NoOp {
  addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
  addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"><big>Stamps v1.2</big></span></a>"}
 }
-set N3ac18d20 [stack 0]
+set N34e766e0 [stack 0]
 Unpremult {
  channels all
  name Unpremult3
@@ -770,49 +766,49 @@ Dot {
  xpos -13062
  ypos 3346
 }
-set N3ac9b890 [stack 0]
+set N34e9aa40 [stack 0]
 Dot {
  name start_dot
  xpos -12762
  ypos 3346
 }
-set N3ac98130 [stack 0]
+set N34ea0f90 [stack 0]
 Dot {
  name aov_dot
  xpos -12512
  ypos 3346
 }
-set N3ad37990 [stack 0]
+set N34ea8e40 [stack 0]
 Dot {
  name aov_dot2
  xpos -12262
  ypos 3346
 }
-set N3aca5550 [stack 0]
+set N34eaf730 [stack 0]
 Dot {
  name aov_dot3
  xpos -12012
  ypos 3346
 }
-set N38f38e00 [stack 0]
+set N34eb6290 [stack 0]
 Dot {
  name aov_dot4
  xpos -11762
  ypos 3346
 }
-set N3ae0a090 [stack 0]
+set N34ebcdd0 [stack 0]
 Dot {
  name aov_dot5
  xpos -11542
  ypos 3346
 }
-set N3872ae30 [stack 0]
+set N34ec3960 [stack 0]
 Dot {
  name aov_dot6
  xpos -11136
  ypos 3346
 }
-set N3ae90230 [stack 0]
+set N34eca4f0 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -839,7 +835,7 @@ Dot {
  xpos -11136
  ypos 3546
 }
-set N38736b00 [stack 0]
+set N34ee1460 [stack 0]
 Dot {
  name Dot18
  note_font " Bold"
@@ -847,7 +843,7 @@ Dot {
  xpos -11136
  ypos 3589
 }
-set N3ab66160 [stack 0]
+set N34ee7560 [stack 0]
 Dot {
  name Dot25
  note_font " Bold"
@@ -855,20 +851,20 @@ Dot {
  xpos -11136
  ypos 4003
 }
-push $N3ab66160
-push $N3ae90230
+push $N34ee7560
+push $N34eca4f0
 Dot {
  name aov_dot7
  xpos -10886
  ypos 3346
 }
-set N3aaf01e0 [stack 0]
+set N34ef4cc0 [stack 0]
 Dot {
  name aov_dot8
  xpos -10636
  ypos 3346
 }
-set N3aec8dd0 [stack 0]
+set N34efb770 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -914,8 +910,8 @@ Dot {
  xpos -10636
  ypos 3826
 }
-push $N38736b00
-push $N3aaf01e0
+push $N34ee1460
+push $N34ef4cc0
 Shuffle2 {
  fromInput1 {
   {0}
@@ -974,14 +970,14 @@ Merge2 {
  xpos -10920
  ypos 3999
 }
-set N3ad6d1f0 [stack 0]
-push $N3aec8dd0
+set N34fd0cc0 [stack 0]
+push $N34efb770
 Dot {
  name aov_dot9
  xpos -10386
  ypos 3346
 }
-set N3abdbcf0 [stack 0]
+set N34fe5a40 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -1016,8 +1012,8 @@ Group {
  note_font "Verdana Bold"
  note_font_size 12
  note_font_color 0xffffffff
- xpos -13288
- ypos -335
+ xpos -13277
+ ypos -1309
  postage_stamp true
 }
  Read {
@@ -1027,6 +1023,8 @@ Group {
   format "1662 1247 0 0 1662 1247 1 "
   origset true
   version 2
+  in_colorspace scene_linear
+  out_colorspace scene_linear
   name Read10
   xpos -717
   ypos -452
@@ -1056,6 +1054,8 @@ Group {
   format "1662 1247 0 0 1662 1247 1 "
   origset true
   version 2
+  in_colorspace scene_linear
+  out_colorspace scene_linear
   name Read2
   xpos -607
   ypos -478
@@ -1091,19 +1091,13 @@ Group {
   font_height_toolbar 100
   output all
   message "\[metadata exr/Software]"
-  old_message {
-   {75 97 114 109 97 32 40 99 112 117 41 32 50 49 46 48 46 52 52 48}
-  }
   old_expression_markers {
-   {0 19}
+   {0 -1}
   }
   box {{input.width/2} {input.height-50} {input.width} {input.height}}
   xjustify right
   transforms {
    {0 2}
-  }
-  font_size_values {
-   {0 50 1 50 2 50 3 50 4 50 5 50 6 50 7 50 8 50 9 50 10 50 11 50 12 50 13 50 14 50 15 50 16 50 17 50 18 50 19 50 0 90 1 90 2 90 3 90 4 90 5 90 6 90 7 90 8 90 9 90 10 90 11 90 12 90 13 90 14 90 15 90 16 90 17 90 18 90 19 90}
   }
   font {{ Courier 10 Pitch : Regular : Courier10Pitch.pfb : 0 }}
   font_size 50
@@ -1147,7 +1141,7 @@ Group {
    name Input
    xpos 0
   }
-set N3b5cf4c0 [stack 0]
+set N3c305ec0 [stack 0]
   Dot {
    name Dot1
    xpos 150
@@ -1158,511 +1152,511 @@ set N3b5cf4c0 [stack 0]
    xpos 150
    ypos 109
   }
-set N3b5de840 [stack 0]
+set N3c315790 [stack 0]
   Dot {
    name Dot3
    xpos 150
    ypos 159
   }
-set N3b5e5340 [stack 0]
+set N3c31d260 [stack 0]
   Dot {
    name Dot4
    xpos 150
    ypos 209
   }
-set N3b5ebed0 [stack 0]
+set N3c323df0 [stack 0]
   Dot {
    name Dot5
    xpos 150
    ypos 259
   }
-set N3b5f2ab0 [stack 0]
+set N3c32a9d0 [stack 0]
   Dot {
    name Dot6
    xpos 150
    ypos 309
   }
-set N3b5f9610 [stack 0]
+set N3c331530 [stack 0]
   Dot {
    name Dot7
    xpos 150
    ypos 359
   }
-set N3b6001a0 [stack 0]
+set N3c3380c0 [stack 0]
   Dot {
    name Dot8
    xpos 150
    ypos 409
   }
-set N3b606d30 [stack 0]
+set N3c33ec50 [stack 0]
   Dot {
    name Dot9
    xpos 150
    ypos 459
   }
-set N3b60e190 [stack 0]
+set N3c3457e0 [stack 0]
   Dot {
    name Dot10
    xpos 150
    ypos 509
   }
-set N3b614990 [stack 0]
+set N3c34d470 [stack 0]
   Dot {
    name Dot11
    xpos 150
    ypos 559
   }
-set N3b61b3a0 [stack 0]
+set N3c353e80 [stack 0]
   Dot {
    name Dot12
    xpos 150
    ypos 609
   }
-set N3b621f30 [stack 0]
+set N3c35aa10 [stack 0]
   Dot {
    name Dot13
    xpos 150
    ypos 659
   }
-set N3b628ac0 [stack 0]
+set N3c3615a0 [stack 0]
   Dot {
    name Dot14
    xpos 150
    ypos 709
   }
-set N3b62f650 [stack 0]
+set N3c368130 [stack 0]
   Dot {
    name Dot15
    xpos 150
    ypos 759
   }
-set N3b6361e0 [stack 0]
+set N3c36ecc0 [stack 0]
   Dot {
    name Dot16
    xpos 150
    ypos 809
   }
-set N3b63cd70 [stack 0]
+set N3c375850 [stack 0]
   Dot {
    name Dot17
    xpos 150
    ypos 859
   }
-set N3b643900 [stack 0]
+set N3c37d4c0 [stack 0]
   Dot {
    name Dot18
    xpos 150
    ypos 909
   }
-set N3b64a490 [stack 0]
+set N3c383f50 [stack 0]
   Dot {
    name Dot19
    xpos 150
    ypos 959
   }
-set N3b651020 [stack 0]
+set N3c38aae0 [stack 0]
   Dot {
    name Dot20
    xpos 150
    ypos 1009
   }
-set N3b657bb0 [stack 0]
+set N3c391670 [stack 0]
   Dot {
    name Dot21
    xpos 150
    ypos 1059
   }
-set N3b65e740 [stack 0]
+set N3c398200 [stack 0]
   Dot {
    name Dot22
    xpos 150
    ypos 1109
   }
-set N3b6652d0 [stack 0]
+set N3c39ed90 [stack 0]
   Dot {
    name Dot23
    xpos 150
    ypos 1159
   }
-set N3b66be60 [stack 0]
+set N3c3a5920 [stack 0]
   Dot {
    name Dot24
    xpos 150
    ypos 1209
   }
-set N3b6729f0 [stack 0]
+set N3c3ad480 [stack 0]
   Dot {
    name Dot25
    xpos 150
    ypos 1259
   }
-set N3bda5e30 [stack 0]
+set N3c3b4010 [stack 0]
   Dot {
    name Dot26
    xpos 150
    ypos 1309
   }
-set N3bdac9c0 [stack 0]
+set N3c3baba0 [stack 0]
   Dot {
    name Dot27
    xpos 150
    ypos 1359
   }
-set N3bdb3550 [stack 0]
+set N3c3c1730 [stack 0]
   Dot {
    name Dot28
    xpos 150
    ypos 1409
   }
-set N3bdba0e0 [stack 0]
+set N3c3c82c0 [stack 0]
   Dot {
    name Dot29
    xpos 150
    ypos 1459
   }
-set N3bdc0c70 [stack 0]
+set N3c3cee50 [stack 0]
   Dot {
    name Dot30
    xpos 150
    ypos 1509
   }
-set N3bdc7800 [stack 0]
+set N3c3d59e0 [stack 0]
   Dot {
    name Dot31
    xpos 150
    ypos 1559
   }
-set N3bdcf660 [stack 0]
+set N3c3dd5f0 [stack 0]
   Dot {
    name Dot32
    xpos 150
    ypos 1609
   }
-set N3bdd61f0 [stack 0]
+set N3c3e40d0 [stack 0]
   Dot {
    name Dot33
    xpos 150
    ypos 1659
   }
-set N3bddcd80 [stack 0]
+set N3c3eac60 [stack 0]
   Dot {
    name Dot34
    xpos 150
    ypos 1709
   }
-set N3bde3b20 [stack 0]
+set N3c3f1a00 [stack 0]
   Dot {
    name Dot35
    xpos 150
    ypos 1759
   }
-set N3bdea6b0 [stack 0]
+set N3c3f9860 [stack 0]
   Dot {
    name Dot36
    xpos 150
    ypos 1809
   }
-set N3bdf1240 [stack 0]
+set N3c4003f0 [stack 0]
   Dot {
    name Dot37
    xpos 150
    ypos 1859
   }
-set N3bdf7dd0 [stack 0]
+set N3c406f80 [stack 0]
   Dot {
    name Dot38
    xpos 150
    ypos 1909
   }
-set N3bdfe960 [stack 0]
+set N3c43fae0 [stack 0]
   Dot {
    name Dot39
    xpos 150
    ypos 1959
   }
-set N3be054f0 [stack 0]
+set N3c446670 [stack 0]
   Dot {
    name Dot40
    xpos 150
    ypos 2009
   }
-set N3be0c080 [stack 0]
+set N3c44d200 [stack 0]
   Dot {
    name Dot41
    xpos 150
    ypos 2059
   }
-set N3be12c10 [stack 0]
+set N3c453d90 [stack 0]
   Dot {
    name Dot42
    xpos 150
    ypos 2109
   }
-set N39725640 [stack 0]
+set N3c45a920 [stack 0]
   Dot {
    name Dot43
    xpos 150
    ypos 2159
   }
-set N3972bf20 [stack 0]
+set N3c4614b0 [stack 0]
   Dot {
    name Dot44
    xpos 150
    ypos 2209
   }
-set N39732ab0 [stack 0]
+set N3c468040 [stack 0]
   Dot {
    name Dot45
    xpos 150
    ypos 2259
   }
-set N39739640 [stack 0]
+set N3c4d2010 [stack 0]
   Dot {
    name Dot46
    xpos 150
    ypos 2309
   }
-set N397401d0 [stack 0]
+set N3c4d8810 [stack 0]
   Dot {
    name Dot47
    xpos 150
    ypos 2359
   }
-set N39746d60 [stack 0]
+set N3c4df2c0 [stack 0]
   Dot {
    name Dot48
    xpos 150
    ypos 2409
   }
-set N3974d8f0 [stack 0]
+set N3c4e5e50 [stack 0]
   Dot {
    name Dot49
    xpos 150
    ypos 2459
   }
-set N39754480 [stack 0]
+set N3c4ec9e0 [stack 0]
   Dot {
    name Dot50
    xpos 150
    ypos 2509
   }
-set N3975b010 [stack 0]
+set N3c4f3570 [stack 0]
   Dot {
    name Dot51
    xpos 150
    ypos 2559
   }
-set N39761ba0 [stack 0]
+set N3c4fa100 [stack 0]
   Dot {
    name Dot52
    xpos 150
    ypos 2609
   }
-set N39768730 [stack 0]
+set N3c500c90 [stack 0]
   Dot {
    name Dot53
    xpos 150
    ypos 2659
   }
-set N3976f2c0 [stack 0]
+set N3c59b7f0 [stack 0]
   Dot {
    name Dot54
    xpos 150
    ypos 2709
   }
-set N39776b10 [stack 0]
+set N3c5a3040 [stack 0]
   Dot {
    name Dot55
    xpos 150
    ypos 2759
   }
-set N3977d340 [stack 0]
+set N3c5a9870 [stack 0]
   Dot {
    name Dot56
    xpos 150
    ypos 2809
   }
-set N39783ed0 [stack 0]
+set N3c5b0400 [stack 0]
   Dot {
    name Dot57
    xpos 150
    ypos 2859
   }
-set N3978aa60 [stack 0]
+set N3c5b6f90 [stack 0]
   Dot {
    name Dot58
    xpos 150
    ypos 2909
   }
-set N397915f0 [stack 0]
+set N3c5bdb20 [stack 0]
   Dot {
    name Dot59
    xpos 150
    ypos 2959
   }
-set N39798180 [stack 0]
+set N3c5c46b0 [stack 0]
   Dot {
    name Dot60
    xpos 150
    ypos 3009
   }
-set N394e3820 [stack 0]
+set N3c5cc430 [stack 0]
   Dot {
    name Dot61
    xpos 150
    ypos 3059
   }
-set N394ea2d0 [stack 0]
+set N3c5d2db0 [stack 0]
   Dot {
    name Dot62
    xpos 150
    ypos 3109
   }
-set N394f0e60 [stack 0]
+set N3c5d9940 [stack 0]
   Dot {
    name Dot63
    xpos 150
    ypos 3159
   }
-set N394f79f0 [stack 0]
+set N3c5e04d0 [stack 0]
   Dot {
    name Dot64
    xpos 150
    ypos 3209
   }
-set N394fe580 [stack 0]
+set N3c5e7060 [stack 0]
   Dot {
    name Dot65
    xpos 150
    ypos 3259
   }
-set N39505110 [stack 0]
+set N3c5edbf0 [stack 0]
   Dot {
    name Dot66
    xpos 150
    ypos 3309
   }
-set N3950ba90 [stack 0]
+set N3c5f4570 [stack 0]
   Dot {
    name Dot67
    xpos 150
    ypos 3359
   }
-set N39512620 [stack 0]
+set N3c65e230 [stack 0]
   Dot {
    name Dot68
    xpos 150
    ypos 3409
   }
-set N395191b0 [stack 0]
+set N3c664c70 [stack 0]
   Dot {
    name Dot69
    xpos 150
    ypos 3459
   }
-set N3951fd40 [stack 0]
+set N3c66b800 [stack 0]
   Dot {
    name Dot70
    xpos 150
    ypos 3509
   }
-set N395268d0 [stack 0]
+set N3c672390 [stack 0]
   Dot {
    name Dot71
    xpos 150
    ypos 3559
   }
-set N3952d460 [stack 0]
+set N3c678f20 [stack 0]
   Dot {
    name Dot72
    xpos 150
    ypos 3609
   }
-set N39533ff0 [stack 0]
+set N3c67fab0 [stack 0]
   Dot {
    name Dot73
    xpos 150
    ypos 3659
   }
-set N3953ab80 [stack 0]
+set N3c686640 [stack 0]
   Dot {
    name Dot74
    xpos 150
    ypos 3709
   }
-push $N3953ab80
-push $N39533ff0
-push $N3952d460
-push $N395268d0
-push $N3951fd40
-push $N395191b0
-push $N39512620
-push $N3950ba90
-push $N39505110
-push $N394fe580
-push $N394f79f0
-push $N394f0e60
-push $N394ea2d0
-push $N394e3820
-push $N39798180
-push $N397915f0
-push $N3978aa60
-push $N39783ed0
-push $N3977d340
-push $N39776b10
-push $N3976f2c0
-push $N39768730
-push $N39761ba0
-push $N3975b010
-push $N39754480
-push $N3974d8f0
-push $N39746d60
-push $N397401d0
-push $N39739640
-push $N39732ab0
-push $N3972bf20
-push $N39725640
-push $N3be12c10
-push $N3be0c080
-push $N3be054f0
-push $N3bdfe960
-push $N3bdf7dd0
-push $N3bdf1240
-push $N3bdea6b0
-push $N3bde3b20
-push $N3bddcd80
-push $N3bdd61f0
-push $N3bdcf660
-push $N3bdc7800
-push $N3bdc0c70
-push $N3bdba0e0
-push $N3bdb3550
-push $N3bdac9c0
-push $N3bda5e30
-push $N3b6729f0
-push $N3b66be60
-push $N3b6652d0
-push $N3b65e740
-push $N3b657bb0
-push $N3b651020
-push $N3b64a490
-push $N3b643900
-push $N3b63cd70
-push $N3b6361e0
-push $N3b62f650
-push $N3b628ac0
-push $N3b621f30
-push $N3b61b3a0
-push $N3b614990
-push $N3b60e190
-push $N3b606d30
-push $N3b6001a0
-push $N3b5f9610
-push $N3b5f2ab0
-push $N3b5ebed0
-push $N3b5e5340
-push $N3b5de840
-push $N3b5cf4c0
+push $N3c686640
+push $N3c67fab0
+push $N3c678f20
+push $N3c672390
+push $N3c66b800
+push $N3c664c70
+push $N3c65e230
+push $N3c5f4570
+push $N3c5edbf0
+push $N3c5e7060
+push $N3c5e04d0
+push $N3c5d9940
+push $N3c5d2db0
+push $N3c5cc430
+push $N3c5c46b0
+push $N3c5bdb20
+push $N3c5b6f90
+push $N3c5b0400
+push $N3c5a9870
+push $N3c5a3040
+push $N3c59b7f0
+push $N3c500c90
+push $N3c4fa100
+push $N3c4f3570
+push $N3c4ec9e0
+push $N3c4e5e50
+push $N3c4df2c0
+push $N3c4d8810
+push $N3c4d2010
+push $N3c468040
+push $N3c4614b0
+push $N3c45a920
+push $N3c453d90
+push $N3c44d200
+push $N3c446670
+push $N3c43fae0
+push $N3c406f80
+push $N3c4003f0
+push $N3c3f9860
+push $N3c3f1a00
+push $N3c3eac60
+push $N3c3e40d0
+push $N3c3dd5f0
+push $N3c3d59e0
+push $N3c3cee50
+push $N3c3c82c0
+push $N3c3c1730
+push $N3c3baba0
+push $N3c3b4010
+push $N3c3ad480
+push $N3c3a5920
+push $N3c39ed90
+push $N3c398200
+push $N3c391670
+push $N3c38aae0
+push $N3c383f50
+push $N3c37d4c0
+push $N3c375850
+push $N3c36ecc0
+push $N3c368130
+push $N3c3615a0
+push $N3c35aa10
+push $N3c353e80
+push $N3c34d470
+push $N3c3457e0
+push $N3c33ec50
+push $N3c3380c0
+push $N3c331530
+push $N3c32a9d0
+push $N3c323df0
+push $N3c31d260
+push $N3c315790
+push $N3c305ec0
   Remove {
    name Remove1
    xpos 0
@@ -2240,8 +2234,8 @@ NoOp {
  autolabel "nuke.thisNode().knob(\"title\").value()"
  tile_color 0xffffff01
  note_font_size 20
- xpos -13288
- ypos -251
+ xpos -13277
+ ypos -1225
  addUserKnob {20 anchor_tab l "Anchor Stamp"}
  addUserKnob {26 identifier -STARTLINE +HIDDEN T anchor}
  addUserKnob {1 title l Title: t "Displayed name on the Node Graph for this Stamp and its Anchor.\nIMPORTANT: This is only for display purposes, and is different from the internal node name."}
@@ -2261,7 +2255,7 @@ NoOp {
  addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
  addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"><big>Stamps v1.2</big></span></a>"}
 }
-set N3910f480 [stack 0]
+set N6c2e2810 [stack 0]
 NoOp {
  name Stamp2
  help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025"
@@ -2316,27 +2310,27 @@ NoOp {
 Dot {
  name Dot23
  label "MATERIALS >"
- note_font " Bold"
+ note_font "Verdana Bold"
  note_font_size 40
  note_font_color 0xffffffff
  xpos -12986
  ypos 827
 }
-set N3911a2c0 [stack 0]
+set N6c2ed620 [stack 0]
 Dot {
  name Dot162
  label "UTILITIES >"
- note_font " Bold"
+ note_font "Verdana Bold"
  note_font_size 40
  note_font_color 0xffffffff
  xpos -12986
  ypos 1077
 }
-set N3912f260 [stack 0]
+set N6c3025f0 [stack 0]
 Dot {
  name Dot205
  label "OTHER >"
- note_font " Bold"
+ note_font "Verdana Bold"
  note_font_size 40
  note_font_color 0xffffffff
  xpos -12986
@@ -2347,7 +2341,7 @@ Dot {
  xpos -12736
  ypos 1327
 }
-set N3913c450 [stack 0]
+set N6c30f7e0 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -2368,7 +2362,7 @@ Shuffle2 {
  ypos 1345
  postage_stamp true
 }
-push $N3913c450
+push $N6c30f7e0
 Dot {
  name Dot125
  xpos -12486
@@ -2394,193 +2388,193 @@ Shuffle2 {
  ypos 1345
  postage_stamp true
 }
-push $N3911a2c0
+push $N6c2ed620
 Dot {
  name Dot131
  xpos -12736
  ypos 827
 }
-set N39163020 [stack 0]
+set N6c337380 [stack 0]
 Dot {
  name Dot132
  xpos -12486
  ypos 827
 }
-set N39169630 [stack 0]
+set N6c33d990 [stack 0]
 Dot {
  name Dot133
  xpos -12236
  ypos 827
 }
-set N391701c0 [stack 0]
+set N6c3454f0 [stack 0]
 Dot {
  name Dot134
  xpos -11986
  ypos 827
 }
-set N39176d50 [stack 0]
+set N6c34c080 [stack 0]
 Dot {
  name Dot135
  xpos -11736
  ypos 827
 }
-set N3917d8e0 [stack 0]
+set N6c352c10 [stack 0]
 Dot {
  name Dot136
  xpos -11486
  ypos 827
 }
-set N39184470 [stack 0]
+set N6c3597a0 [stack 0]
 Dot {
  name Dot137
  xpos -11236
  ypos 827
 }
-set N3918b000 [stack 0]
+set N6c360330 [stack 0]
 Dot {
  name Dot138
  xpos -10986
  ypos 827
 }
-set N39191b90 [stack 0]
+set N6c366ec0 [stack 0]
 Dot {
  name Dot139
  xpos -10736
  ypos 827
 }
-set N39198720 [stack 0]
+set N6c36da50 [stack 0]
 Dot {
  name Dot140
  xpos -10486
  ypos 827
 }
-set N3919f2b0 [stack 0]
+set N6c3755f0 [stack 0]
 Dot {
  name Dot141
  xpos -10236
  ypos 827
 }
-set N391a5e40 [stack 0]
+set N6c37c140 [stack 0]
 Dot {
  name Dot142
  xpos -9986
  ypos 827
 }
-set N391ac9d0 [stack 0]
+set N6c382cd0 [stack 0]
 Dot {
  name Dot143
  xpos -9736
  ypos 827
 }
-set N391b4220 [stack 0]
+set N6c389860 [stack 0]
 Dot {
  name Dot144
  xpos -9486
  ypos 827
 }
-set N391baa50 [stack 0]
+set N6c3910b0 [stack 0]
 Dot {
  name Dot145
  xpos -9236
  ypos 827
 }
-set N391c15e0 [stack 0]
+set N6c3978e0 [stack 0]
 Dot {
  name Dot146
  xpos -8986
  ypos 827
 }
-set N391c8170 [stack 0]
+set N6c39e470 [stack 0]
 Dot {
  name Dot147
  xpos -8736
  ypos 827
 }
-set N391ced00 [stack 0]
+set N8c004010 [stack 0]
 Dot {
  name Dot148
  xpos -8486
  ypos 827
 }
-set N391d5890 [stack 0]
+set N8c00ab60 [stack 0]
 Dot {
  name Dot149
  xpos -8236
  ypos 827
 }
-set N391dc420 [stack 0]
+set N8c0116f0 [stack 0]
 Dot {
  name Dot150
  xpos -7986
  ypos 827
 }
-set N391e2fb0 [stack 0]
+set N8c018280 [stack 0]
 Dot {
  name Dot151
  xpos -7736
  ypos 827
 }
-set N391e9b40 [stack 0]
+set N8c01ee10 [stack 0]
 Dot {
  name Dot152
  xpos -7486
  ypos 827
 }
-set N391f06d0 [stack 0]
+set N8c0259a0 [stack 0]
 Dot {
  name Dot153
  xpos -7236
  ypos 827
 }
-set N391f7260 [stack 0]
+set N8c02c530 [stack 0]
 Dot {
  name Dot154
  xpos -6986
  ypos 827
 }
-set N391fddf0 [stack 0]
+set N8c0330c0 [stack 0]
 Dot {
  name Dot155
  xpos -6736
  ypos 827
 }
-set N39204770 [stack 0]
+set N8c03ac20 [stack 0]
 Dot {
  name Dot156
  xpos -6486
  ypos 827
 }
-set N3920b300 [stack 0]
+set N8c0415a0 [stack 0]
 Dot {
  name Dot157
  xpos -6236
  ypos 827
 }
-set N39211e90 [stack 0]
+set N8c048130 [stack 0]
 Dot {
  name Dot158
  xpos -5986
  ypos 827
 }
-set N39218a20 [stack 0]
+set N8c04ecc0 [stack 0]
 Dot {
  name Dot159
  xpos -5736
  ypos 827
 }
-set N3921f5b0 [stack 0]
+set N8c055850 [stack 0]
 Dot {
  name Dot160
  xpos -5486
  ypos 827
 }
-set N39226140 [stack 0]
+set N8c05c3e0 [stack 0]
 Dot {
  name Dot161
  xpos -5236
  ypos 827
 }
-set N3922ccd0 [stack 0]
+set N8c062f70 [stack 0]
 Dot {
  name Dot127
  xpos -4989
@@ -2685,7 +2679,7 @@ NoOp {
  addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
  addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"><big>Stamps v1.2</big></span></a>"}
 }
-push $N3910f480
+push $N6c2e2810
 NoOp {
  name Stamp4
  help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025"
@@ -2695,8 +2689,8 @@ NoOp {
  tile_color 0x1000001
  note_font Verdana
  note_font_size 20
- xpos -13288
- ypos -217
+ xpos -13277
+ ypos -1191
  hide_input true
  addUserKnob {20 wired_tab l "Wired Stamp"}
  addUserKnob {26 identifier -STARTLINE +HIDDEN T wired}
@@ -2737,7 +2731,7 @@ NoOp {
  addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
  addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"><big>Stamps v1.2</big></span></a>"}
 }
-push $N3ac194e0
+push $N34e76e80
 NoOp {
  name Stamp5
  help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025"
@@ -2747,8 +2741,8 @@ NoOp {
  tile_color 0x1000001
  note_font Verdana
  note_font_size 20
- xpos -13107
- ypos -218
+ xpos -13096
+ ypos -1192
  hide_input true
  addUserKnob {20 wired_tab l "Wired Stamp"}
  addUserKnob {26 identifier -STARTLINE +HIDDEN T wired}
@@ -2795,8 +2789,8 @@ Group {
  note_font "Verdana Bold"
  note_font_size 12
  note_font_color 0xffffffff
- xpos -12915
- ypos -336
+ xpos -12904
+ ypos -1310
  postage_stamp true
 }
  Read {
@@ -2836,6 +2830,8 @@ Group {
   format "1280 720 0 0 1280 720 1 HD_720"
   origset true
   version 2
+  in_colorspace scene_linear
+  out_colorspace scene_linear
   name Read4
   xpos -607
   ypos -497
@@ -2871,19 +2867,13 @@ Group {
   font_height_toolbar 100
   output all
   message "\[metadata exr/Software]"
-  old_message {
-   {75 97 114 109 97 32 40 99 112 117 41 32 50 50 46 48 46 51 54 56}
-  }
   old_expression_markers {
-   {0 19}
+   {0 -1}
   }
   box {{input.width/2} {input.height-50} {input.width} {input.height}}
   xjustify right
   transforms {
    {0 2}
-  }
-  font_size_values {
-   {0 50 1 50 2 50 3 50 4 50 5 50 6 50 7 50 8 50 9 50 10 50 11 50 12 50 13 50 14 50 15 50 16 50 17 50 18 50 19 50 0 90 1 90 2 90 3 90 4 90 5 90 6 90 7 90 8 90 9 90 10 90 11 90 12 90 13 90 14 90 15 90 16 90 17 90 18 90 19 90}
   }
   cursor_position 23
   font {{ Courier 10 Pitch : Regular : Courier10Pitch.pfb : 0 }}
@@ -2928,7 +2918,7 @@ Group {
    name Input
    xpos 0
   }
-set N39414e10 [stack 0]
+set N8c287230 [stack 0]
   Dot {
    name Dot1
    xpos 150
@@ -2939,70 +2929,70 @@ set N39414e10 [stack 0]
    xpos 150
    ypos 109
   }
-set N394256d0 [stack 0]
+set N8c2978c0 [stack 0]
   Dot {
    name Dot3
    xpos 150
    ypos 159
   }
-set N3942c1d0 [stack 0]
+set N8c29e3c0 [stack 0]
   Dot {
    name Dot4
    xpos 150
    ypos 209
   }
-set N39433570 [stack 0]
+set N8c2a5760 [stack 0]
   Dot {
    name Dot5
    xpos 150
    ypos 259
   }
-set N39439f40 [stack 0]
+set N8c2ac130 [stack 0]
   Dot {
    name Dot6
    xpos 150
    ypos 309
   }
-set N39440aa0 [stack 0]
+set N8c2b3e50 [stack 0]
   Dot {
    name Dot7
    xpos 150
    ypos 359
   }
-set N39447630 [stack 0]
+set N8c2ba7f0 [stack 0]
   Dot {
    name Dot8
    xpos 150
    ypos 409
   }
-set N3944e1c0 [stack 0]
+set N8c2c1380 [stack 0]
   Dot {
    name Dot9
    xpos 150
    ypos 459
   }
-set N39454d50 [stack 0]
+set N8c2c7f10 [stack 0]
   Dot {
    name Dot10
    xpos 150
    ypos 509
   }
-set N3945b890 [stack 0]
+set N8c2cea50 [stack 0]
   Dot {
    name Dot11
    xpos 150
    ypos 559
   }
-push $N3945b890
-push $N39454d50
-push $N3944e1c0
-push $N39447630
-push $N39440aa0
-push $N39439f40
-push $N39433570
-push $N3942c1d0
-push $N394256d0
-push $N39414e10
+push $N8c2cea50
+push $N8c2c7f10
+push $N8c2c1380
+push $N8c2ba7f0
+push $N8c2b3e50
+push $N8c2ac130
+push $N8c2a5760
+push $N8c29e3c0
+push $N8c2978c0
+push $N8c287230
   Remove {
    name Remove1
    xpos 0
@@ -3098,8 +3088,8 @@ NoOp {
  autolabel "nuke.thisNode().knob(\"title\").value()"
  tile_color 0xffffff01
  note_font_size 20
- xpos -12915
- ypos -254
+ xpos -12904
+ ypos -1228
  addUserKnob {20 anchor_tab l "Anchor Stamp"}
  addUserKnob {26 identifier -STARTLINE +HIDDEN T anchor}
  addUserKnob {1 title l Title: t "Displayed name on the Node Graph for this Stamp and its Anchor.\nIMPORTANT: This is only for display purposes, and is different from the internal node name."}
@@ -3128,8 +3118,8 @@ NoOp {
  tile_color 0x1000001
  note_font Verdana
  note_font_size 20
- xpos -12915
- ypos -220
+ xpos -12904
+ ypos -1194
  hide_input true
  addUserKnob {20 wired_tab l "Wired Stamp"}
  addUserKnob {26 identifier -STARTLINE +HIDDEN T wired}
@@ -3176,8 +3166,8 @@ Group {
  note_font "Verdana Bold"
  note_font_size 12
  note_font_color 0xffffffff
- xpos -12729
- ypos -336
+ xpos -12718
+ ypos -1310
  postage_stamp true
 }
  Read {
@@ -3216,6 +3206,8 @@ Group {
   format "1662 1247 0 0 1662 1247 1 "
   origset true
   version 1
+  in_colorspace scene_linear
+  out_colorspace scene_linear
   name Read6
   xpos -607
   ypos -621
@@ -3250,19 +3242,13 @@ Group {
   font_height_toolbar 100
   output all
   message "\[metadata exr/Software]"
-  old_message {
-   {75 97 114 109 97 32 40 99 112 117 41 32 50 50 46 48 46 51 54 56}
-  }
   old_expression_markers {
-   {0 19}
+   {0 -1}
   }
   box {{input.width/2} {input.height-50} {input.width} {input.height}}
   xjustify right
   transforms {
    {0 2}
-  }
-  font_size_values {
-   {0 50 1 50 2 50 3 50 4 50 5 50 6 50 7 50 8 50 9 50 10 50 11 50 12 50 13 50 14 50 15 50 16 50 17 50 18 50 19 50 0 99 1 99 2 99 3 99 4 99 5 99 6 99 7 99 8 99 9 99 10 99 11 99 12 99 13 99 14 99 15 99 16 99 17 99 18 99 19 99}
   }
   font {{ Courier 10 Pitch : Regular : Courier10Pitch.pfb : 0 }}
   font_size 50
@@ -3306,7 +3292,7 @@ Group {
    name Input
    xpos 0
   }
-set N3e033ef0 [stack 0]
+set N941a4850 [stack 0]
   Dot {
    name Dot1
    xpos 150
@@ -3317,231 +3303,231 @@ set N3e033ef0 [stack 0]
    xpos 150
    ypos 109
   }
-set N3e043dc0 [stack 0]
+set N941b47c0 [stack 0]
   Dot {
    name Dot3
    xpos 150
    ypos 159
   }
-set N3e04a8c0 [stack 0]
+set N941bb2c0 [stack 0]
   Dot {
    name Dot4
    xpos 150
    ypos 209
   }
-set N3e051450 [stack 0]
+set N941c2fe0 [stack 0]
   Dot {
    name Dot5
    xpos 150
    ypos 259
   }
-set N3e058030 [stack 0]
+set N941c9a00 [stack 0]
   Dot {
    name Dot6
    xpos 150
    ypos 309
   }
-set N3e05eb90 [stack 0]
+set N941d0560 [stack 0]
   Dot {
    name Dot7
    xpos 150
    ypos 359
   }
-set N3e065720 [stack 0]
+set N941d70f0 [stack 0]
   Dot {
    name Dot8
    xpos 150
    ypos 409
   }
-set N3e06c2b0 [stack 0]
+set N941ddc80 [stack 0]
   Dot {
    name Dot9
    xpos 150
    ypos 459
   }
-set N3e072e40 [stack 0]
+set N941e4810 [stack 0]
   Dot {
    name Dot10
    xpos 150
    ypos 509
   }
-set N3e079980 [stack 0]
+set N941eb350 [stack 0]
   Dot {
    name Dot11
    xpos 150
    ypos 559
   }
-set N3e080510 [stack 0]
+set N941f3010 [stack 0]
   Dot {
    name Dot12
    xpos 150
    ypos 609
   }
-set N3e0870a0 [stack 0]
+set N941f9a50 [stack 0]
   Dot {
    name Dot13
    xpos 150
    ypos 659
   }
-set N3e08dc30 [stack 0]
+set N942005e0 [stack 0]
   Dot {
    name Dot14
    xpos 150
    ypos 709
   }
-set N3e0947c0 [stack 0]
+set N94207170 [stack 0]
   Dot {
    name Dot15
    xpos 150
    ypos 759
   }
-set N3e09b350 [stack 0]
+set N9420dd00 [stack 0]
   Dot {
    name Dot16
    xpos 150
    ypos 809
   }
-set N3e0a1ee0 [stack 0]
+set N94214890 [stack 0]
   Dot {
    name Dot17
    xpos 150
    ypos 859
   }
-set N3e0a8a70 [stack 0]
+set N9421b420 [stack 0]
   Dot {
    name Dot18
    xpos 150
    ypos 909
   }
-set N3e0af600 [stack 0]
+set N8c4a2f80 [stack 0]
   Dot {
    name Dot19
    xpos 150
    ypos 959
   }
-set N3e0b6190 [stack 0]
+set N8c4a9b10 [stack 0]
   Dot {
    name Dot20
    xpos 150
    ypos 1009
   }
-set N3e0bcd20 [stack 0]
+set N8c4b06a0 [stack 0]
   Dot {
    name Dot21
    xpos 150
    ypos 1059
   }
-set N3e0c38b0 [stack 0]
+set N8c4b7230 [stack 0]
   Dot {
    name Dot22
    xpos 150
    ypos 1109
   }
-set N3e0ca440 [stack 0]
+set N8c4bddc0 [stack 0]
   Dot {
    name Dot23
    xpos 150
    ypos 1159
   }
-set N3e0d0fd0 [stack 0]
+set N8c4c4950 [stack 0]
   Dot {
    name Dot24
    xpos 150
    ypos 1209
   }
-set N3e0d7b60 [stack 0]
+set N8c4cb4e0 [stack 0]
   Dot {
    name Dot25
    xpos 150
    ypos 1259
   }
-set N3e0de6f0 [stack 0]
+set N8c4d3090 [stack 0]
   Dot {
    name Dot26
    xpos 150
    ypos 1309
   }
-set N3e0e5280 [stack 0]
+set N8c4d9bd0 [stack 0]
   Dot {
    name Dot27
    xpos 150
    ypos 1359
   }
-set N3e0ebe10 [stack 0]
+set N8c4e0760 [stack 0]
   Dot {
    name Dot28
    xpos 150
    ypos 1409
   }
-set N3e0f29a0 [stack 0]
+set N8c4e72f0 [stack 0]
   Dot {
    name Dot29
    xpos 150
    ypos 1459
   }
-set N3e0f9530 [stack 0]
+set N8c4ede80 [stack 0]
   Dot {
    name Dot30
    xpos 150
    ypos 1509
   }
-set N3e1000c0 [stack 0]
+set N8c4f4a10 [stack 0]
   Dot {
    name Dot31
    xpos 150
    ypos 1559
   }
-set N3e106c50 [stack 0]
+set N8c4fb5a0 [stack 0]
   Dot {
    name Dot32
    xpos 150
    ypos 1609
   }
-set N3e10d7e0 [stack 0]
+set N8c503100 [stack 0]
   Dot {
    name Dot33
    xpos 150
    ypos 1659
   }
-set N3e114370 [stack 0]
+set N8c509c90 [stack 0]
   Dot {
    name Dot34
    xpos 150
    ypos 1709
   }
-push $N3e114370
-push $N3e10d7e0
-push $N3e106c50
-push $N3e1000c0
-push $N3e0f9530
-push $N3e0f29a0
-push $N3e0ebe10
-push $N3e0e5280
-push $N3e0de6f0
-push $N3e0d7b60
-push $N3e0d0fd0
-push $N3e0ca440
-push $N3e0c38b0
-push $N3e0bcd20
-push $N3e0b6190
-push $N3e0af600
-push $N3e0a8a70
-push $N3e0a1ee0
-push $N3e09b350
-push $N3e0947c0
-push $N3e08dc30
-push $N3e0870a0
-push $N3e080510
-push $N3e079980
-push $N3e072e40
-push $N3e06c2b0
-push $N3e065720
-push $N3e05eb90
-push $N3e058030
-push $N3e051450
-push $N3e04a8c0
-push $N3e043dc0
-push $N3e033ef0
+push $N8c509c90
+push $N8c503100
+push $N8c4fb5a0
+push $N8c4f4a10
+push $N8c4ede80
+push $N8c4e72f0
+push $N8c4e0760
+push $N8c4d9bd0
+push $N8c4d3090
+push $N8c4cb4e0
+push $N8c4c4950
+push $N8c4bddc0
+push $N8c4b7230
+push $N8c4b06a0
+push $N8c4a9b10
+push $N8c4a2f80
+push $N9421b420
+push $N94214890
+push $N9420dd00
+push $N94207170
+push $N942005e0
+push $N941f9a50
+push $N941f3010
+push $N941eb350
+push $N941e4810
+push $N941ddc80
+push $N941d70f0
+push $N941d0560
+push $N941c9a00
+push $N941c2fe0
+push $N941bb2c0
+push $N941b47c0
+push $N941a4850
   Remove {
    name Remove1
    xpos 0
@@ -3799,8 +3785,8 @@ NoOp {
  autolabel "nuke.thisNode().knob(\"title\").value()"
  tile_color 0xffffff01
  note_font_size 20
- xpos -12729
- ypos -252
+ xpos -12718
+ ypos -1226
  addUserKnob {20 anchor_tab l "Anchor Stamp"}
  addUserKnob {26 identifier -STARTLINE +HIDDEN T anchor}
  addUserKnob {1 title l Title: t "Displayed name on the Node Graph for this Stamp and its Anchor.\nIMPORTANT: This is only for display purposes, and is different from the internal node name."}
@@ -3829,8 +3815,8 @@ NoOp {
  tile_color 0x1000001
  note_font Verdana
  note_font_size 20
- xpos -12729
- ypos -218
+ xpos -12718
+ ypos -1192
  hide_input true
  addUserKnob {20 wired_tab l "Wired Stamp"}
  addUserKnob {26 identifier -STARTLINE +HIDDEN T wired}
@@ -3871,7 +3857,7 @@ NoOp {
  addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
  addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"><big>Stamps v1.2</big></span></a>"}
 }
-push $N3ac194e0
+push $N34e76e80
 NoOp {
  name Stamp12
  help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025"
@@ -3923,23 +3909,11 @@ NoOp {
  addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
  addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"><big>Stamps v1.2</big></span></a>"}
 }
-StickyNote {
- inputs 0
- name StickyNote1
- tile_color 0x272727ff
- label "Layers Key"
- note_font " Bold"
- note_font_size 200
- note_font_color 0xa8a8a8ff
- xpos -13455
- ypos 258
- bookmark true
-}
-push $N3ac18d20
+push $N34e766e0
 Dot {
  name Dot15
  label "< UTILITY                    "
- note_font " Bold"
+ note_font "Verdana Bold"
  note_font_size 40
  note_font_color 0xffffffff
  xpos -12762
@@ -3950,7 +3924,7 @@ Dot {
  xpos -12462
  ypos 3046
 }
-set N3c613ad0 [stack 0]
+set N3c87f520 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -3969,7 +3943,7 @@ Shuffle2 {
  xpos -12496
  ypos 3065
 }
-push $N3c613ad0
+push $N3c87f520
 Dot {
  name Dot30
  xpos -12162
@@ -3992,19 +3966,7 @@ Shuffle2 {
  xpos -12196
  ypos 3065
 }
-StickyNote {
- inputs 0
- name StickyNote2
- tile_color 0x272727ff
- label "Rebuild with albedo example"
- note_font " Bold"
- note_font_size 200
- note_font_color 0xa8a8a8ff
- xpos -14191
- ypos 2608
- bookmark true
-}
-push $N3ac194e0
+push $N34e76e80
 NoOp {
  name Stamp10
  help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025"
@@ -4056,11 +4018,11 @@ NoOp {
  addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
  addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"><big>Stamps v1.2</big></span></a>"}
 }
-set N3c641ef0 [stack 0]
+set N3c168920 [stack 0]
 Dot {
  name Dot1
  label "< UTILITY                    "
- note_font " Bold"
+ note_font "Verdana Bold"
  note_font_size 40
  note_font_color 0xffffffff
  xpos -13373
@@ -4071,7 +4033,7 @@ Dot {
  xpos -13673
  ypos 9285
 }
-set N3c656120 [stack 0]
+set N3c17cb50 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -4090,7 +4052,7 @@ Shuffle2 {
  xpos -13707
  ypos 9304
 }
-push $N3c656120
+push $N3c17cb50
 Dot {
  name Dot5
  xpos -13973
@@ -4113,7 +4075,7 @@ Shuffle2 {
  xpos -14007
  ypos 9304
 }
-push $N3c641ef0
+push $N3c168920
 Unpremult {
  channels all
  name Unpremult1
@@ -4125,73 +4087,73 @@ Dot {
  xpos -13073
  ypos 9585
 }
-set N3c687a40 [stack 0]
+set N3c8f5300 [stack 0]
 Dot {
  name start_dot1
  xpos -13373
  ypos 9585
 }
-set N3c68e3e0 [stack 0]
+set N3c8fbca0 [stack 0]
 Dot {
  name aov_dot1
  xpos -13673
  ypos 9585
 }
-set N3c694ff0 [stack 0]
+set N3c9028b0 [stack 0]
 Dot {
  name aov_dot12
  xpos -13973
  ypos 9585
 }
-set N3c69bb80 [stack 0]
+set N3c100250 [stack 0]
 Dot {
  name aov_dot13
  xpos -14273
  ypos 9585
 }
-set N3c6a2710 [stack 0]
+set N3c106de0 [stack 0]
 Dot {
  name aov_dot14
  xpos -14573
  ypos 9585
 }
-set N3c6a92a0 [stack 0]
+set N3c10d970 [stack 0]
 Dot {
  name aov_dot15
  xpos -14873
  ypos 9585
 }
-set N3c6afe30 [stack 0]
+set N3c114500 [stack 0]
 Dot {
  name aov_dot16
  xpos -15173
  ypos 9585
 }
-set N3c6b69c0 [stack 0]
+set N3c11b090 [stack 0]
 Dot {
  name aov_dot17
  xpos -15473
  ypos 9585
 }
-set N3c6bd550 [stack 0]
+set N3c121c20 [stack 0]
 Dot {
  name aov_dot18
  xpos -15773
  ypos 9585
 }
-set N3c6c40e0 [stack 0]
+set N3c1287b0 [stack 0]
 Dot {
  name aov_dot19
  xpos -16073
  ypos 9585
 }
-set N3c6cac70 [stack 0]
+set N3c06c010 [stack 0]
 Dot {
  name aov_dot20
  xpos -16373
  ypos 9585
 }
-set N3c6d1800 [stack 0]
+set N3c072ba0 [stack 0]
 Dot {
  name Dot10
  xpos -16673
@@ -4214,8 +4176,8 @@ Shuffle2 {
  xpos -16707
  ypos 9676
 }
-set N3c6defd0 [stack 0]
-push $N3c6defd0
+set N3c080370 [stack 0]
+push $N3c080370
 Merge2 {
  inputs 2
  operation from
@@ -4227,8 +4189,8 @@ Merge2 {
  xpos -16707
  ypos 9776
 }
-set N3c6eb870 [stack 0]
-push $N3c6eb870
+set N3c08cc10 [stack 0]
+push $N3c08cc10
 Merge2 {
  inputs 2
  operation from
@@ -4240,8 +4202,8 @@ Merge2 {
  xpos -16707
  ypos 9876
 }
-set N3c700750 [stack 0]
-push $N3c700750
+set N3c0a2920 [stack 0]
+push $N3c0a2920
 Merge2 {
  inputs 2
  operation from
@@ -4253,8 +4215,8 @@ Merge2 {
  xpos -16707
  ypos 9976
 }
-set N3c715790 [stack 0]
-push $N3c715790
+set N3c0b7c80 [stack 0]
+push $N3c0b7c80
 Merge2 {
  inputs 2
  operation from
@@ -4266,8 +4228,8 @@ Merge2 {
  xpos -16707
  ypos 10076
 }
-set N3c72ae70 [stack 0]
-push $N3c72ae70
+set N34f398a0 [stack 0]
+push $N34f398a0
 Merge2 {
  inputs 2
  operation from
@@ -4279,8 +4241,8 @@ Merge2 {
  xpos -16707
  ypos 10176
 }
-set N3c73fdd0 [stack 0]
-push $N3c73fdd0
+set N34f4ed40 [stack 0]
+push $N34f4ed40
 Merge2 {
  inputs 2
  operation from
@@ -4292,8 +4254,8 @@ Merge2 {
  xpos -16707
  ypos 10276
 }
-set N3c755410 [stack 0]
-push $N3c755410
+set N34f63ee0 [stack 0]
+push $N34f63ee0
 Merge2 {
  inputs 2
  operation from
@@ -4305,8 +4267,8 @@ Merge2 {
  xpos -16707
  ypos 10376
 }
-set N3c76a470 [stack 0]
-push $N3c76a470
+set N3c979d40 [stack 0]
+push $N3c979d40
 Merge2 {
  inputs 2
  operation from
@@ -4318,8 +4280,8 @@ Merge2 {
  xpos -16707
  ypos 10476
 }
-set N3c77f960 [stack 0]
-push $N3c77f960
+set N3c98f0b0 [stack 0]
+push $N3c98f0b0
 Merge2 {
  inputs 2
  operation from
@@ -4331,8 +4293,8 @@ Merge2 {
  xpos -16707
  ypos 10576
 }
-set N3c7949d0 [stack 0]
-push $N3c7949d0
+set N8c102690 [stack 0]
+push $N8c102690
 Merge2 {
  inputs 2
  operation from
@@ -4375,7 +4337,7 @@ Dot {
  xpos -16673
  ypos 13085
 }
-push $N3c6d1800
+push $N3c072ba0
 Shuffle2 {
  fromInput1 {
   {0}
@@ -4400,7 +4362,7 @@ Dot {
  xpos -16373
  ypos 12585
 }
-push $N3c6cac70
+push $N3c06c010
 Shuffle2 {
  fromInput1 {
   {0}
@@ -4425,7 +4387,7 @@ Dot {
  xpos -16073
  ypos 12285
 }
-push $N3c6c40e0
+push $N3c1287b0
 Shuffle2 {
  fromInput1 {
   {0}
@@ -4450,7 +4412,7 @@ Dot {
  xpos -15773
  ypos 11985
 }
-push $N3c6bd550
+push $N3c121c20
 Shuffle2 {
  fromInput1 {
   {0}
@@ -4475,7 +4437,7 @@ Dot {
  xpos -15473
  ypos 11685
 }
-push $N3c6b69c0
+push $N3c11b090
 Shuffle2 {
  fromInput1 {
   {0}
@@ -4500,7 +4462,7 @@ Dot {
  xpos -15173
  ypos 11385
 }
-push $N3c6afe30
+push $N3c114500
 Shuffle2 {
  fromInput1 {
   {0}
@@ -4525,7 +4487,7 @@ Dot {
  xpos -14873
  ypos 11085
 }
-push $N3c6a92a0
+push $N3c10d970
 Shuffle2 {
  fromInput1 {
   {0}
@@ -4550,7 +4512,7 @@ Dot {
  xpos -14573
  ypos 10785
 }
-push $N3c6a2710
+push $N3c106de0
 Shuffle2 {
  fromInput1 {
   {0}
@@ -4575,7 +4537,7 @@ Dot {
  xpos -14273
  ypos 10485
 }
-push $N3c69bb80
+push $N3c100250
 Shuffle2 {
  fromInput1 {
   {0}
@@ -4600,7 +4562,7 @@ Dot {
  xpos -13973
  ypos 10185
 }
-push $N3c694ff0
+push $N3c9028b0
 Shuffle2 {
  fromInput1 {
   {0}
@@ -4625,7 +4587,7 @@ Dot {
  xpos -13673
  ypos 9885
 }
-push $N3c68e3e0
+push $N3c8fbca0
 Remove {
  channels rgb
  name Remove2
@@ -4746,13 +4708,13 @@ Merge2 {
  ypos 13071
  disable true
 }
-push $N3c687a40
+push $N3c8f5300
 Dot {
  name b_pipe_btm_01_dot
  xpos -13073
  ypos 13185
 }
-set N3c9d0ca0 [stack 0]
+set N3c717d00 [stack 0]
 Merge2 {
  inputs 2
  operation divide
@@ -4761,7 +4723,7 @@ Merge2 {
  xpos -13407
  ypos 13282
 }
-push $N3c9d0ca0
+push $N3c717d00
 Merge2 {
  inputs 2
  operation multiply
@@ -4775,19 +4737,19 @@ Dot {
  xpos -13073
  ypos 13485
 }
-set N3ca01a20 [stack 0]
+set N3c748cf0 [stack 0]
 Dot {
  name start_dot2
  xpos -13373
  ypos 13485
 }
-set N3ca08310 [stack 0]
+set N3c780600 [stack 0]
 Dot {
  name aov_dot21
  xpos -13673
  ypos 13485
 }
-set N3ca0ef20 [stack 0]
+set N3c787210 [stack 0]
 Dot {
  name Dot11
  xpos -13973
@@ -4810,8 +4772,8 @@ Shuffle2 {
  xpos -14007
  ypos 13576
 }
-set N3ca1c6f0 [stack 0]
-push $N3ca1c6f0
+set N3c7949e0 [stack 0]
+push $N3c7949e0
 Merge2 {
  inputs 2
  operation from
@@ -4848,7 +4810,7 @@ StickyNote {
  xpos -14927
  ypos 13763
 }
-push $N3ac194e0
+push $N34e76e80
 NoOp {
  name Stamp7
  help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025"
@@ -4900,11 +4862,11 @@ NoOp {
  addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
  addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"><big>Stamps v1.2</big></span></a>"}
 }
-set N3ca58fe0 [stack 0]
+set N3c812920 [stack 0]
 Dot {
  name Dot12
  label "< UTILITY                    "
- note_font " Bold"
+ note_font "Verdana Bold"
  note_font_size 40
  note_font_color 0xffffffff
  xpos -7798
@@ -4915,7 +4877,7 @@ Dot {
  xpos -8098
  ypos 9242
 }
-set N3caaacc0 [stack 0]
+set N3c918010 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -4934,7 +4896,7 @@ Shuffle2 {
  xpos -8132
  ypos 9261
 }
-push $N3caaacc0
+push $N3c918010
 Dot {
  name Dot126
  xpos -8398
@@ -4957,7 +4919,7 @@ Shuffle2 {
  xpos -8432
  ypos 9261
 }
-push $N3ca58fe0
+push $N3c812920
 Unpremult {
  channels all
  name Unpremult2
@@ -4969,79 +4931,79 @@ Dot {
  xpos -7498
  ypos 9542
 }
-set N3cadbc90 [stack 0]
+set N3c949000 [stack 0]
 Dot {
  name start_dot3
  xpos -7798
  ypos 9542
 }
-set N3cae2680 [stack 0]
+set N3c94f9f0 [stack 0]
 Dot {
  name aov_dot22
  xpos -8098
  ypos 9542
 }
-set N3cae9290 [stack 0]
+set N3c956600 [stack 0]
 Dot {
  name aov_dot23
  xpos -8398
  ypos 9542
 }
-set N3caefe20 [stack 0]
+set N3c95d190 [stack 0]
 Dot {
  name aov_dot26
  xpos -8698
  ypos 9542
 }
-set N3caf69b0 [stack 0]
+set N3c963d20 [stack 0]
 Dot {
  name aov_dot27
  xpos -8998
  ypos 9542
 }
-set N3cafd540 [stack 0]
+set N3c009a90 [stack 0]
 Dot {
  name aov_dot28
  xpos -9298
  ypos 9542
 }
-set N3cb040d0 [stack 0]
+set N3c010460 [stack 0]
 Dot {
  name aov_dot29
  xpos -9598
  ypos 9542
 }
-set N3cb0ac60 [stack 0]
+set N3c016ff0 [stack 0]
 Dot {
  name aov_dot30
  xpos -9898
  ypos 9542
 }
-set N3cb117f0 [stack 0]
+set N3c01db80 [stack 0]
 Dot {
  name aov_dot31
  xpos -10198
  ypos 9542
 }
-set N3cb18380 [stack 0]
+set N3c024710 [stack 0]
 Dot {
  name aov_dot32
  xpos -10498
  ypos 9542
 }
-set N3cb1ef10 [stack 0]
+set N3c02b2a0 [stack 0]
 Dot {
  name aov_dot33
  xpos -10798
  ypos 9542
 }
-set N3cb25aa0 [stack 0]
+set N3c031e30 [stack 0]
 Dot {
  name aov_dot34
  xpos -11098
  ypos 9542
 }
-set N3cb2c630 [stack 0]
+set N3c0389c0 [stack 0]
 Dot {
  name Dot129
  xpos -11398
@@ -5064,8 +5026,8 @@ Shuffle2 {
  xpos -11432
  ypos 9633
 }
-set N3cb39e00 [stack 0]
-push $N3cb39e00
+set N140571b0 [stack 0]
+push $N140571b0
 Merge2 {
  inputs 2
  operation from
@@ -5077,8 +5039,8 @@ Merge2 {
  xpos -11432
  ypos 9733
 }
-set N3cb466a0 [stack 0]
-push $N3cb466a0
+set N14063a50 [stack 0]
+push $N14063a50
 Merge2 {
  inputs 2
  operation from
@@ -5090,8 +5052,8 @@ Merge2 {
  xpos -11432
  ypos 9833
 }
-set N3cb5b580 [stack 0]
-push $N3cb5b580
+set N14078930 [stack 0]
+push $N14078930
 Merge2 {
  inputs 2
  operation from
@@ -5103,8 +5065,8 @@ Merge2 {
  xpos -11432
  ypos 9933
 }
-set N3c6709b0 [stack 0]
-push $N3c6709b0
+set N1400aa60 [stack 0]
+push $N1400aa60
 Merge2 {
  inputs 2
  operation from
@@ -5116,8 +5078,8 @@ Merge2 {
  xpos -11432
  ypos 10033
 }
-set N3cb86db0 [stack 0]
-push $N3cb86db0
+set N3c8ea8b0 [stack 0]
+push $N3c8ea8b0
 Merge2 {
  inputs 2
  operation from
@@ -5129,8 +5091,8 @@ Merge2 {
  xpos -11432
  ypos 10133
 }
-set N3cb9c0b0 [stack 0]
-push $N3cb9c0b0
+set N140360f0 [stack 0]
+push $N140360f0
 Merge2 {
  inputs 2
  operation from
@@ -5142,8 +5104,8 @@ Merge2 {
  xpos -11432
  ypos 10233
 }
-set N3cbb1250 [stack 0]
-push $N3cbb1250
+set Nec02e620 [stack 0]
+push $Nec02e620
 Merge2 {
  inputs 2
  operation from
@@ -5155,8 +5117,8 @@ Merge2 {
  xpos -11432
  ypos 10333
 }
-set N3cbc6740 [stack 0]
-push $N3cbc6740
+set Nec043b10 [stack 0]
+push $Nec043b10
 Merge2 {
  inputs 2
  operation from
@@ -5168,8 +5130,8 @@ Merge2 {
  xpos -11432
  ypos 10433
 }
-set N3cbdb790 [stack 0]
-push $N3cbdb790
+set Nec058b60 [stack 0]
+push $Nec058b60
 Merge2 {
  inputs 2
  operation from
@@ -5181,8 +5143,8 @@ Merge2 {
  xpos -11432
  ypos 10533
 }
-set N3cbf0c90 [stack 0]
-push $N3cbf0c90
+set N245a6fd0 [stack 0]
+push $N245a6fd0
 Merge2 {
  inputs 2
  operation from
@@ -5194,8 +5156,8 @@ Merge2 {
  xpos -11432
  ypos 10633
 }
-set N3cc05c30 [stack 0]
-push $N3cc05c30
+set N245bc250 [stack 0]
+push $N245bc250
 Merge2 {
  inputs 2
  operation from
@@ -5222,17 +5184,7 @@ CurveTool {
  xpos -11432
  ypos 10821
 }
-StickyNote {
- inputs 0
- name StickyNote6
- tile_color 0x272727ff
- label "<font color=#eb4c34><b>Negative Values</b></font>\nUnassigned pipe disconnected. Negative values should not be plussed to the B pipe"
- note_font_size 20
- note_font_color 0xa8a8a8ff
- xpos -12352
- ypos 10820
-}
-push $N3c687a40
+push $N3c8f5300
 Dot {
  name beauty_dot
  xpos -12773
@@ -5243,20 +5195,20 @@ Dot {
  xpos -12773
  ypos 14235
 }
-set N3cc8e5d0 [stack 0]
+set Nec4602d0 [stack 0]
 Dot {
  name copy_dot
  xpos -12773
  ypos 14335
 }
-push $N3cc8e5d0
+push $Nec4602d0
 Dot {
  inputs 0
  name unassigned_bottom_dot1
  xpos -13973
  ypos 13835
 }
-push $N3ca0ef20
+push $N3c787210
 Shuffle2 {
  fromInput1 {
   {0}
@@ -5281,7 +5233,7 @@ Dot {
  xpos -13673
  ypos 13785
 }
-push $N3ca08310
+push $N3c780600
 Remove {
  channels rgb
  name Remove3
@@ -5312,13 +5264,13 @@ Merge2 {
  ypos 13821
  disable true
 }
-push $N3ca01a20
+push $N3c748cf0
 Dot {
  name b_pipe_btm_02_dot
  xpos -13073
  ypos 13935
 }
-set N3ccebcd0 [stack 0]
+set N97c571b0 [stack 0]
 Merge2 {
  inputs 2
  operation divide
@@ -5327,7 +5279,7 @@ Merge2 {
  xpos -13407
  ypos 14032
 }
-push $N3ccebcd0
+push $N97c571b0
 Merge2 {
  inputs 2
  operation multiply
@@ -5367,18 +5319,6 @@ Remove {
 }
 StickyNote {
  inputs 0
- name StickyNote10
- tile_color 0x272727ff
- label "Example 02: <font color=#70EE70>Correct Rebuild</font>"
- note_font " Bold"
- note_font_size 60
- note_font_color 0xa8a8a8ff
- xpos -7881
- ypos 9093
- bookmark true
-}
-StickyNote {
- inputs 0
  name StickyNote11
  tile_color 0x272727ff
  label "<font color=#eb4c34>The lightgroups rebuild block does not match the beauty\nand breaks the total rebuild as it merges \nthrough the divide / multiply loop</font>"
@@ -5388,31 +5328,7 @@ StickyNote {
  xpos -14389
  ypos 13988
 }
-StickyNote {
- inputs 0
- name StickyNote12
- tile_color 0x272727ff
- label "color not divided \nfrom light as expected\nin Houdini 22.0.368\n\nSee albedo / diffuse rebuild"
- note_font " Bold"
- note_font_size 40
- note_font_color 0xa8a8a8ff
- xpos -13261
- ypos 7048
- bookmark true
-}
-StickyNote {
- inputs 0
- name StickyNote9
- tile_color 0x272727ff
- label "Example 01: <font color=#eb4c34>Broken Rebuild</font>"
- note_font " Bold"
- note_font_size 60
- note_font_color 0xa8a8a8ff
- xpos -13388
- ypos 9075
- bookmark true
-}
-push $N3ad37990
+push $N34ea8e40
 Shuffle2 {
  fromInput1 {
   {0}
@@ -5439,8 +5355,8 @@ Dot {
  xpos -12512
  ypos 3488
 }
-set N3cd78db0 [stack 0]
-push $N3aca5550
+set N1435dec0 [stack 0]
+push $N34eaf730
 Shuffle2 {
  fromInput1 {
   {0}
@@ -5472,7 +5388,7 @@ MergeExpression {
  xpos -12296
  ypos 3479
 }
-set N3cd8c0e0 [stack 0]
+set N14371050 [stack 0]
 Dot {
  name Dot130
  label "<font color=#eb4c34>View here to see difference between division\nin Houdini versions 21.0.440 & 22.0368</font>"
@@ -5481,19 +5397,7 @@ Dot {
  xpos -12186
  ypos 3488
 }
-StickyNote {
- inputs 0
- name StickyNote3
- tile_color 0x272727ff
- label "This 'Master Switch' has 2 switches.\n\nThe 1st is to switch between viewing renders from Houdini versions 22 & 21.\n\nh21 = 0 and h22 = 1 (1 is the default)\n\nThe 2nd switch is to compare between CPU and XPU\n\nCPU = 0 and XPU = 1 (0 is the default)\n\nThe renders are wrapped into groups.\n \nAs discribed in the wiki \nif you drop the 'render' folder \ninside the 'AOV_rebuild_karma_examples' folder\nthe render files should load automatically \n\nThis script was made in nuke 17 \nso you may need to updare the colorspace\nsetting for the read nodes inside groups\n\nKarma_All_AOVs\nKarma_All_Materials\nKarma_Default_Utils\nKarma_Extra_Utils\n\nto match the ACES config your version of Nuke is using."
- note_font " Bold"
- note_font_size 40
- note_font_color 0xa8a8a8ff
- xpos -13660
- ypos -1748
- bookmark true
-}
-push $N391701c0
+push $N6c3454f0
 Shuffle2 {
  fromInput1 {
   {0}
@@ -5514,7 +5418,7 @@ Shuffle2 {
  ypos 846
  postage_stamp true
 }
-push $N39176d50
+push $N6c34c080
 Shuffle2 {
  fromInput1 {
   {0}
@@ -5535,7 +5439,7 @@ Shuffle2 {
  ypos 846
  postage_stamp true
 }
-push $N3917d8e0
+push $N6c352c10
 Shuffle2 {
  fromInput1 {
   {0}
@@ -5556,7 +5460,7 @@ Shuffle2 {
  ypos 846
  postage_stamp true
 }
-push $N39184470
+push $N6c3597a0
 Shuffle2 {
  fromInput1 {
   {0}
@@ -5577,7 +5481,7 @@ Shuffle2 {
  ypos 846
  postage_stamp true
 }
-push $N3918b000
+push $N6c360330
 Shuffle2 {
  fromInput1 {
   {0}
@@ -5598,7 +5502,7 @@ Shuffle2 {
  ypos 846
  postage_stamp true
 }
-push $N39198720
+push $N6c36da50
 Shuffle2 {
  fromInput1 {
   {0}
@@ -5619,7 +5523,7 @@ Shuffle2 {
  ypos 846
  postage_stamp true
 }
-push $N391a5e40
+push $N6c37c140
 Shuffle2 {
  fromInput1 {
   {0}
@@ -5640,7 +5544,7 @@ Shuffle2 {
  ypos 846
  postage_stamp true
 }
-push $N391ac9d0
+push $N6c382cd0
 Shuffle2 {
  fromInput1 {
   {0}
@@ -5661,7 +5565,7 @@ Shuffle2 {
  ypos 846
  postage_stamp true
 }
-push $N391b4220
+push $N6c389860
 Shuffle2 {
  fromInput1 {
   {0}
@@ -5682,7 +5586,7 @@ Shuffle2 {
  ypos 846
  postage_stamp true
 }
-push $N391baa50
+push $N6c3910b0
 Shuffle2 {
  fromInput1 {
   {0}
@@ -5703,7 +5607,7 @@ Shuffle2 {
  ypos 846
  postage_stamp true
 }
-push $N391c15e0
+push $N6c3978e0
 Shuffle2 {
  fromInput1 {
   {0}
@@ -5724,7 +5628,7 @@ Shuffle2 {
  ypos 846
  postage_stamp true
 }
-push $N391c8170
+push $N6c39e470
 Shuffle2 {
  fromInput1 {
   {0}
@@ -5745,7 +5649,7 @@ Shuffle2 {
  ypos 846
  postage_stamp true
 }
-push $N391dc420
+push $N8c0116f0
 Shuffle2 {
  fromInput1 {
   {0}
@@ -5766,7 +5670,7 @@ Shuffle2 {
  ypos 846
  postage_stamp true
 }
-push $N391e2fb0
+push $N8c018280
 Shuffle2 {
  fromInput1 {
   {0}
@@ -5787,7 +5691,7 @@ Shuffle2 {
  ypos 846
  postage_stamp true
 }
-push $N391e9b40
+push $N8c01ee10
 Shuffle2 {
  fromInput1 {
   {0}
@@ -5808,7 +5712,7 @@ Shuffle2 {
  ypos 846
  postage_stamp true
 }
-push $N391f06d0
+push $N8c0259a0
 Shuffle2 {
  fromInput1 {
   {0}
@@ -5829,7 +5733,7 @@ Shuffle2 {
  ypos 846
  postage_stamp true
 }
-push $N391f7260
+push $N8c02c530
 Shuffle2 {
  fromInput1 {
   {0}
@@ -5850,7 +5754,7 @@ Shuffle2 {
  ypos 846
  postage_stamp true
 }
-push $N391fddf0
+push $N8c0330c0
 Shuffle2 {
  fromInput1 {
   {0}
@@ -5871,7 +5775,7 @@ Shuffle2 {
  ypos 846
  postage_stamp true
 }
-push $N39204770
+push $N8c03ac20
 Shuffle2 {
  fromInput1 {
   {0}
@@ -5892,7 +5796,7 @@ Shuffle2 {
  ypos 846
  postage_stamp true
 }
-push $N3920b300
+push $N8c0415a0
 Shuffle2 {
  fromInput1 {
   {0}
@@ -5913,7 +5817,7 @@ Shuffle2 {
  ypos 846
  postage_stamp true
 }
-push $N39211e90
+push $N8c048130
 Shuffle2 {
  fromInput1 {
   {0}
@@ -5934,7 +5838,7 @@ Shuffle2 {
  ypos 846
  postage_stamp true
 }
-push $N39218a20
+push $N8c04ecc0
 Shuffle2 {
  fromInput1 {
   {0}
@@ -5955,7 +5859,7 @@ Shuffle2 {
  ypos 846
  postage_stamp true
 }
-push $N39226140
+push $N8c05c3e0
 Shuffle2 {
  fromInput1 {
   {0}
@@ -5976,7 +5880,7 @@ Shuffle2 {
  ypos 846
  postage_stamp true
 }
-push $N3922ccd0
+push $N8c062f70
 Shuffle2 {
  fromInput1 {
   {0}
@@ -5997,31 +5901,31 @@ Shuffle2 {
  ypos 846
  postage_stamp true
 }
-push $N3912f260
+push $N6c3025f0
 Dot {
  name Dot63
  xpos -12736
  ypos 1077
 }
-set N3cef2640 [stack 0]
+set N94531a80 [stack 0]
 Dot {
  name Dot163
  xpos -12486
  ypos 1077
 }
-set N3c82f550 [stack 0]
+set N94538090 [stack 0]
 Dot {
  name Dot164
  xpos -12236
  ypos 1077
 }
-set N3ceffff0 [stack 0]
+set N9453ec20 [stack 0]
 Dot {
  name Dot165
  xpos -11986
  ypos 1077
 }
-set N3cf06b80 [stack 0]
+set N945457b0 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -6042,13 +5946,13 @@ Shuffle2 {
  ypos 1096
  postage_stamp true
 }
-push $N3cf06b80
+push $N945457b0
 Dot {
  name Dot166
  xpos -11736
  ypos 1077
 }
-set N3cf1a6a0 [stack 0]
+set N94559ad0 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -6069,13 +5973,13 @@ Shuffle2 {
  ypos 1096
  postage_stamp true
 }
-push $N3cf1a6a0
+push $N94559ad0
 Dot {
  name Dot167
  xpos -11486
  ypos 1077
 }
-set N3cf2da10 [stack 0]
+set N9456ce40 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -6096,13 +6000,13 @@ Shuffle2 {
  ypos 1096
  postage_stamp true
 }
-push $N3cf2da10
+push $N9456ce40
 Dot {
  name Dot168
  xpos -11236
  ypos 1077
 }
-set N3cf40a60 [stack 0]
+set N9457fe90 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -6123,13 +6027,13 @@ Shuffle2 {
  ypos 1096
  postage_stamp true
 }
-push $N3cf40a60
+push $N9457fe90
 Dot {
  name Dot169
  xpos -10986
  ypos 1077
 }
-set N3cf544c0 [stack 0]
+set N945938f0 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -6150,13 +6054,13 @@ Shuffle2 {
  ypos 1096
  postage_stamp true
 }
-push $N3cf544c0
+push $N945938f0
 Dot {
  name Dot170
  xpos -10736
  ypos 1077
 }
-set N3cf677e0 [stack 0]
+set N945a6c10 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -6177,13 +6081,13 @@ Shuffle2 {
  ypos 1096
  postage_stamp true
 }
-push $N3cf677e0
+push $N945a6c10
 Dot {
  name Dot171
  xpos -10486
  ypos 1077
 }
-set N3cf7ab00 [stack 0]
+set N945b9f30 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -6204,13 +6108,13 @@ Shuffle2 {
  ypos 1096
  postage_stamp true
 }
-push $N3cf7ab00
+push $N945b9f30
 Dot {
  name Dot172
  xpos -10236
  ypos 1077
 }
-set N3cf8d630 [stack 0]
+set N945cca60 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -6231,13 +6135,13 @@ Shuffle2 {
  ypos 1096
  postage_stamp true
 }
-push $N3cf8d630
+push $N945cca60
 Dot {
  name Dot173
  xpos -9986
  ypos 1077
 }
-set N3cfa0810 [stack 0]
+set N945dfc40 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -6258,13 +6162,13 @@ Shuffle2 {
  ypos 1096
  postage_stamp true
 }
-push $N3cfa0810
+push $N945dfc40
 Dot {
  name Dot174
  xpos -9736
  ypos 1077
 }
-set N3cfb4700 [stack 0]
+set N945f3b30 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -6285,13 +6189,13 @@ Shuffle2 {
  ypos 1096
  postage_stamp true
 }
-push $N3cfb4700
+push $N945f3b30
 Dot {
  name Dot175
  xpos -9486
  ypos 1077
 }
-set N3cfc7620 [stack 0]
+set N94606a50 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -6312,13 +6216,13 @@ Shuffle2 {
  ypos 1096
  postage_stamp true
 }
-push $N3cfc7620
+push $N94606a50
 Dot {
  name Dot176
  xpos -9236
  ypos 1077
 }
-set N3cfda7b0 [stack 0]
+set N94619be0 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -6339,13 +6243,13 @@ Shuffle2 {
  ypos 1096
  postage_stamp true
 }
-push $N3cfda7b0
+push $N94619be0
 Dot {
  name Dot177
  xpos -8986
  ypos 1077
 }
-set N3cfed980 [stack 0]
+set N9462cdb0 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -6366,13 +6270,13 @@ Shuffle2 {
  ypos 1096
  postage_stamp true
 }
-push $N3cfed980
+push $N9462cdb0
 Dot {
  name Dot178
  xpos -8736
  ypos 1077
 }
-set N3d000ae0 [stack 0]
+set N9463ff10 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -6393,13 +6297,13 @@ Shuffle2 {
  ypos 1096
  postage_stamp true
 }
-push $N3d000ae0
+push $N9463ff10
 Dot {
  name Dot179
  xpos -8486
  ypos 1077
 }
-set N3d013c70 [stack 0]
+set N946530a0 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -6420,13 +6324,13 @@ Shuffle2 {
  ypos 1096
  postage_stamp true
 }
-push $N3d013c70
+push $N946530a0
 Dot {
  name Dot180
  xpos -8236
  ypos 1077
 }
-set N3d026e30 [stack 0]
+set N94666260 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -6447,13 +6351,13 @@ Shuffle2 {
  ypos 1096
  postage_stamp true
 }
-push $N3d026e30
+push $N94666260
 Dot {
  name Dot181
  xpos -7986
  ypos 1077
 }
-set N3d03b250 [stack 0]
+set N946793b0 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -6474,13 +6378,13 @@ Shuffle2 {
  ypos 1096
  postage_stamp true
 }
-push $N3d03b250
+push $N946793b0
 Dot {
  name Dot182
  xpos -7736
  ypos 1077
 }
-set N3d04e400 [stack 0]
+set N9468c560 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -6501,13 +6405,13 @@ Shuffle2 {
  ypos 1096
  postage_stamp true
 }
-push $N3d04e400
+push $N9468c560
 Dot {
  name Dot183
  xpos -7486
  ypos 1077
 }
-set N3d061590 [stack 0]
+set N9469f6f0 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -6527,13 +6431,13 @@ Shuffle2 {
  ypos 1096
  postage_stamp true
 }
-push $N3d061590
+push $N9469f6f0
 Dot {
  name Dot184
  xpos -7236
  ypos 1077
 }
-set N3d074830 [stack 0]
+set Nec08da90 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -6554,13 +6458,13 @@ Shuffle2 {
  ypos 1096
  postage_stamp true
 }
-push $N3d074830
+push $Nec08da90
 Dot {
  name Dot185
  xpos -6986
  ypos 1077
 }
-set N3d0879c0 [stack 0]
+set Nec0a1de0 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -6581,13 +6485,13 @@ Shuffle2 {
  ypos 1096
  postage_stamp true
 }
-push $N3d0879c0
+push $Nec0a1de0
 Dot {
  name Dot186
  xpos -6736
  ypos 1077
 }
-set N3d09ab60 [stack 0]
+set Nec0b4f80 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -6608,13 +6512,13 @@ Shuffle2 {
  ypos 1096
  postage_stamp true
 }
-push $N3d09ab60
+push $Nec0b4f80
 Dot {
  name Dot187
  xpos -6486
  ypos 1077
 }
-set N3d0adda0 [stack 0]
+set Nec0c81c0 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -6635,13 +6539,13 @@ Shuffle2 {
  ypos 1096
  postage_stamp true
 }
-push $N3d0adda0
+push $Nec0c81c0
 Dot {
  name Dot188
  xpos -6236
  ypos 1077
 }
-set N3d0c0da0 [stack 0]
+set Nec0db1c0 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -6662,13 +6566,13 @@ Shuffle2 {
  ypos 1096
  postage_stamp true
 }
-push $N3d0c0da0
+push $Nec0db1c0
 Dot {
  name Dot189
  xpos -5986
  ypos 1077
 }
-set N3d0d3ea0 [stack 0]
+set Nec0ee2c0 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -6689,13 +6593,13 @@ Shuffle2 {
  ypos 1096
  postage_stamp true
 }
-push $N3d0d3ea0
+push $Nec0ee2c0
 Dot {
  name Dot190
  xpos -5736
  ypos 1077
 }
-set N3d0e7100 [stack 0]
+set Nec101520 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -6716,13 +6620,13 @@ Shuffle2 {
  ypos 1096
  postage_stamp true
 }
-push $N3d0e7100
+push $Nec101520
 Dot {
  name Dot191
  xpos -5486
  ypos 1077
 }
-set N3d0fa0f0 [stack 0]
+set Nec114510 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -6743,13 +6647,13 @@ Shuffle2 {
  ypos 1096
  postage_stamp true
 }
-push $N3d0fa0f0
+push $Nec114510
 Dot {
  name Dot192
  xpos -5236
  ypos 1077
 }
-set N3d10d220 [stack 0]
+set Nec127640 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -6770,13 +6674,13 @@ Shuffle2 {
  ypos 1096
  postage_stamp true
 }
-push $N3d10d220
+push $Nec127640
 Dot {
  name Dot193
  xpos -4986
  ypos 1077
 }
-set N3d1203c0 [stack 0]
+set Nec13a7e0 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -6797,13 +6701,13 @@ Shuffle2 {
  ypos 1096
  postage_stamp true
 }
-push $N3d1203c0
+push $Nec13a7e0
 Dot {
  name Dot194
  xpos -4736
  ypos 1077
 }
-set N3eb5f200 [stack 0]
+set Nec14d890 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -6824,13 +6728,13 @@ Shuffle2 {
  ypos 1096
  postage_stamp true
 }
-push $N3eb5f200
+push $Nec14d890
 Dot {
  name Dot195
  xpos -4486
  ypos 1077
 }
-set N3eb724e0 [stack 0]
+set Nec160b70 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -6851,13 +6755,13 @@ Shuffle2 {
  ypos 1096
  postage_stamp true
 }
-push $N3eb724e0
+push $Nec160b70
 Dot {
  name Dot196
  xpos -4236
  ypos 1077
 }
-set N3eb855c0 [stack 0]
+set Nec173c50 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -6878,13 +6782,13 @@ Shuffle2 {
  ypos 1096
  postage_stamp true
 }
-push $N3eb855c0
+push $Nec173c50
 Dot {
  name Dot197
  xpos -3986
  ypos 1077
 }
-set N3eb988b0 [stack 0]
+set Nec186f40 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -6905,13 +6809,13 @@ Shuffle2 {
  ypos 1096
  postage_stamp true
 }
-push $N3eb988b0
+push $Nec186f40
 Dot {
  name Dot198
  xpos -3736
  ypos 1077
 }
-set N3ebab6f0 [stack 0]
+set Nec199d80 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -6932,13 +6836,13 @@ Shuffle2 {
  ypos 1096
  postage_stamp true
 }
-push $N3ebab6f0
+push $Nec199d80
 Dot {
  name Dot199
  xpos -3486
  ypos 1077
 }
-set N3ebbe8e0 [stack 0]
+set Nec1acf60 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -6959,13 +6863,13 @@ Shuffle2 {
  ypos 1096
  postage_stamp true
 }
-push $N3ebbe8e0
+push $Nec1acf60
 Dot {
  name Dot200
  xpos -3236
  ypos 1077
 }
-set N3ebd1db0 [stack 0]
+set Nec1c0420 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -6986,13 +6890,13 @@ Shuffle2 {
  ypos 1096
  postage_stamp true
 }
-push $N3ebd1db0
+push $Nec1c0420
 Dot {
  name Dot201
  xpos -2986
  ypos 1077
 }
-set N3ebe4d70 [stack 0]
+set Nec1d33e0 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -7013,13 +6917,13 @@ Shuffle2 {
  ypos 1096
  postage_stamp true
 }
-push $N3ebe4d70
+push $Nec1d33e0
 Dot {
  name Dot202
  xpos -2736
  ypos 1077
 }
-set N3ebf7ef0 [stack 0]
+set Nec1e6560 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -7040,13 +6944,13 @@ Shuffle2 {
  ypos 1096
  postage_stamp true
 }
-push $N3ebf7ef0
+push $Nec1e6560
 Dot {
  name Dot203
  xpos -2486
  ypos 1077
 }
-set N3ec0b1f0 [stack 0]
+set Nec1f9860 [stack 0]
 Shuffle2 {
  fromInput1 {
   {0}
@@ -7067,7 +6971,7 @@ Shuffle2 {
  ypos 1096
  postage_stamp true
 }
-push $N3ec0b1f0
+push $Nec1f9860
 Dot {
  name Dot204
  xpos -2236
@@ -7093,7 +6997,7 @@ Shuffle2 {
  ypos 1096
  postage_stamp true
 }
-push $N39191b90
+push $N6c366ec0
 Shuffle2 {
  fromInput1 {
   {0}
@@ -7143,7 +7047,7 @@ NoOp {
  addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
  addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"><big>Stamps v1.2</big></span></a>"}
 }
-push $N3919f2b0
+push $N6c3755f0
 Shuffle2 {
  fromInput1 {
   {0}
@@ -7193,7 +7097,7 @@ NoOp {
  addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
  addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"><big>Stamps v1.2</big></span></a>"}
 }
-push $N391ced00
+push $N8c004010
 Shuffle2 {
  fromInput1 {
   {0}
@@ -7243,7 +7147,7 @@ NoOp {
  addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
  addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"><big>Stamps v1.2</big></span></a>"}
 }
-push $N391d5890
+push $N8c00ab60
 Shuffle2 {
  fromInput1 {
   {0}
@@ -7293,7 +7197,7 @@ NoOp {
  addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
  addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"><big>Stamps v1.2</big></span></a>"}
 }
-push $N3921f5b0
+push $N8c055850
 Shuffle2 {
  fromInput1 {
   {0}
@@ -7343,7 +7247,7 @@ NoOp {
  addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
  addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"><big>Stamps v1.2</big></span></a>"}
 }
-push $N3ceffff0
+push $N9453ec20
 Shuffle2 {
  fromInput1 {
   {0}
@@ -7364,7 +7268,7 @@ Shuffle2 {
  ypos 1096
  postage_stamp true
 }
-push $N39169630
+push $N6c33d990
 Shuffle2 {
  fromInput1 {
   {0}
@@ -7385,7 +7289,7 @@ Shuffle2 {
  ypos 846
  postage_stamp true
 }
-push $N39163020
+push $N6c337380
 Shuffle2 {
  fromInput1 {
   {0}
@@ -7406,7 +7310,7 @@ Shuffle2 {
  ypos 845
  postage_stamp true
 }
-push $N3cef2640
+push $N94531a80
 Shuffle2 {
  fromInput1 {
   {0}
@@ -7427,42 +7331,7 @@ Shuffle2 {
  ypos 1095
  postage_stamp true
 }
-StickyNote {
- inputs 0
- name StickyNote7
- tile_color 0x272727ff
- label "<font color=#eb4c34>The material rebuild block does not match the beauty\nand breaks the total rebuild as it merges \nthrough the divide / multiply loop</font>"
- note_font "Verdana Bold"
- note_font_size 30
- note_font_color 0xa8a8a8ff
- xpos -14340
- ypos 13236
-}
-StickyNote {
- inputs 0
- name StickyNote13
- tile_color 0x272727ff
- label "<font color=#70EE70>material rebuild matches the beauty \nand merges correctly \nthrough the divide / multiply loop</font>"
- note_font " Bold"
- note_font_size 30
- note_font_color 0xa8a8a8ff
- xpos -8392
- ypos 13547
- bookmark true
-}
-StickyNote {
- inputs 0
- name StickyNote8
- tile_color 0x272727ff
- label "Emissive Objects, Light Sources vs Additive Rebuild Divide / Multiply Loops"
- note_font " Bold"
- note_font_size 200
- note_font_color 0xa8a8a8ff
- xpos -14972
- ypos 8527
- bookmark true
-}
-push $N3ac9b890
+push $N34e9aa40
 Dot {
  name beauty_dot2
  xpos -13362
@@ -7473,50 +7342,50 @@ Dot {
  xpos -13362
  ypos 6796
 }
-set N3ecee350 [stack 0]
+set Nec55a1e0 [stack 0]
 Dot {
  name copy_dot2
  xpos -13362
  ypos 6896
 }
-push $N3ecee350
-push $N3abdbcf0
+push $Nec55a1e0
+push $N34fe5a40
 Dot {
  name aov_dot10
  xpos -9863
  ypos 3346
 }
-set N3ecfba50 [stack 0]
+set Nec5678e0 [stack 0]
 Dot {
  name aov_dot11
  xpos -9613
  ypos 3346
 }
-set N3ed024a0 [stack 0]
+set Nec56e330 [stack 0]
 Dot {
  name aov_dot24
  xpos -9022
  ypos 3346
 }
-set N3ed09030 [stack 0]
+set Nec574ec0 [stack 0]
 Dot {
  name aov_dot25
  xpos -8722
  ypos 3346
 }
-set N3ed0fbc0 [stack 0]
+set Nec57ba50 [stack 0]
 Dot {
  name aov_dot35
  xpos -8414
  ypos 3346
 }
-set N3ed16750 [stack 0]
+set Nec5825e0 [stack 0]
 Dot {
  name aov_dot36
  xpos -7811
  ypos 3346
 }
-set N3ed1d2e0 [stack 0]
+set Nec589170 [stack 0]
 Dot {
  name aov_dot37
  xpos -7511
@@ -7546,7 +7415,7 @@ Dot {
  xpos -7511
  ypos 6207
 }
-push $N3ed1d2e0
+push $Nec589170
 Shuffle2 {
  fromInput1 {
   {0}
@@ -7571,7 +7440,7 @@ Dot {
  xpos -7811
  ypos 5907
 }
-push $N3ed16750
+push $Nec5825e0
 Shuffle2 {
  fromInput1 {
   {0}
@@ -7596,7 +7465,7 @@ Dot {
  xpos -8414
  ypos 5631
 }
-push $N3ed0fbc0
+push $Nec57ba50
 Shuffle2 {
  fromInput1 {
   {0}
@@ -7621,7 +7490,7 @@ Dot {
  xpos -8722
  ypos 5333
 }
-push $N3ed09030
+push $Nec574ec0
 Shuffle2 {
  fromInput1 {
   {0}
@@ -7646,7 +7515,7 @@ Dot {
  xpos -9022
  ypos 5033
 }
-push $N3ecfba50
+push $Nec5678e0
 Shuffle2 {
  fromInput1 {
   {0}
@@ -7673,7 +7542,7 @@ Dot {
  xpos -9863
  ypos 3546
 }
-set N3ed97140 [stack 0]
+set Nec602fd0 [stack 0]
 Dot {
  name Dot26
  note_font " Bold"
@@ -7681,8 +7550,8 @@ Dot {
  xpos -9863
  ypos 4003
 }
-push $N3ed97140
-push $N3ed024a0
+push $Nec602fd0
+push $Nec56e330
 Shuffle2 {
  fromInput1 {
   {0}
@@ -7736,7 +7605,7 @@ Dot {
  xpos -9613
  ypos 4720
 }
-push $N3ad6d1f0
+push $N34fd0cc0
 Dot {
  name Dot4
  note_font " Bold"
@@ -7744,7 +7613,7 @@ Dot {
  xpos -10886
  ypos 4426
 }
-push $N3c82f550
+push $N94538090
 Shuffle2 {
  fromInput1 {
   {0}
@@ -7802,7 +7671,7 @@ NoOp {
  addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
  addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"><big>Stamps v1.2</big></span></a>"}
 }
-set N3ee18760 [stack 0]
+set N2464fb50 [stack 0]
 NoOp {
  name Stamp1
  help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025"
@@ -7854,7 +7723,7 @@ NoOp {
  addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
  addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"><big>Stamps v1.2</big></span></a>"}
 }
-push $N3ee18760
+push $N2464fb50
 NoOp {
  name Stamp6
  help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025"
@@ -7907,7 +7776,7 @@ NoOp {
  addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
  addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated March 3 2025." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"><big>Stamps v1.2</big></span></a>"}
 }
-push $N3cd78db0
+push $N1435dec0
 Dot {
  name Dot21
  note_font " Bold"
@@ -7915,7 +7784,7 @@ Dot {
  xpos -12512
  ypos 3589
 }
-set N3ee2ced0 [stack 0]
+set N24661290 [stack 0]
 Dot {
  name Dot9
  note_font " Bold"
@@ -7923,7 +7792,7 @@ Dot {
  xpos -12512
  ypos 3634
 }
-set N3ee48c00 [stack 0]
+set N2467da10 [stack 0]
 HueShift {
  inputs 1+1
  hue_rotation 100
@@ -7938,8 +7807,8 @@ Dot {
  xpos -12512
  ypos 4210
 }
-push $N3ee48c00
-push $N3ae0a090
+push $N2467da10
+push $N34ebcdd0
 Shuffle2 {
  fromInput1 {
   {0}
@@ -7959,7 +7828,7 @@ Shuffle2 {
  xpos -11796
  ypos 3365
 }
-set N3ee694e0 [stack 0]
+set N246a0760 [stack 0]
 MergeExpression {
  inputs 2
  expr0 "Ar == 0 ? Br : Br/Ar"
@@ -7986,8 +7855,8 @@ Dot {
  xpos -11762
  ypos 4003
 }
-push $N3ee2ced0
-push $N38f38e00
+push $N24661290
+push $N34eb6290
 Shuffle2 {
  fromInput1 {
   {0}
@@ -8033,7 +7902,7 @@ Dot {
  xpos -12012
  ypos 3826
 }
-push $N3cd8c0e0
+push $N14371050
 Dot {
  name Dot19
  label "RAW\nDirect Lighting"
@@ -8071,8 +7940,8 @@ Merge2 {
  xpos -12296
  ypos 4206
 }
-set N3eef4490 [stack 0]
-push $N3872ae30
+set N2472b530 [stack 0]
+push $N34ec3960
 Shuffle2 {
  fromInput1 {
   {0}
@@ -8092,7 +7961,7 @@ Shuffle2 {
  xpos -11576
  ypos 3365
 }
-push $N3ee694e0
+push $N246a0760
 Merge2 {
  inputs 2
  operation plus
@@ -8117,7 +7986,7 @@ HueShift {
  xpos -11686
  ypos 4307
 }
-push $N3eef4490
+push $N2472b530
 Switch {
  inputs 2
  name Switch6
@@ -8144,7 +8013,7 @@ Merge2 {
  xpos -12296
  ypos 4710
 }
-push $N3ac98130
+push $N34ea0f90
 Remove {
  channels rgb
  name Remove1
@@ -8212,13 +8081,13 @@ Merge2 {
  xpos -12796
  ypos 6198
 }
-push $N3ac9b890
+push $N34e9aa40
 Dot {
  name b_pipe_btm_01_dot2
  xpos -13062
  ypos 6396
 }
-set N3f007760 [stack 0]
+set Nec6f0be0 [stack 0]
 Merge2 {
  inputs 2
  operation divide
@@ -8227,7 +8096,7 @@ Merge2 {
  xpos -12796
  ypos 6493
 }
-push $N3f007760
+push $Nec6f0be0
 Merge2 {
  inputs 2
  operation multiply
@@ -8265,34 +8134,7 @@ Remove {
  xpos -13096
  ypos 6951
 }
-Group {
- inputs 0
- name Master_Switch
- label "\nuse this to switch beween\n\nh21 / h22\n&\nCPU / XPU"
- note_font "Verdana Bold"
- note_font_size 12
- note_font_color 0xffffffff
- xpos -13014
- ypos -555
- addUserKnob {20 master_switch l "Master Switch"}
- addUserKnob {26 spacer01 l "      "}
- addUserKnob {3 h21_h22_switch l "h21 / h22 Switch: h21 = 0 h22 = 1" t "h21 = 0 \n\nh22 = 1"}
- addUserKnob {26 spacer02 l "      "}
- addUserKnob {3 xpu_cpu_switch l "XPU / CPU Switch: CPU = 0 XPU = 1" t "CPU = 0\n\nXPU = 1"}
-}
- Input {
-  inputs 0
-  name Input1
-  xpos -905
-  ypos -629
- }
- Output {
-  name Output1
-  xpos -905
-  ypos -545
- }
-end_group
-push $N3cadbc90
+push $N3c949000
 Dot {
  name beauty_dot1
  xpos -7198
@@ -8303,20 +8145,20 @@ Dot {
  xpos -7198
  ypos 13892
 }
-set N3f073410 [stack 0]
+set Nec75cb30 [stack 0]
 Dot {
  name copy_dot1
  xpos -7198
  ypos 13992
 }
-push $N3f073410
+push $Nec75cb30
 Dot {
  inputs 0
  name unassigned_bottom_dot2
  xpos -11398
  ypos 13392
 }
-push $N3cb2c630
+push $N3c0389c0
 Shuffle2 {
  fromInput1 {
   {0}
@@ -8341,7 +8183,7 @@ Dot {
  xpos -11098
  ypos 12842
 }
-push $N3cb25aa0
+push $N3c031e30
 Shuffle2 {
  fromInput1 {
   {0}
@@ -8366,7 +8208,7 @@ Dot {
  xpos -10798
  ypos 12542
 }
-push $N3cb1ef10
+push $N3c02b2a0
 Shuffle2 {
  fromInput1 {
   {0}
@@ -8391,7 +8233,7 @@ Dot {
  xpos -10498
  ypos 12242
 }
-push $N3cb18380
+push $N3c024710
 Shuffle2 {
  fromInput1 {
   {0}
@@ -8416,7 +8258,7 @@ Dot {
  xpos -10198
  ypos 11942
 }
-push $N3cb117f0
+push $N3c01db80
 Shuffle2 {
  fromInput1 {
   {0}
@@ -8441,7 +8283,7 @@ Dot {
  xpos -9898
  ypos 11642
 }
-push $N3cb0ac60
+push $N3c016ff0
 Shuffle2 {
  fromInput1 {
   {0}
@@ -8466,7 +8308,7 @@ Dot {
  xpos -9598
  ypos 11342
 }
-push $N3cb040d0
+push $N3c010460
 Shuffle2 {
  fromInput1 {
   {0}
@@ -8491,7 +8333,7 @@ Dot {
  xpos -9298
  ypos 11042
 }
-push $N3cafd540
+push $N3c009a90
 Shuffle2 {
  fromInput1 {
   {0}
@@ -8516,7 +8358,7 @@ Dot {
  xpos -8998
  ypos 10742
 }
-push $N3caf69b0
+push $N3c963d20
 Shuffle2 {
  fromInput1 {
   {0}
@@ -8541,7 +8383,7 @@ Dot {
  xpos -8698
  ypos 10442
 }
-push $N3caefe20
+push $N3c95d190
 Shuffle2 {
  fromInput1 {
   {0}
@@ -8566,7 +8408,7 @@ Dot {
  xpos -8398
  ypos 10142
 }
-push $N3cae9290
+push $N3c956600
 Shuffle2 {
  fromInput1 {
   {0}
@@ -8591,7 +8433,7 @@ Dot {
  xpos -8098
  ypos 9842
 }
-push $N3cae2680
+push $N3c94f9f0
 Remove {
  channels rgb
  name Remove5
@@ -8722,13 +8564,13 @@ Merge2 {
  ypos 13378
  disable true
 }
-push $N3cadbc90
+push $N3c949000
 Dot {
  name b_pipe_btm_01_dot1
  xpos -7498
  ypos 13492
 }
-set N3f263210 [stack 0]
+set N8cbede20 [stack 0]
 Merge2 {
  inputs 2
  operation divide
@@ -8737,7 +8579,7 @@ Merge2 {
  xpos -7832
  ypos 13589
 }
-push $N3f263210
+push $N8cbede20
 Merge2 {
  inputs 2
  operation multiply
@@ -8782,4 +8624,165 @@ Viewer {
  name Viewer1
  xpos -7532
  ypos 14192
+}
+StickyNote {
+ inputs 0
+ name StickyNote6
+ tile_color 0x272727ff
+ label "<font color=#eb4c34><b>Negative Values</b></font>\nUnassigned pipe disconnected. Negative values should not be plussed to the B pipe"
+ note_font_size 20
+ note_font_color 0xa8a8a8ff
+ xpos -12352
+ ypos 10820
+}
+StickyNote {
+ inputs 0
+ name StickyNote7
+ tile_color 0x272727ff
+ label "<font color=#eb4c34>The material rebuild block does not match the beauty\nand breaks the total rebuild as it merges \nthrough the divide / multiply loop</font>"
+ note_font "Verdana Bold"
+ note_font_size 30
+ note_font_color 0xa8a8a8ff
+ xpos -14340
+ ypos 13236
+}
+StickyNote {
+ inputs 0
+ name StickyNote3
+ tile_color 0x272727ff
+ label "This 'Master Switch' has 2 switches.\n\nThe 1st is to switch between viewing renders from Houdini versions 22 & 21.\n\nh21 = 0 and h22 = 1 (1 is the default)\n\nThe 2nd switch is to compare between CPU and XPU\n\nCPU = 0 and XPU = 1 (0 is the default)"
+ note_font "Verdana Bold"
+ note_font_size 40
+ note_font_color 0xa8a8a8ff
+ xpos -13786
+ ypos -944
+ bookmark true
+}
+StickyNote {
+ inputs 0
+ name StickyNote10
+ tile_color 0x272727ff
+ label "Example 02: <font color=#70EE70>Correct Rebuild</font>"
+ note_font "Verdana Bold"
+ note_font_size 60
+ note_font_color 0xa8a8a8ff
+ xpos -7910
+ ypos 8988
+ bookmark true
+}
+StickyNote {
+ inputs 0
+ name StickyNote9
+ tile_color 0x272727ff
+ label "Example 01: <font color=#eb4c34>Broken Rebuild</font>"
+ note_font "Verdana Bold"
+ note_font_size 60
+ note_font_color 0xa8a8a8ff
+ xpos -13423
+ ypos 9021
+ bookmark true
+}
+StickyNote {
+ inputs 0
+ name StickyNote8
+ tile_color 0x272727ff
+ label "Emissive Objects, Light Sources vs Additive Rebuild Divide / Multiply Loops"
+ note_font "Verdana Bold"
+ note_font_size 200
+ note_font_color 0xa8a8a8ff
+ xpos -14972
+ ypos 8527
+ bookmark true
+}
+StickyNote {
+ inputs 0
+ name StickyNote1
+ tile_color 0x272727ff
+ label "Layers Key"
+ note_font "Verdana Bold"
+ note_font_size 200
+ note_font_color 0xa8a8a8ff
+ xpos -13451
+ ypos 268
+ bookmark true
+}
+StickyNote {
+ inputs 0
+ name StickyNote2
+ tile_color 0x272727ff
+ label "Rebuild with albedo example"
+ note_font "Verdana Bold"
+ note_font_size 200
+ note_font_color 0xa8a8a8ff
+ xpos -14191
+ ypos 2600
+ bookmark true
+}
+Group {
+ inputs 0
+ name Master_Switch
+ label "\nuse this to switch beween\n\nh21 / h22\n&\nCPU / XPU"
+ note_font "Verdana Bold"
+ note_font_size 12
+ note_font_color 0xffffffff
+ xpos -12993
+ ypos -1102
+ addUserKnob {20 master_switch l "Master Switch"}
+ addUserKnob {26 spacer01 l "      "}
+ addUserKnob {3 h21_h22_switch l "h21 / h22 Switch: h21 = 0 h22 = 1" t "h21 = 0 \n\nh22 = 1"}
+ h21_h22_switch 1
+ addUserKnob {26 spacer02 l "      "}
+ addUserKnob {3 xpu_cpu_switch l "XPU / CPU Switch: CPU = 0 XPU = 1" t "CPU = 0\n\nXPU = 1"}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos -905
+  ypos -629
+ }
+ Output {
+  name Output1
+  xpos -905
+  ypos -545
+ }
+end_group
+StickyNote {
+ inputs 0
+ name StickyNote12
+ tile_color 0x272727ff
+ label "color not divided \nfrom light as expected\nin Houdini 22.0.368\n\nSee albedo / diffuse rebuild"
+ note_font "Verdana Bold"
+ note_font_size 40
+ note_font_color 0xa8a8a8ff
+ xpos -13321
+ ypos 7048
+ bookmark true
+}
+StickyNote {
+ inputs 0
+ name StickyNote13
+ tile_color 0x272727ff
+ label "<font color=#70EE70>material rebuild matches the beauty \nand merges correctly \nthrough the divide / multiply loop</font>"
+ note_font "Verdana Bold"
+ note_font_size 30
+ note_font_color 0xa8a8a8ff
+ xpos -8503
+ ypos 13546
+ bookmark true
+}
+StickyNote {
+ inputs 0
+ name StickyNote15
+ tile_color 0x272727ff
+ label "To work with the render files used in this script\n\ndownload them from...\n\nhttps://drive.google.com/file/d/1xFd_NTzeSA4k5ENejdn-RPZtkI2HSJTL/view?usp=sharing\n\nTo load render files automatically, drop the 'render' folder \ninside the 'AOV_rebuild_karma_examples' folder \nwhere you have placed it on disk.\n\n(eg.) /example/directory/path/AOV_rebuild_karma_examples/renders\n\nBe sure to keep this script 'AOV_rebuild_karma_examples_v002.nk' \nin the AOV_rebuild_karma_examples folder for relative file paths to match.\n\nYou may need to update the colorspace setting for the read nodes inside groups\n\nKarma_All_AOVs\nKarma_All_Materials\nKarma_Default_Utils\nKarma_Extra_Utils\n\nto match the ACES config your version of Nuke is using."
+ note_font "Verdana Bold"
+ note_font_size 40
+ note_font_color 0xa8a8a8ff
+ selected true
+ xpos -13943
+ ypos -2496
+ bookmark true
+ addUserKnob {20 tab_download l "Render Files Download"}
+ addUserKnob {26 spacer l "" +STARTLINE T "     \n\n"}
+ addUserKnob {26 download l "     " T "<span style=\"color:#aaa;font-family:sans-serif;font-size:14pt\"><b> Render Files - </b><a href=\"https://drive.google.com/file/d/1xFd_NTzeSA4k5ENejdn-RPZtkI2HSJTL/view?usp=sharing\" style=\"color:#aaa\">Google Drive Download Link</a></span>"}
 }
